@@ -1,0 +1,7 @@
+.checks/
+.workbuddy/
+.github/
+scripts/
+PROJECT_HANDOFF.md
+data/tools_before.json
+data/tools_prev.json

@@ -1,0 +1,1380 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050817">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230b1324'/%3E%3Cpath d='m16 4 3.4 8.6L28 16l-8.6 3.4L16 28l-3.4-8.6L4 16l8.6-3.4z' fill='%239be7d6'/%3E%3C/svg%3E">
+  <title>拾光 · AI 工具宇宙</title>
+  <style>
+    :root{color-scheme:dark;font-family:"Segoe UI","Microsoft YaHei",system-ui,sans-serif;--bg:#050817;--ink:#edf3ff;--muted:#91a1bd;--mint:#9be7d6}
+    *{box-sizing:border-box}body{margin:0;min-width:320px;overflow:hidden;color:var(--ink);background:#000}button,a{font:inherit;color:inherit;-webkit-tap-highlight-color:transparent}button{border:0;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--mint);outline-offset:4px}
+    #scene{position:fixed;inset:0;z-index:0;pointer-events:none}#scene canvas{display:block;width:100%;height:100%}.ui{position:relative;z-index:1;height:100svh;min-height:620px;pointer-events:none}.ui>*{pointer-events:auto}
+    .topbar{position:absolute;inset:0 4% auto;height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff18}.brand{display:flex;align-items:center;gap:11px;letter-spacing:3px;font-weight:600}.brand-mark{width:32px;height:32px;border:1px solid #a9e9dc66;border-radius:10px;display:grid;place-items:center;color:var(--mint)}.brand-mark svg{width:20px;height:20px}.brand small{margin-left:10px;color:#71809b;font-size:10px;letter-spacing:2px;font-weight:400}.top-meta{color:#70809a;font:10px ui-monospace,monospace;letter-spacing:1px}
+    .view{position:absolute;inset:0;transition:opacity .5s ease,transform .6s cubic-bezier(.2,.8,.2,1)}.view.home{transform:translateY(0);opacity:1}.view.list{transform:translateY(28px);opacity:0;pointer-events:none}.app.list-mode .view.home{transform:translateY(-24px) scale(.98);opacity:0;pointer-events:none}.app.list-mode .view.list{transform:translateY(0);opacity:1;pointer-events:auto}
+    /* 文字背后的一层极弱暗场：星系核心的泛光会顶到标题上，
+       没有它白色核心会让标题"糊进光里"。径向渐变两端都收到 0，
+       所以看不到任何矩形边界，只是把局部背景压暗约 40%。 */
+    .hero{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);width:min(880px,90vw);text-align:center;isolation:isolate}
+    /* 文字保护：用户点名的 0 2px 10px rgba(0,0,0,.9)，再叠一层 1px/3px 的实底阴影护住笔画边缘。
+       背后那层径向暗场两端收到 0，看不到矩形边界，只是把局部背景压暗。 */
+    .hero::before{content:'';position:absolute;left:-14%;right:-14%;top:-26%;bottom:-30%;z-index:-1;pointer-events:none;
+      background:radial-gradient(ellipse 54% 50% at 50% 50%,rgba(0,0,0,.58),rgba(0,0,0,.36) 44%,rgba(0,0,0,.14) 64%,rgba(0,0,0,0) 80%)}
+    .eyebrow{margin:0 0 17px;color:#9cc0c4;font:11px ui-monospace,monospace;letter-spacing:4px;text-shadow:0 2px 10px rgba(0,0,0,.9),0 1px 3px rgba(0,0,0,.95)}
+    h1{margin:0;font-size:clamp(34px,6vw,74px);line-height:1.15;font-weight:300;letter-spacing:5px;text-shadow:0 2px 10px rgba(0,0,0,.9),0 1px 3px rgba(0,0,0,.95),0 0 30px rgba(0,0,0,.6),0 0 34px rgba(146,229,214,.13)}
+    h1 em{color:var(--mint);font-style:normal}
+    .hero p{margin:22px auto 0;max-width:430px;color:#aab8cc;font-size:13px;line-height:1.8;text-shadow:0 2px 10px rgba(0,0,0,.9),0 1px 3px rgba(0,0,0,.95)}
+    .hint{margin-top:28px;color:#8e9db3;font-size:11px;letter-spacing:1px;text-shadow:0 2px 10px rgba(0,0,0,.9),0 1px 3px rgba(0,0,0,.95)}
+    .category-dock{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);width:min(1140px,92vw);display:grid;grid-template-columns:repeat(9,1fr);gap:8px}.category-btn{min-height:58px;padding:10px 8px;border:1px solid #ffffff1f;border-radius:12px;background:rgba(0,0,0,.62);backdrop-filter:blur(18px) saturate(115%);-webkit-backdrop-filter:blur(18px) saturate(115%);color:#c8d3e4;transition:transform .2s,border-color .2s,background .2s,color .2s}.category-btn:hover{transform:translateY(-5px);border-color:var(--accent);background:rgba(10,14,24,.78);color:#fff}.category-btn .dot{display:block;width:5px;height:5px;margin:0 auto 8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}.category-btn strong{display:block;font-size:12px;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.category-btn small{display:block;margin-top:5px;color:#8d9cb2;font:10px ui-monospace,monospace}
+    /* ===== 分类页：非对称双栏 3 : 7 ===== */
+    /* 分类页进入"电影画幅"模式：顶部品牌条隐去，让左右两栏成为唯一构图 */
+    .app.list-mode .topbar{opacity:0;pointer-events:none;transition:opacity .35s ease}
+    .list-grid{position:absolute;inset:0;display:grid;grid-template-columns:30% 70%;grid-template-rows:100%;overflow:hidden}
+    .list-panel{position:relative;z-index:2;display:flex;flex-direction:column;min-width:0;min-height:0;padding:clamp(84px,10vh,120px) clamp(20px,2.7vw,52px) 0;background:rgba(10,15,20,.7);backdrop-filter:blur(20px) saturate(125%);-webkit-backdrop-filter:blur(20px) saturate(125%);border-right:1px solid rgba(255,255,255,.06)}
+    /* 右边缘向 3D 场景平滑过渡，避免一条硬边 */
+    .list-panel::after{content:'';position:absolute;left:100%;top:0;bottom:0;width:clamp(44px,7vw,130px);pointer-events:none;background:linear-gradient(90deg,rgba(10,15,20,.72),rgba(10,15,20,.26) 46%,rgba(10,15,20,0))}
+    /* 让黑洞的光"漏"进磨砂玻璃右缘：暖色来自吸积盘，冷色来自光子环。
+       两层径向渐变 + screen 混合，只做极弱的一层，不抢文字。 */
+    .list-panel::before{content:'';position:absolute;top:0;bottom:0;right:0;width:clamp(120px,20vw,280px);pointer-events:none;z-index:0;
+      background:radial-gradient(ellipse 130% 46% at 104% 42%,rgba(255,186,120,.16),rgba(255,150,90,.055) 42%,rgba(0,0,0,0) 72%),
+                 radial-gradient(ellipse 90% 30% at 104% 62%,rgba(150,190,255,.10),rgba(120,160,255,.03) 48%,rgba(0,0,0,0) 76%);
+      mix-blend-mode:screen}
+    /* 面板内部也别是死板的纯色：极轻的纵向渐变，上暗下略亮 */
+    .list-panel{background-image:linear-gradient(180deg,rgba(12,17,24,.30),rgba(6,9,13,.14) 55%,rgba(10,15,20,0))}
+    .panel-head,.tool-list,.list-fade{position:relative;z-index:1}
+    .bh-view{position:relative;overflow:hidden;background:#03050a;cursor:grab;touch-action:pan-y}
+    .bh-view.dragging{cursor:grabbing}
+    .bh-view canvas{display:block;width:100%;height:100%}
+    .bh-hint{position:absolute;right:clamp(16px,2.2vw,34px);bottom:22px;z-index:2;color:#5b6d82;font:10px ui-monospace,monospace;letter-spacing:2.4px;pointer-events:none;transition:opacity .35s}
+    .bh-view.dragging .bh-hint{opacity:0}
+    .panel-head{padding-bottom:6px}
+    .back{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.04);color:#c3d2e6;font-size:12px;letter-spacing:.4px;transition:border-color .2s,color .2s,background .2s}
+    .back:hover{border-color:var(--accent);color:#fff;background:rgba(255,255,255,.08)}
+    .panel-kicker{margin:clamp(30px,6vh,54px) 0 14px;color:var(--accent);font:10px/1 ui-monospace,monospace;letter-spacing:3px;text-transform:uppercase}
+    #panel-title{margin:0;font-family:"Inter","Helvetica Neue",Helvetica,"PingFang SC","Microsoft YaHei",sans-serif;font-size:clamp(29px,3.2vw,52px);font-weight:800;line-height:1.02;letter-spacing:-.02em;color:#f7fbff;text-shadow:0 0 26px rgba(170,220,255,.20),0 0 72px rgba(130,186,245,.12)}
+    .panel-subtitle{margin:16px 0 0;color:#7d8ea6;font:11px/1.6 ui-monospace,monospace;letter-spacing:.6px}
+    .tool-list{position:relative;flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:clamp(18px,3.4vh,34px) 0 160px;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.18) transparent}
+    .tool-list::-webkit-scrollbar{width:4px}
+    .tool-list::-webkit-scrollbar-track{background:transparent}
+    .tool-list::-webkit-scrollbar-thumb{background:rgba(255,255,255,.17);border-radius:999px}
+    .tool-list::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.32)}
+    .tool-item{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:19px 2px 17px;border-bottom:1px solid rgba(255,255,255,.1);transition:background .2s}
+    .tool-item:hover{background:linear-gradient(90deg,rgba(255,255,255,.05),rgba(255,255,255,0))}
+    .tool-main{min-width:0;flex:1}
+    .tool-name{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:600;letter-spacing:-.01em}
+    .tool-name a{color:#f1f7ff;text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .tool-name a:hover{color:var(--accent)}
+    .tool-name .plain{color:#f1f7ff}
+    .tool-summary{margin:8px 0 0;color:#78889e;font-size:12px;line-height:1.55;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:10px}
+    .tag{padding:0;border:0;color:#5d6d83;font:9.5px ui-monospace,monospace;letter-spacing:.7px;text-transform:uppercase}
+    .tag+.tag::before{content:'/';margin-right:9px;color:#33414f}
+    .score{flex:0 0 auto;min-width:50px;text-align:right;color:#7fe3c8;font:13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;letter-spacing:.5px;text-shadow:0 0 14px rgba(127,227,200,.35)}
+    .empty{padding:44px 4px;color:#8496ad;font-size:13px}
+    .list-fade{position:absolute;left:0;right:0;bottom:0;z-index:3;height:clamp(96px,17vh,190px);pointer-events:none;background:linear-gradient(180deg,rgba(10,15,20,0),rgba(8,12,17,.74) 46%,#04070b 100%)}
+    .footer-note{position:absolute;left:4%;bottom:13px;color:#60728e;font:10px ui-monospace,monospace;letter-spacing:1px}
+    .status{position:fixed;inset:0;z-index:4;display:grid;place-items:center;padding:30px;background:#050817e8;text-align:center}.status[hidden]{display:none}.status-card{max-width:420px;padding:28px;border:1px solid #ffffff1f;border-radius:16px;background:#101a2ddd}.status-card h2{margin:0 0 10px;font-size:20px;font-weight:400}.status-card p{margin:0;color:#94a2b9;font-size:13px;line-height:1.7}.status-card button{margin-top:18px;padding:10px 16px;border:1px solid #ffffff25;border-radius:8px;background:#14233b}
+    @media(max-width:850px){.topbar{inset-inline:6%;height:66px}.brand small,.top-meta{display:none}.hero{top:34%}.hero p{font-size:12px}.category-dock{grid-template-columns:repeat(3,1fr);bottom:18px;gap:6px}.category-btn{min-height:53px;padding:8px 5px}.category-btn strong{font-size:10px}.category-btn small{font-size:9px}
+      .list-grid{grid-template-columns:1fr}.bh-view{display:none}.list-panel{padding:92px 18px 0;background:rgba(8,12,17,.88);border-right:0}.list-panel::after{display:none}#panel-title{font-size:clamp(30px,8.5vw,44px)}.panel-kicker{margin-top:26px}.tool-item{padding:16px 2px 14px}.tool-name{font-size:16px}.footer-note{display:none}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
+  <!-- Three.js 走本站 vendor（r180，与 CDN 版本一致）。
+       CDN 实测要 4-6 秒，本地是最快也最稳的取法。
+       若要改回公共 CDN，把下面这行换成：
+       {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"}}
+       注意部署时必须一并发布 vendor/ （.vercelignore 未排除它）。
+       第十九轮起页面只用 "three" 本体；"three/addons/" 映射保留但无任何 import 引用
+       （浏览器不会下载 examples/jsm，实测 0 请求）。留着是为了将来想复用某个 addon 时不用改这里。 -->
+  <script type="importmap">{"imports":{
+    "three":"./vendor/three/build/three.module.js",
+    "three/addons/":"./vendor/three/examples/jsm/"
+  }}</script>
+</head>
+<body>
+  <div id="scene" aria-hidden="true"></div>
+  <main class="ui app" id="app">
+    <header class="topbar"><div class="brand"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="m12 2 2.7 7.3L22 12l-7.3 2.7L12 22l-2.7-7.3L2 12l7.3-2.7L12 2Z" stroke="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>拾光</span><small>AI TOOL UNIVERSE</small></div><div class="top-meta" id="top-meta">09 GALAXIES · 000 TOOLS</div></header>
+    <section class="view home" id="home-view"><div class="hero"><p class="eyebrow">A UNIVERSE OF POSSIBILITIES</p><h1>让好工具，<em>离你更近。</em></h1><p>从一个中心星系出发，进入九个领域，找到正在改变工作方式的工具。</p><div class="hint">选择下方分类，进入对应星系</div></div><nav class="category-dock" id="category-dock" aria-label="工具分类"></nav><div class="footer-note">CENTRAL GALAXY / ALL TOOLS</div></section>
+    <section class="view list" id="list-view" inert>
+      <div class="list-grid">
+        <aside class="list-panel" id="panel">
+          <div class="panel-head">
+            <button class="back" id="back" type="button">← 返回星系</button>
+            <p class="panel-kicker" id="panel-kicker"></p>
+            <h2 id="panel-title"></h2>
+            <p class="panel-subtitle" id="panel-subtitle"></p>
+          </div>
+          <div class="tool-list" id="tool-list"></div>
+          <div class="list-fade" aria-hidden="true"></div>
+        </aside>
+        <div class="bh-view" id="bh-view" aria-hidden="true"><span class="bh-hint">DRAG TO ROTATE</span></div>
+      </div>
+    </section>
+  </main>
+  <div class="status" id="status"><div class="status-card"><h2 id="status-title">正在点亮星空</h2><p id="status-message">从 data/tools.json 读取工具数据…</p><button id="continue-demo" hidden type="button">继续查看演示数据</button><button id="reload" hidden type="button">重新加载</button></div></div>
+  <script>
+    // Keep a useful status visible if the CDN module itself cannot be downloaded.
+    window.__spaceModuleTimer=setTimeout(()=>{const status=document.querySelector('#status');if(status&&!status.hidden){document.querySelector('#status-title').textContent='星空模块载入失败';document.querySelector('#status-message').textContent='请检查 Three.js CDN 网络连接后重新加载。';document.querySelector('#reload').hidden=false;}},15000);
+  </script>
+  <script type="module">
+    import * as THREE from 'three';
+    // 第十九轮：行星发动机（第十七轮的 UnrealBloomPass + Line2 方案）已全线回滚，
+    // 页面只依赖 three 本体，不再从 examples/jsm 里 import 任何 addon。
+    // vendor 里的 addons 文件保留（不加载即零成本），恢复时再引回即可。
+    (()=>{
+      // 自定义 shader 直接输出 sRGB 数值，关闭色彩管理避免颜色被二次转换压暗
+      THREE.ColorManagement.enabled=false;
+      const CATEGORIES=[['对话与助手','#9be7d6'],['图像生成与处理','#b9a6fa'],['视频与音频','#f0a8c8'],['编程与开发','#82baf5'],['写作与文本处理','#f1aa91'],['搜索与研究','#e5c87e'],['效率与办公','#80d1cc'],['模型与基础设施','#afb5f7'],['开发者作品','#c8d996']];
+      const DEMO_TOOLS=[
+        {id:'demo-chat',name:'Demo Chat',url:'https://example.com/demo-chat',category:'对话与助手',tags:['示例'],summary:'用于验证页面加载的演示工具',score:88},
+        {id:'demo-canvas',name:'Demo Canvas',url:'https://example.com/demo-canvas',category:'图像生成与处理',tags:['示例'],summary:'用于验证分类列表的演示工具',score:76},
+        {id:'demo-code',name:'Demo Code',url:'https://example.com/demo-code',category:'编程与开发',tags:['示例'],summary:'用于验证工具条目的演示工具',score:68}
+      ];
+      const $=s=>document.querySelector(s),app=$('#app'),dock=$('#category-dock'),list=$('#tool-list'),status=$('#status');
+      let tools=[],groups=new Map(),current=null,scene,camera,renderer,points,geometry,positions,homePositions,colors,homeColors,categoryPositions,categoryColors,sizes,alphas,sectors,layers,pars,spikes,camDist=17.5,camDistTween=null,morphTween=null,last=0,running=true,spinning=0,wobbleT=0,parX=0,parY=0,tgtX=0,tgtY=0,hoverTarget=0,hoverS=0,hoverAngle=0,lastPointer=0,rafPending=false,fitPull=1,zoom=1,zoomTarget=1,zoomMin=1,zoomMax=1,gTilt=0,gSway=0,gSpin=0,
+          dustPoints,dustGeometry;
+      // 分类页右侧的独立视口：黑洞 + 引力透镜。只在分类页激活时渲染。
+      let bhRenderer,bhScene,bhCamera,bhMat,bhHost,bhQuad,bhPending=false,bhLast=0,bhTime=0,bhFrames=0,
+          bhDown=false,bhPX=0,bhPY=0,bhRatio=1,bhScale=.82,bhMissed=0,bhSampleN=0,bhClean=0,bhWarm=0,
+          // 鼠标引力：位置用 vUv 空间（y 自下而上），强度 0..1 由指针进出渐变
+          bhMouseU=.5,bhMouseV=.5,bhMouseK=0,bhMouseKT=0,
+          // 相机轨道：az 绕黑洞公转，el 仰角。这是"真实三维"的唯一状态源。
+          bhAz=.30,bhAzT=.30,bhEl=.085,bhElT=.085,bhHoverX=0,bhHoverY=0,bhHoverK=0;
+      // 相机俯角 + 盘面倾角 共同决定星系的椭圆压缩比，两者都影响"看向盘面的角度"
+      // 俯角从 21° 提到 27°：盘面投影的短轴/长轴从 0.394 压到 0.296，
+      // 椭圆透视明显得多 —— 这正是"像真实天体"而不是"正对着看的光圈"的关键。
+      const CAM_ELEV=THREE.MathUtils.degToRad(30),DISC_TILT=.8,HOME_DIST=17.5,LIST_DIST=26;
+      const CAM_DIR=new THREE.Vector3(0,Math.sin(CAM_ELEV),Math.cos(CAM_ELEV));
+      const SQUASH=Math.cos(CAM_ELEV+DISC_TILT);
+      // 差速自转的**基准相位**速率（rad/s）。着色器里还要再乘 r^-0.70，
+      // 所以这是"外盘"的角速度：外盘 r≈5.4 → om≈0.31，
+      // 盘沿约 0.008*0.31*356px ≈ 0.9 px/s；内圈 r≈0.3 → om≈2.3，快 7 倍多。
+      const SPIN_BASE=.0080,SPIN_HOVER=.0200;
+      // 进动（陀螺摇摆）周期原本只有 27 秒，是画面里最明显的运动；一起放慢到约 108 秒
+      const WOBBLE_SLOW=.058;
+      // 缩放：camera.position.z 严格限制在 [10,40]。相机带 21° 俯角，
+      // 所以轨道半径 = z / cos(21°)，由 z 区间直接反推，两者严格对应。
+      const Z_MIN=10,Z_MAX=40,MIN_DIST=Z_MIN/Math.cos(CAM_ELEV),MAX_DIST=Z_MAX/Math.cos(CAM_ELEV);
+      const ZOOM_DAMP=3;   // lerp 系数 3*dt，60fps 下正好是需求里的 0.05/帧
+      const ZOOM_STEP=.0011;
+      // 粒子分四组：密集微星 / 带十字星芒的主星 / 星系本体 / 暗尘埃
+      // 星系本体再拆成"核球"与"旋臂星尘"两段，用同一套着色器、同一个 BufferGeometry，
+      // 靠 attribute 区分 —— 这样加了几千颗粒子也不增加 draw call。
+      const TINY_COUNT=7000,BIG_COUNT=50;
+      // 核球从 3400 砍到 900：用户要求"削减中心密度"。
+      // 亮度不再靠堆数量，而是靠 80 颗炽核 + 后处理泛光。
+      const CORE_HOT=80;        // 炽核：极亮、稍大，是泛光的燃料
+      const CORE_INNER=300;     // 内核：细碎颗粒，只补质感
+      const CORE_MID=280;       // 中环：填 14-34px 的亮度肩部（见下方注释）
+      const CORE_COUNT=900;     // 总数（80 + 300 + 280 + 240 金晕）
+      // 旋臂星尘 9200 颗：尺寸缩到原来的 3 成之后，必须靠数量把密度补回来
+      const ARM_COUNT=72000;
+      const GALAXY_COUNT=CORE_COUNT+ARM_COUNT;
+      const SKY_COUNT=TINY_COUNT+BIG_COUNT;
+      const TOTAL_COUNT=SKY_COUNT+GALAXY_COUNT;
+      // 尘埃带单独一个 Points：它要用 NormalBlending（做减法压暗背后的光），
+      // 而发光粒子是 AdditiveBlending —— 混合模式不同，只能拆成两个绘制。
+      const DUST_COUNT=3600;
+      // 视差位移（世界单位）
+      const SKY_PAR=20;
+      // 星云贴图、深空底色贴图、气层贴图全部移除。
+      // 死掉的两个常量（DEEP_D / NEB_FAR_D / NEB_NEAR_D）一并删掉，
+      // 背景现在由 renderer 的 clearColor 直接给纯黑。#000 不需要任何贴图。
+      // 径向色带：纯白核球 → 淡金黄 → 奶白 → 冷白 → 浅蓝 → 蓝 → 深靛紫。
+      // **必须用 HSL 插值**：上一版在 RGB 里从金黄直接 lerp 到蓝，中点正好是
+      // R≈G≈B 的中性灰 —— 这就是"廉价发光线圈"观感的第一个来源。
+      // HSL 一路保持色相连续转动、明度不掉到灰区，中间只经过"更亮的白"。
+      // [位置, 色相, 饱和度, 明度]
+      const HSL_STOPS=[
+        [0.000,0.105,0.10,1.000],   // 核球正中心：白
+        [0.026,0.098,0.62,0.930],   // 淡金黄（从这里开始读得出金）
+        [0.070,0.090,0.88,0.760],   // 金：核球外晕的主色（明度必须压到 .76，否则读作奶白）
+        [0.140,0.082,0.66,0.820],   // 浅奶油
+        [0.230,0.590,0.20,0.950],   // 冷白：内盘起点
+        [0.400,0.606,0.50,0.840],   // 浅蓝
+        [0.600,0.615,0.68,0.660],   // 蓝（旋臂主色）
+        [0.800,0.665,0.70,0.470],   // 靛蓝
+        [1.000,0.706,0.58,0.300]    // 深紫蓝，融进黑
+      ];
+      const galaxyColor=(t,out)=>{
+        t=t<0?0:t>1?1:t;
+        let i=0;while(i<HSL_STOPS.length-2&&t>HSL_STOPS[i+1][0])i++;
+        const a=HSL_STOPS[i],b=HSL_STOPS[i+1];
+        const k=(t-a[0])/Math.max(b[0]-a[0],1e-6);
+        out.setHSL(a[1]+(b[1]-a[1])*k,a[2]+(b[2]-a[2])*k,a[3]+(b[3]-a[3])*k);
+        return out;
+      };
+      // zoom 的允许区间只跟"首页基准距离"有关，与当前基准无关。
+      // 若按当前基准反推，进入分类页时基准变大就会把 zoom 永久压小，返回首页回不去。
+      const zoomBounds=()=>{const base=HOME_DIST*fitPull;zoomMin=MIN_DIST/base;zoomMax=MAX_DIST/base;};
+      // 预分配的三件套：每帧重建盘面矩阵时不产生新对象
+      const matA=new THREE.Matrix4(),matB=new THREE.Matrix4(),matC=new THREE.Matrix4(),galaxyMat=new THREE.Matrix3(),viewDir=new THREE.Vector3();
+      const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const colorFor=category=>CATEGORIES.find(c=>c[0]===category)?.[1]||'#a6b8d8';
+      const seeded=seed=>{let x=seed|0;return()=>{x=(x*1664525+1013904223)|0;return(x>>>0)/4294967296;};};
+      const setStatus=(title,message,showReload=false)=>{$('#status-title').textContent=title;$('#status-message').textContent=message;$('#reload').hidden=!showReload;$('#continue-demo').hidden=!showReload;status.hidden=false;};
+      function buildData(data){
+        tools=Array.isArray(data)&&data.length?data.filter(t=>t&&typeof t.name==='string'):DEMO_TOOLS;
+        groups=new Map(CATEGORIES.map(([name])=>[name,[]]));tools.forEach(t=>{if(groups.has(t.category))groups.get(t.category).push(t);});groups.forEach(items=>items.sort((a,b)=>(Number(b.score)||0)-(Number(a.score)||0)));
+        $('#top-meta').textContent=`09 GALAXIES · ${tools.length.toLocaleString('en-US')} TOOLS`;renderCategoryButtons();
+      }
+      function renderCategoryButtons(){
+        dock.innerHTML='';CATEGORIES.forEach(([name,accent])=>{const items=groups.get(name)||[],button=document.createElement('button');button.className='category-btn';button.style.setProperty('--accent',accent);button.dataset.category=name;
+          const dot=document.createElement('span');dot.className='dot';const title=document.createElement('strong');title.textContent=name;const count=document.createElement('small');count.textContent=`${items.length} 个工具`;button.append(dot,title,count);button.addEventListener('click',()=>openCategory(name));button.addEventListener('pointerenter',()=>hoverCategory(button));button.addEventListener('pointerleave',()=>{hoverTarget=0;});dock.append(button);});
+      }
+      function renderList(name){
+        const accent=colorFor(name),items=groups.get(name)||[];$('#panel').style.setProperty('--accent',accent);$('#panel-kicker').textContent=`SECTOR 0${CATEGORIES.findIndex(c=>c[0]===name)+1} / CATEGORY GALAXY`;$('#panel-title').textContent=name;$('#panel-subtitle').textContent=`${items.length} 个工具 · 按评分排序`;list.innerHTML='';
+        if(!items.length){const empty=document.createElement('p');empty.className='empty';empty.textContent='这个星系暂时没有收录工具。';list.append(empty);return;}
+        items.forEach(tool=>{const row=document.createElement('article');row.className='tool-item';row.style.setProperty('--accent',accent);const main=document.createElement('div');main.className='tool-main';const nameLine=document.createElement('div');nameLine.className='tool-name';const safe=validURL(tool.url);if(safe){const a=document.createElement('a');a.href=safe;a.target='_blank';a.rel='noopener noreferrer';a.textContent=tool.name;nameLine.append(a);}else{const text=document.createElement('span');text.className='plain';text.textContent=tool.name;nameLine.append(text);}
+          const summary=document.createElement('p');summary.className='tool-summary';summary.textContent=tool.summary||'暂无简介';const tags=document.createElement('div');tags.className='tags';(Array.isArray(tool.tags)&&tool.tags.length?tool.tags:['未标注']).forEach(tag=>{const pill=document.createElement('span');pill.className='tag';pill.textContent=tag;tags.append(pill);});main.append(nameLine,summary,tags);const score=document.createElement('div');score.className='score';score.textContent=Number(tool.score)||0;row.append(main,score);list.append(row);});
+      }
+      function validURL(value){try{const u=new URL(value);return['http:','https:'].includes(u.protocol)?u.href:null;}catch{return null;}}
+      function createScene(){
+        scene=new THREE.Scene();
+        fitPull=innerWidth<innerHeight?1.35:1;zoomBounds();
+        // 远裁剪面必须覆盖 星云(-640) 与星场(最远约 640)，否则整层会被裁掉
+        camera=new THREE.PerspectiveCamera(45,innerWidth/innerHeight,.5,2600);
+        camera.position.set(0,CAM_DIR.y*HOME_DIST*fitPull,CAM_DIR.z*HOME_DIST*fitPull);camera.lookAt(0,0,0);
+        // canvas 不再透明：背景由 clearColor 直接给纯黑（#000）。
+        // 之前用 alpha:true + CSS 底色，是为了让星云贴图能"透"出来；
+        // 现在贴图全删了，不透明黑最干净、也省掉一次合成。
+        renderer=new THREE.WebGLRenderer({antialias:false,alpha:false,powerPreference:'high-performance'});
+        renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.35));renderer.setSize(innerWidth,innerHeight);
+        renderer.setClearColor(0x000000,1);$('#scene').append(renderer.domElement);
+        // 共用 BufferGeometry：0..6999 密集微星，7000..7049 主星，7050.. 之后是星系本体
+        // （核心 1500 + 旋臂星尘 9200）。尘埃带是独立的一个 Points，见 buildDustLanes()。
+        positions=new Float32Array(TOTAL_COUNT*3);homePositions=new Float32Array(TOTAL_COUNT*3);colors=new Float32Array(TOTAL_COUNT*3);homeColors=new Float32Array(TOTAL_COUNT*3);
+        sizes=new Float32Array(TOTAL_COUNT);alphas=new Float32Array(TOTAL_COUNT);sectors=new Float32Array(TOTAL_COUNT);layers=new Float32Array(TOTAL_COUNT);
+        pars=new Float32Array(TOTAL_COUNT);spikes=new Float32Array(TOTAL_COUNT);
+        const random=seeded(4017),swatch=new THREE.Color();
+        camera.updateMatrixWorld();
+        // 微星铺在以"相机→原点"为轴的锥体里。用角度分布而不是屏幕 NDC：
+        // 相机的视锥角是固定的，无论滚轮把相机推远多少，这个锥体都能盖满画面，
+        // 而按 NDC 铺的星场在拉远后会露出空边。
+        const axis=new THREE.Vector3().subVectors(new THREE.Vector3(0,0,0),camera.position).normalize();
+        const sideA=new THREE.Vector3().crossVectors(axis,new THREE.Vector3(0,1,0)).normalize();
+        const sideB=new THREE.Vector3().crossVectors(sideA,axis).normalize();
+        const SKY_HALF=Math.cos(.78);   // 半锥角 44.7°，大于纵向 22.5° 与横向 31.7° 的半视场
+        // ---- 层 1：7000 颗密集微星 ----
+        for(let i=0;i<TINY_COUNT;i++){
+          const cosA=1-random()*(1-SKY_HALF),sinA=Math.sqrt(1-cosA*cosA),phi=random()*Math.PI*2;
+          const t=Math.pow(random(),.8);                 // 0=近 1=远
+          const r=190+t*290,o=i*3;   // 190-480，投影后多数在 1-3px
+          const dx=axis.x*cosA+(sideA.x*Math.cos(phi)+sideB.x*Math.sin(phi))*sinA;
+          const dy=axis.y*cosA+(sideA.y*Math.cos(phi)+sideB.y*Math.sin(phi))*sinA;
+          const dz=axis.z*cosA+(sideA.z*Math.cos(phi)+sideB.z*Math.sin(phi))*sinA;
+          homePositions[o]=camera.position.x+dx*r;
+          homePositions[o+1]=camera.position.y+dy*r;
+          homePositions[o+2]=camera.position.z+dz*r;
+          // 偏白偏黄为主，少量冰蓝：真实星场的色温分布
+          const k=random();
+          if(k<.58)swatch.setRGB(1,.955+random()*.045,.885+random()*.075);      // 暖白 / 淡黄
+          else if(k<.86)swatch.setRGB(.84+random()*.16,.90+random()*.10,1);     // 冷白 / 冰蓝
+          else swatch.setRGB(1,1,1);
+          const light=.42+random()*.50;
+          colors[o]=swatch.r*light;colors[o+1]=swatch.g*light;colors[o+2]=swatch.b*light;
+          // 尺寸要按真实投影反推：gl_PointSize ≈ aSize*1158/dist，
+          // 星点在 240-620 距离上，aSize 只有 0.09 时算出来不到 0.5px，
+          // 会被 clamp 成亚像素而等于没画。0.20-0.92 对应约 1-4px（近）到 0.4-1.7px（远）。
+          sizes[i]=.34+Math.pow(random(),2.4)*.95;
+          alphas[i]=.34+random()*.40;
+          pars[i]=1.0-t*.72;                            // 越近视差越大
+          sectors[i]=-1;
+        }
+        // ---- 层 2：50 颗带十字星芒的主星 ----
+        // 用 NDC 反投影定位，保证它们落在指定区域：60% 聚在粉色核心，40% 在左侧蓝紫区
+        const CORE_U=.65,CORE_V=.40;                    // 与星云 shader 的亮核位置对齐
+        const ray=new THREE.Vector3();
+        for(let i=0;i<BIG_COUNT;i++){
+          const idx=TINY_COUNT+i,o=idx*3;
+          let u,v;
+          if(i%5<3){u=CORE_U+(random()-.5)*.40;v=CORE_V+(random()-.5)*.36;}
+          else{u=.20+(random()-.5)*.34;v=.50+(random()-.5)*.62;}
+          u=Math.min(.97,Math.max(.03,u));v=Math.min(.97,Math.max(.03,v));
+          const ndcX=u*2-1,ndcY=v*2-1;
+          const D=250+random()*170;
+          ray.set(ndcX,ndcY,.5).unproject(camera).sub(camera.position).normalize();
+          homePositions[o]=camera.position.x+ray.x*D;
+          homePositions[o+1]=camera.position.y+ray.y*D;
+          homePositions[o+2]=camera.position.z+ray.z*D;
+          // 冷暖对比：右侧星云里偏暖粉/亮白，左侧偏冷白/冰蓝
+          if(i%5<3){swatch.setRGB(.92,.78+random()*.14,.80+random()*.12);}
+          else{swatch.setRGB(.76+random()*.16,.84+random()*.12,.96);}
+          colors[o]=swatch.r;colors[o+1]=swatch.g;colors[o+2]=swatch.b;
+          // 主星降级为"稍亮一点的星点 + 隐约光晕"：
+          // 尺寸只比微星大三四倍，透明度极低，绝不抢星系的戏。
+          sizes[idx]=1.2+random()*1.9;                  // 放大后约 4-11px
+          alphas[idx]=.30+random()*.20;                 // 0.30-0.50，明显亮于微星
+          pars[idx]=.62+(D-250)/170*.28;                // 近的慢一点点，仍在同一层
+          // 十字星芒整体关闭。上一版那种又大又白的十字是"廉价感"的主要来源，
+          // 真实深空摄影里绝大多数星点只是光点，芒是少数亮星在特定光学条件下的产物。
+          // shader 里的分支保留，把这里改成 1 就能重新启用（届时记得把尺寸调大）。
+          spikes[idx]=0;sectors[idx]=-1;
+        }
+        // ---- 层 3：星系本体（核球 + 旋臂星尘）----
+        // **尺寸统一缩到原来的 3 成。** 原盘面 aSize .034~.184，投影出来是
+        // 2~12px —— 12px 的圆点就是用户说的"色块"。现在 .010~.032（投影 0.7~2.1px），
+        // 密度靠 9200 颗的数量补回来，才是"细碎星尘"而不是"彩色玻璃渣"。
+        // 3a. 核球：三层结构（共 900 颗 + 80 颗炽核）
+        // 用户要"削减密度、但中心更亮"。这两件事在加法混合下是矛盾的 ——
+        // 粒子越少，Σ(color×alpha) 越低，就越暗。唯一出路是把亮度**集中**：
+        //   · 80 颗炽核：4.7-8.6px、alpha 0.90-1.00、亮白/淡金，挤在 0.16 世界（10px）内。
+        //     它们是泛光的燃料 —— 少数极亮像素比一片中等亮度更能被 bloom 抓住。
+        //   · 380 颗内核：1.0-2.0px，铺到 0.26 世界，只负责补一点颗粒感，
+        //     不再像上一版那样堆成一片白。
+        //   · 440 颗金晕：1.6-4.0px、alpha 0.16-0.42，铺到 0.95 世界，
+        //     负责"淡金黄"那一圈，也负责让光球边缘平滑过渡。
+        for(let i=0;i<CORE_COUNT;i++){
+          const idx=SKY_COUNT+i,o=idx*3;layers[idx]=1;
+          // 三层各自用**斐波那契球**采样。
+          // 随机撒在球面上必然出现团块，投影出来就是个歪的亮球：实测光球边缘
+          // 在 12-21px 之间跳（最大/最小 1.75），看着像"核心散".
+          // 黄金角螺旋能把每一层都铺得角向均匀，边缘才是正圆。
+          // 三层的相位各自错开（tier*0.37），避免三层在同一角度叠成辐条。
+          let tier,jn,cn,rad;
+          if(i<CORE_HOT){tier=0;jn=i;cn=CORE_HOT;}
+          else if(i<CORE_HOT+CORE_INNER){tier=1;jn=i-CORE_HOT;cn=CORE_INNER;}
+          else if(i<CORE_HOT+CORE_INNER+CORE_MID){tier=2;jn=i-CORE_HOT-CORE_INNER;cn=CORE_MID;}
+          else{tier=3;jn=i-CORE_HOT-CORE_INNER-CORE_MID;cn=CORE_COUNT-CORE_HOT-CORE_INNER-CORE_MID;}
+          const hot=tier===0, nucleus=tier===1;
+          const u=(jn+.5)/cn;
+          const zz=1-2*u, rr2=Math.sqrt(Math.max(0,1-zz*zz));
+          const ga=(jn+tier*0.37)*2.399963229728653;      // 黄金角
+          if(tier===0) rad=.16*Math.pow(u,.55);            // 炽核：10px 内的实心球
+          else if(tier===1) rad=.045+.175*Math.pow(u,.80);  // 内核：铺到 0.22 世界（14px）
+          // 中环：专门填 0.20-0.55 世界（13-34px）这一段。
+          // 只靠"加泛光"来补这段肩部会把整片旋臂一起泛白（实测盘面抬亮 2.2 倍），
+          // 加一层中等亮度的粒子更省、更准。
+          else if(tier===2) rad=.20+Math.pow(u,.95)*.35;
+          else rad=.50+.45*Math.pow(u,.80);                 // 金晕：31-60px
+          // 极小的抖动，避免读出"规则点阵"的机械感
+          const jx=(random()-.5)*.012, jy=(random()-.5)*.012, jz=(random()-.5)*.010;
+          const x=Math.cos(ga)*rr2*rad+jx, y=Math.sin(ga)*rr2*rad+jy, z=zz*rad*.90+jz;
+          homePositions[o]=x;homePositions[o+1]=y;homePositions[o+2]=z;
+          // 炽核在亮白与淡金之间各占一半；内核近白；金晕落在"金"档（t≈0.045-0.10）
+          if(hot) galaxyColor(random()<.5?random()*.010:.020+random()*.028,swatch);
+          else if(nucleus) galaxyColor(random()*.020,swatch);
+          else if(tier===2) galaxyColor(.030+random()*.045,swatch);
+          else galaxyColor(.050+random()*.055,swatch);
+          colors[o]=swatch.r;colors[o+1]=swatch.g;colors[o+2]=swatch.b;
+          if(hot) sizes[idx]=.071+Math.pow(random(),1.4)*.059;          // 4.7-8.6px
+          else if(nucleus) sizes[idx]=.015+Math.pow(random(),2.0)*.015;  // 1.0-2.0px
+          else if(tier===2) sizes[idx]=.022+Math.pow(random(),1.5)*.030; // 1.5-3.4px
+          else sizes[idx]=.030+Math.pow(random(),1.6)*.042;             // 2.0-4.7px
+          // 炽核给满 alpha；金晕压到 1/3 以下，理由见上一轮：高 alpha 一叠，
+          // R/G/B 会同时顶到 255，金色立刻被削平成白。
+          if(hot) alphas[idx]=.90+random()*.10;
+          else if(nucleus) alphas[idx]=.55+random()*.35;
+          else if(tier===2) alphas[idx]=.34+random()*.22;
+          else alphas[idx]=(.46+random()*.24)*(1.0-0.55*((rad-.50)/.45));
+          sectors[idx]=-1;   // 核球不跟 Dock 闪
+        }
+        // 3b. 旋臂星尘 72000 颗
+        for(let i=0;i<ARM_COUNT;i++){
+          const idx=SKY_COUNT+CORE_COUNT+i,o=idx*3;layers[idx]=1;
+          const radius=.30+Math.sqrt(random())*5.10,arm=i%5,spread=.46-(radius/5.4)*.22;
+          const angle=arm*1.25664+radius*1.24+(random()-.5)*spread+(random()-.5)*.14;
+          // 盘面厚度：中心厚、外盘缓慢变薄但不归零，垂直分布用两随机数相加（近似三角）
+          const thick=.30*Math.exp(-radius*.62)+.055+radius*.022;
+          homePositions[o]=Math.cos(angle)*radius;
+          homePositions[o+1]=Math.sin(angle)*radius;
+          homePositions[o+2]=(random()+random()-1)*thick*1.10;
+          galaxyColor(Math.min(1,radius/5.1),swatch);
+          const boost=i%61===0?1.32:.72+random()*.40;
+          colors[o]=swatch.r*boost;colors[o+1]=swatch.g*boost;colors[o+2]=swatch.b*boost;
+          sizes[idx]=.012+Math.pow(random(),2.2)*.024;
+          alphas[idx]=.50+random()*.50;
+          sectors[idx]=((angle/6.2831853)%1+1)%1;
+        }
+        positions.set(homePositions);homeColors.set(colors);geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.BufferAttribute(positions,3).setUsage(THREE.DynamicDrawUsage));geometry.setAttribute('color',new THREE.BufferAttribute(colors,3).setUsage(THREE.DynamicDrawUsage));geometry.setAttribute('aSize',new THREE.BufferAttribute(sizes,1));geometry.setAttribute('aAlpha',new THREE.BufferAttribute(alphas,1));geometry.setAttribute('aSector',new THREE.BufferAttribute(sectors,1));geometry.setAttribute('aLayer',new THREE.BufferAttribute(layers,1));geometry.setAttribute('aPar',new THREE.BufferAttribute(pars,1));geometry.setAttribute('aSpike',new THREE.BufferAttribute(spikes,1));
+        const material=new THREE.ShaderMaterial({transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,toneMapped:false,uniforms:{uScale:{value:innerHeight/(2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2)))},uPixelRatio:{value:renderer.getPixelRatio()},uHoverAngle:{value:0},uHoverStrength:{value:0},uGalaxyMat:{value:galaxyMat},uSkyShift:{value:new THREE.Vector3()},uSpin:{value:0}},vertexShader:`
+          attribute vec3 color;attribute float aSize;attribute float aAlpha;attribute float aSector;attribute float aLayer;attribute float aPar;attribute float aSpike;
+          uniform float uScale;uniform float uPixelRatio;uniform float uHoverAngle;uniform float uHoverStrength;uniform float uSpin;
+          uniform mat3 uGalaxyMat;uniform vec3 uSkyShift;
+          varying vec3 vColor;varying float vAlpha;varying float vSpike;
+          // ---- 差速自转 ----
+          // 开普勒式：角速度 ∝ r^-0.70。内圈角速度快、外圈慢，
+          // 结果是旋臂越往内卷得越紧 —— 真实盘星系的样子。
+          // 注意这必须在**盘面局部坐标**里做，再用 uGalaxyMat 做倾斜/进动，
+          // 否则倾斜会把自转轴也掰歪。
+          float omegaFor(float rho){return pow(max(rho,0.10),-0.70);}
+          void main(){
+            vec3 local=position;
+            float ang=0.0;
+            if(aLayer>0.5){
+              float om=omegaFor(length(position.xy));
+              ang=uSpin*om;
+              float ca=cos(ang),sa=sin(ang);
+              local=vec3(position.x*ca-position.y*sa,position.x*sa+position.y*ca,position.z);
+            }
+            // aLayer=1 的粒子留在盘面坐标系，由 uGalaxyMat 完成倾斜+进动；
+            // aLayer=0 的星场固定在宇宙里，按 aPar 吃不同强度的视差 —— 这是景深感的来源。
+            vec3 p=mix(position+uSkyShift*aPar,uGalaxyMat*local,aLayer);
+            vec4 mv=modelViewMatrix*vec4(p,1.0);
+            gl_Position=projectionMatrix*mv;
+            float dist=max(1.0,-mv.z);
+            // 视深衰减：星系用近距离曲线做前后层次；星场在 240-620 之外，单独给一条平缓的
+            float fade;
+            if(aLayer>0.5){fade=1.0-clamp((dist-6.0)/42.0,0.0,1.0)*0.7;}
+            else{fade=1.0-clamp((dist-60.0)/700.0,0.0,1.0)*0.5;}
+            // 悬停扇区高光：扇区角要跟着差速旋转一起走，否则高光会和旋臂脱开
+            float hot=0.0;
+            if(uHoverStrength>0.001&&aSector>=0.0){
+              float sec=aSector+ang/6.2831853;
+              sec=sec-floor(sec);
+              float d=abs(sec-uHoverAngle);d=min(d,1.0-d);
+              hot=(1.0-smoothstep(0.0,0.062,d))*uHoverStrength;
+            }
+            float cap=(aSpike>0.5?130.0:9.0)*uPixelRatio;
+            // 下限保到 1 个物理像素：尺寸缩小 70% 之后，很多星点的理论直径
+            // 不到 0.5px，被 clamp 成亚像素就会整层闪烁/消失（这个坑踩过）。
+            gl_PointSize=clamp(aSize*uScale/dist*(1.0+hot*1.1),uPixelRatio*1.0,cap);
+            vColor=color*(1.0+hot*1.9);
+            vAlpha=clamp(aAlpha*fade*(1.0+hot*0.9),0.0,1.0);
+            vSpike=aSpike;
+          }`,fragmentShader:`
+          varying vec3 vColor;varying float vAlpha;varying float vSpike;
+          void main(){
+            vec2 q=gl_PointCoord-vec2(0.5);
+            float d2=dot(q,q);
+            if(d2>0.25&&vSpike<0.5)discard;
+            // 纯高斯衰减，没有实心内圆。
+            // 旧版是 exp(-d2*42)（中心≈1，一个硬核）+ 一层弱光晕 ——
+            // 缩到 1-2px 之后那等于一个方形色块。现在整块都是软的，
+            // 边缘再用 smoothstep 收到 0，不会有圆盘的硬边。
+            float a=exp(-d2*11.0);
+            a*=1.0-smoothstep(0.12,0.25,d2);
+            if(vSpike>0.5){
+              vec2 qa=abs(q);
+              float thinX=exp(-qa.y*135.0)*exp(-qa.x*2.6);
+              float softX=exp(-qa.y*26.0)*exp(-qa.x*3.4);
+              float thinY=exp(-qa.x*135.0)*exp(-qa.y*2.6);
+              float softY=exp(-qa.x*26.0)*exp(-qa.y*3.4);
+              float sx=thinX*1.00+softX*0.55;
+              float sy=thinY*1.00+softY*0.55;
+              float dg=exp(-(qa.x+qa.y)*70.0)*0.30;
+              a+=sx+sy+dg;
+            }
+            gl_FragColor=vec4(vColor,clamp(a*vAlpha,0.0,1.0));
+          }`});
+        points=new THREE.Points(geometry,material);points.frustumCulled=false;points.renderOrder=0;scene.add(points);
+        buildDustLanes();
+        buildBloom();
+        createBlackHole();
+        addEventListener('resize',resize);addEventListener('pointermove',onPointerMove,{passive:true});addEventListener('wheel',onWheel,{passive:false});
+        document.addEventListener('pointerleave',()=>{tgtX=0;tgtY=0;});addEventListener('blur',()=>{tgtX=0;tgtY=0;hoverTarget=0;});
+        document.addEventListener('visibilitychange',()=>{if(document.hidden){running=false;}else{if(!reduced)running=true;last=0;schedule();if(current!==null){bhLast=0;bhResize();bhSchedule();}}});
+        schedule();enableInspector();if(new URLSearchParams(location.search).has('inspect'))window.__dbg={scene,renderer,camera,points,dustPoints,dustGeometry,bloomComp:matComp,bloomBright:matBright,bhRenderer,bhMat,bhScene,bhCamera,bhQuad};
+      }
+
+      // ============ 分类页右侧：黑洞（测地线光线追踪） ============
+      // 上一版是"屏幕空间贴图"：一条画出来的椭圆亮带 + 一个画出来的圆环，
+      // 没有任何真实的三维关系——盘面只是一条斜线，透镜只是一次径向重映射。
+      //
+      // 这一版是真的在算光线：每个像素发一条光线，在史瓦西时空中用光子轨道方程
+      //     d²u/dφ² + u = 1.5·rs·u²      (u = 1/r)
+      // 逐步积分。于是下面这些全部是"算出来的"，不是画上去的：
+      //   · 背景星空被弯折 → 爱因斯坦环与拉丝弧
+      //   · 盘面穿越是求交得到的 3D 交点 → 近侧盘挡在洞前、远侧盘绕到洞后
+      //     远侧盘的光还被弯到洞的上方和下方，形成那两道标志性的弧
+      //   · 同一交点按开普勒速度算多普勒因子 → 迎面一侧更亮更蓝
+      // 仍然只有 1 个全屏四边形 / 1 次 draw call，且只在分类页渲染。
+      const BH_FRAG=`
+        precision highp float;
+        varying vec2 vUv;
+        uniform vec2 uRes;
+        uniform float uTime;
+        uniform vec2 uOrbit;    // x = 方位角, y = 仰角
+        uniform vec2 uCenter;
+        uniform vec2 uDbg;      // 调试：x=光子环倍率（正常是 1）
+        uniform vec2 uMouse;    // 鼠标在 vUv 空间的位置
+        uniform float uMouseK;  // 鼠标引力强度 0..1
+
+        // 几何单位：史瓦西半径 rs = 1
+        const float RS = 1.0;
+        // 比例是这一版最关键的一组数：
+        // 阴影的屏幕半径 = (b_crit/CAM_D)/TF，盘的屏幕半径 = (R_OUT/CAM_D)/TF。
+        // 两者之比只由 b_crit/R_OUT 决定 —— 上一版 R_OUT=8.0 而 b_crit=2.598，
+        // 盘比视界大 3 倍多，再叠上被弯折到头顶的远侧盘像，就成了"发光蘑菇"。
+        // 把 R_OUT 收到 5.4，比例变成 0.48，视界才立得住。
+        const float R_IN = 2.42;      // 盘内缘（略小于 ISCO=3rs）
+        const float R_OUT = 5.4;
+        const float CAM_D = 19.0;
+        // 盘的半厚。上一版是零厚度的数学平面，掠射时只剩一条线，
+        // 视界上方完全没有光——那正是"看不清黑洞、只有一条亮带"的根因。
+        // 给一个真实的薄厚度后，被引力弯折的像会在视界周围铺成一圈细密光环。
+        const float DISK_H = 0.135;
+        const float ESCAPE_R = 70.0;
+        // 临界光线要绕黑洞接近一整圈，才会在视界周围形成 n=1 的次级像
+        // （那圈细密光环就是它）。按 0.0095 rad 一步算，一圈约 580 步，
+        // 上一版只有 230 步，光线根本走不完循环，所以视界上方永远是空的。
+        const int   MAX_STEPS = 620;
+
+        float hash21(vec2 p){vec3 p3=fract(vec3(p.xyx)*vec3(.1031,.1030,.0973));p3+=dot(p3,p3.yzx+33.33);return fract((p3.x+p3.y)*p3.z);}
+        vec3  hash33(vec3 p3){p3=fract(p3*vec3(.1031,.1030,.0973));p3+=dot(p3,p3.yxz+33.33);return fract((p3.xxy+p3.yxx)*p3.zyx);}
+
+        float vnoise(vec3 p){
+          vec3 i=floor(p),f=fract(p);f=f*f*(3.0-2.0*f);
+          float a=hash33(i).x,b=hash33(i+vec3(1.,0.,0.)).x,c=hash33(i+vec3(0.,1.,0.)).x,d=hash33(i+vec3(1.,1.,0.)).x;
+          float e=hash33(i+vec3(0.,0.,1.)).x,g=hash33(i+vec3(1.,0.,1.)).x,h=hash33(i+vec3(0.,1.,1.)).x,k=hash33(i+vec3(1.,1.,1.)).x;
+          return mix(mix(mix(a,b,f.x),mix(c,d,f.x),f.y),mix(mix(e,g,f.x),mix(h,k,f.x),f.y),f.z);
+        }
+
+        // 星点：把方向投到立方网格上，每格至多一颗
+        float starField(vec3 d,float scale,float prob,float size,float seed){
+          vec3 p=d*scale;
+          vec3 id=floor(p),f=fract(p)-0.5;
+          vec3 h=hash33(id+seed);
+          if(h.x>prob)return 0.0;
+          vec3 off=(hash33(id+seed+5.7)-0.5)*0.62;
+          return smoothstep(size,0.0,length(f-off))*(0.32+0.68*h.y);
+        }
+        // 背景天球：三层不同密度的星 + 极淡的星际尘埃
+        vec3 sky(vec3 d){
+          float s1=starField(d,34.0,0.13,0.105,0.0);
+          float s2=starField(d,72.0,0.20,0.085,31.0);
+          // 最细那一层原本是 scale=150/size=0.065，角半径 0.0004rad，
+          // 不到一个像素 —— 采样点一动就在"有/无"之间跳，正是盘缘
+          // 那些"细碎白色虚线点"的来源。放大到 1.5px 量级并降低密度。
+          float s3=starField(d,110.0,0.20,0.120,67.0);
+          float s=s1+s2*0.62+s3*0.32;
+          float t=hash21(floor(d.xz*36.0)+d.y*11.0);
+          vec3 tint=mix(vec3(0.74,0.85,1.00),vec3(1.00,0.93,0.82),t);
+          vec3 c=tint*s*1.55;
+          // 这里原本还有一层"星际尘埃"（vec3(0.020,0.030,0.055) × 噪声）。
+          // 它是画面四周那股灰绿脏雾的唯一来源：G(0.030) 比 R(0.020) 高，
+          // 经过 ACES 之后就是 7/255 的青灰。深空应该是纯黑，所以整段删掉。
+          return c;
+        }
+
+        // 观测色温 → 颜色（Planck 轨迹的单调近似色带）。
+        // 上一版是"基色 × 红移系数"：冷白基色(0.86,0.92,1.00) 乘上红移
+        // (1.40,0.66,0.36) 之后 R 与 B 互相抵消，落回中性灰 ——
+        // 那就是左侧那块"灰白色块"的第一个成因。
+        // 改成按**观测温度**取色：温度一降，颜色沿
+        // 冷白 → 暖白 → 橙 → 暗红 → 近黑 单调滑下去，永远不经过灰色。
+        vec3 tempColor(float T){
+          float t=clamp((T-1700.0)/8600.0,0.0,1.0);
+          vec3 c=vec3(0.130,0.008,0.002);
+          c=mix(c,vec3(0.62,0.075,0.010),smoothstep(0.00,0.16,t));
+          c=mix(c,vec3(1.00,0.26,0.040),smoothstep(0.10,0.36,t));
+          c=mix(c,vec3(1.00,0.56,0.200),smoothstep(0.30,0.55,t));
+          c=mix(c,vec3(1.00,0.84,0.620),smoothstep(0.50,0.74,t));
+          c=mix(c,vec3(1.00,0.96,0.920),smoothstep(0.72,0.88,t));
+          c=mix(c,vec3(0.74,0.85,1.000),smoothstep(0.86,1.00,t));
+          return c;
+        }
+
+        // 单点辐射强度：静止温度走 SS 剖面 T ∝ r^-1.15，再被多普勒因子 D
+        // 同时改温（色移）和改亮（集束）。
+        // 两个指数都**故意**大于物理值：真实 D≈0.78 只够把颜色压到暖黄，
+        // 而这里要的是"右明左暗"的断崖 —— 左侧一路走到深暗红再进黑。
+        vec3 diskRadiance(float rho,float D,out float beaming){
+          // rho 下限必须钉在 R_IN：盘内缘以内没有物质，但光线照样会穿过
+          // 那里的赤道面。不钉住的话 (R_IN/rho)^1.15 会飙到上万 K，
+          // 内缘附近就烧出一条冷白色的亮带（上一版那次"灰白马赛克"）。
+          // 静止温度 7000K：这是"内缘=暖白"而不是"内缘=冷白"的分水岭。
+          // 给到 9000K 时，任何 D≈1 的穿越都会被映射成蓝白并削顶成死白，
+          // 于是画面里出现没有色相的白板。
+          float Tr=7000.0*pow(R_IN/max(rho,R_IN*0.98),1.15);
+          float Ts=Tr*pow(clamp(D,0.30,1.90),3.20);
+          vec3 c=tempColor(Ts);
+          // 集束权重从 (D^4.4 × 0.62) 收到 (D^4.0 × 0.72) 并夹上限：
+          // 原参数在 D=1.8 时给出 13.5 倍，ACES 之后 R/G/B 同时顶到 1.0，
+          // 色相被完全削平 —— 那正是"灰白"而不是"亮"。
+          beaming=min(pow(clamp(D,0.020,2.10),4.00)*0.72,3.20);
+          return c*beaming;
+        }
+
+        // 吸积盘在某点的辐射
+        vec3 diskEmission(float rho,float ang,float D,out float dens){
+          float t=clamp((rho-R_IN)/(R_OUT-R_IN),0.0,1.0);
+          // 差速自转的湍流：内圈角速度快得多，条纹被拉成同心弧
+          float om=0.30*pow(max(rho,1.0),-1.5);
+          vec2 sp=vec2(cos(ang+om*uTime),sin(ang+om*uTime));
+          // 频率要低：高频噪声在薄盘上只会变成散斑，读不出"气流的丝"
+          float n=vnoise(vec3(sp*(1.15+rho*0.22),rho*1.1+uTime*0.0009))*0.62
+                 +vnoise(vec3(sp*(2.9+rho*0.52),rho*2.4-uTime*0.0016))*0.38;
+          float nAmp=mix(0.42,1.0,smoothstep(0.02,0.30,t));
+          dens=mix(0.66,smoothstep(0.28,0.86,n),nAmp);
+
+          // 内缘亮环 + 径向衰减（真实盘在 r^-2 量级上就暗掉了；
+          // 完全不衰减的话外缘会糊成一大团发光的雾，看起来就像贴图）
+          float rim=exp(-pow((rho-R_IN*1.03)/0.44,2.0));
+          float falloff=pow(R_IN/max(rho,R_IN),1.5);
+          dens*=(0.62+0.72*rim)*mix(1.0,falloff,0.62);
+          // 径向窗两端都用宽缓的 smoothstep，不再在盘缘切一刀：
+          // 硬 cut 在掠射处会留下锯齿，内缘断开后也接不上下方的光子环。
+          // 但**内缘起点必须贴着 R_IN**（0.94~1.06），不能往里放宽：
+          // 盘内缘以内只有"光线穿过赤道面"，没有物质，放进来就是假的亮带。
+          dens*=smoothstep(R_IN*0.94,R_IN*1.06,rho)*(1.0-smoothstep(R_OUT*0.60,R_OUT*1.02,rho));
+          float bm;return diskRadiance(rho,D,bm);
+        }
+
+        // 光子环专用的轻量版：不含湍流噪声（环本来就被透镜抹平了，
+        // 而且环上每个像素都要算一次，两次 vnoise 是这里的最大开销）。
+        // 省掉它，内部渲染倍率能从 0.68 回到 0.8 以上——画面更锐。
+        vec3 diskBandColor(float rho,float D,out float dens){
+          float t=clamp((rho-R_IN)/(R_OUT-R_IN),0.0,1.0);
+          dens=0.78*smoothstep(0.0,0.12,t)*(1.0-smoothstep(0.66,1.0,t));
+          float bm;return diskRadiance(rho,D,bm);
+        }
+
+        // 用 (u, du, φ) 反推解析切向，而不是拿最后一个积分弦当方向。
+        // 弦方向与渐近方向可以差半个步长（0.058 rad ≈ 3.3°），
+        // 采星空时同一颗星会在相邻像素间跳位 —— 那就是盘缘那些
+        // "细碎白色虚线点"的第二个来源。
+        vec3 rayTangent(float uu2,float ddu,float ph,vec3 er0,vec3 et0){
+          vec3 dr=cos(ph)*er0+sin(ph)*et0;
+          vec3 dt=-sin(ph)*er0+cos(ph)*et0;
+          return normalize(dr*(-ddu/max(uu2*uu2,1e-6))+dt/max(uu2,1e-6));
+        }
+
+        void main(){
+          float aspect=uRes.x/max(uRes.y,1.0);
+          vec2 uv=(vUv-uCenter)*vec2(aspect,1.0)*2.0;
+
+          // ---- 鼠标引力透镜（屏幕空间位移）----
+          // 这就是一个 ShaderPass 做的事：在"取光线方向"之前先把采样坐标掰弯，
+          // 所以下面的吸积盘、光子环、背景星空会**一起**被拖动，而不是只糊在盘上。
+          // 点透镜的偏折：β = θ - θE²/θ。采样点向鼠标靠拢 → 图像被径向压缩、
+          // 切向拉长，划过星场时星星就被拉成弧线。
+          if(uMouseK>0.002){
+            vec2 mv=(uMouse-uCenter)*vec2(aspect,1.0)*2.0;
+            vec2 dv=uv-mv;
+            float md=max(length(dv),2e-3);
+            // 上一版 θE²=0.0165、包络半径 0.40：只有贴着光标一两百像素
+            // 才看得出弯折，很容易被当成"没生效"。这一版作用半径 0.58
+            // （约 0.29 屏高），位移上限 0.34·θ —— 光标周围 0.3 屏高的星点
+            // 实测位移 20~23px，肉眼能明确看到星空被拽向光标。
+            float thetaE2=uMouseK*0.0190;
+            float env=exp(-pow(md/0.58,2.0));
+            // 纯 β=θ-θE²/θ 在 θ<θE 时会把采样点翻到对面去（θE=0.138，
+            // 相当于光标周围 66px 全被倒置），画面上是一团乱码而不是"拉扯"。
+            // 所以把位移夹在 0.34·θ 以内：永远不会越过光标，
+            // 近处是"强压缩"，远处自然过渡回 1/θ，整片星空被拽向光标。
+            float pull=min(thetaE2/md,0.34*md)*env;
+            // 只做径向会把星星"挤成一团"。加一点切向卷曲，星星会被拉成弧，
+            // 才读得出这是引力透镜而不是画面被缩放。
+            vec2 dirT=vec2(-dv.y,dv.x)/md;
+            uv-=dv/md*pull;
+            uv+=dirT*pull*0.34;
+          }
+
+          // ---- 相机：绕黑洞公转（这是"真实三维"的来源）----
+          float az=uOrbit.x,el=uOrbit.y;
+          vec3 ro=vec3(sin(az)*cos(el),sin(el),cos(az)*cos(el))*CAM_D;
+          vec3 ww=normalize(-ro);
+          vec3 uu=normalize(cross(vec3(0.0,1.0,0.0),ww));
+          vec3 vv=cross(ww,uu);
+          const float TF=0.30;
+          vec3 rd=normalize(ww+(uv.x*uu+uv.y*vv)*TF);
+
+          // ---- 光子轨道：在 (相机, 光线) 张成的平面内积分 ----
+          float r0=length(ro);
+          vec3 er=ro/r0;
+          float vr=dot(rd,er);
+          vec3 tv=rd-vr*er;
+          float vt=max(length(tv),1e-5);
+          vec3 et=tv/vt;
+
+          float u=1.0/r0;
+          float du=-u*vr/vt;
+          float phi=0.0;
+
+          // 光子轨道的精确守恒量：du² + u² - rs·u³ = 1/b²
+          // b 就是这条光线的碰撞参数。捕获判据 b < 3√3/2·rs 是解析的，
+          // 直接用它定阴影边界 —— 如果靠"积分到掉进视界"来判，
+          // 临界光线需要绕行很多圈，步数一截断就会把它们误判成捕获，
+          // 阴影会从 2.60 一路胀到 3.95（实测过）。
+          float bInv=sqrt(max(du*du+u*u-RS*u*u*u,1e-9));
+          float bImp=1.0/bInv;
+          // 这条光线最终会被吞掉的判据（解析解）。
+          // 注意不能据此直接 return 黑色：吸积盘的近侧就在视界**前面**，
+          // 必须先沿光线走完、把挡在洞前的盘面积累下来，否则近侧盘会被一起吞掉，
+          // 形成"黑洞吃掉自己前襟"的错误画面。
+          // 它只用来决定"步数用尽时该怎么收尾"。
+          float willFall=1.0-step(2.5981,bImp);
+          // b 越大轨迹越接近直线，可以把步长放粗（0 .. 0.11 rad）
+          float dphiBoost=0.11*smoothstep(4.0,13.0,bImp);
+
+          vec3 prevPos=ro;
+          float yMinAbs=1e9;   // 全光线离赤道面最近的距离（光子环的平面窗口用）
+          vec3 col=vec3(0.0);
+          int passN=0;                 // 这条光线已经穿过盘面几次
+          float trans=1.0;
+          vec3 dirOut=rd;
+          float escaped=0.0;
+
+          for(int i=0;i<MAX_STEPS;i++){
+            float rr=1.0/max(u,1e-5);
+            // 近洞用细步，远处用粗步（远处偏折小，粗步不损精度）
+            // 步长按"离临界有多近"分配：b≈b_crit 的那一圈光线要绕大半圈才能形成
+            // 次级像，必须细步；其余光线偏折很小，粗步无损。
+            // 这样总步数不必拉满，也能把那圈细密光环算出来。
+            float crit=1.0-smoothstep(2.65,4.6,bImp);
+            float near2=mix(0.0195,0.0072,crit);
+            float dphi=mix(near2,0.058+dphiBoost,smoothstep(1.4,16.0,rr));
+            float a1=1.5*RS*u*u-u;
+            float un=u+du*dphi+0.5*a1*dphi*dphi;
+            float a2=1.5*un*un*RS-un;
+            float dun=du+0.5*(a1+a2)*dphi;
+            float phin=phi+dphi;
+            vec3 pos=(1.0/max(un,1e-5))*(cos(phin)*er+sin(phin)*et);
+
+            // ---- 与赤道盘求交（3D 交点，不是屏幕上的斜线）----
+            // 只做严格穿越：掠射时一条光线会有几十个"擦过盘面"的步长，
+            // 每步都算一次盘面辐射（两次噪声采样）会把帧率直接拖垮（实测 23.8ms）。
+            // 厚度改由两处提供：①DISK_H 本身 ②循环结束后的一次"最近点辉光"。
+            {
+              if(prevPos.y*pos.y<0.0){
+              float kHit=prevPos.y/(prevPos.y-pos.y);
+              vec3 hit=mix(prevPos,pos,kHit);
+              float rho=length(hit.xz);
+              // 门槛放宽一圈，真正的边缘由 dens 里的平滑径向窗收，
+              // 这样盘缘不会因为硬 cut 出现一像素台阶。
+              if(rho>R_IN*0.72&&rho<R_OUT*1.26){
+                float ang=atan(hit.z,hit.x);
+                vec3 rad=vec3(hit.x,0.0,hit.z)/max(rho,1e-4);
+                vec3 vh=normalize(cross(vec3(0.0,1.0,0.0),rad));     // 轨道速度方向
+                float beta=min(0.72,sqrt(0.5*RS/max(rho,1.15)));       // v = sqrt(GM/r)
+                vec3 nobs=normalize(ro-hit);                           // 指向观察者
+                float D=1.0/(sqrt(1.0-beta*beta)*(1.0-beta*dot(vh,nobs)));
+                float dens;
+                vec3 dc=diskEmission(rho,ang,D,dens);
+                // 弦长：掠射（|vy| 小）时极长 → 亮；正射时短 → 淡。
+                // 上一版是 min(2H/max(|vy|,0.010),9.0)：两个硬折点叠在一起。
+                // |vy| 跨过 0.010 的那一列像素，弦长会在一个像素内跳两个
+                // 数量级；tau 直接顶到 2.1 饱和，色块边界就呈锯齿状。
+                // 这就是左侧那坨"灰白马赛克"的真正来源。
+                // 换成软分母（二次平滑），曲线处处连续，锯齿消失。
+                vec3 dirSeg=normalize(pos-prevPos);
+                float ay=abs(dirSeg.y);
+                float soft=sqrt(ay*ay+0.00090);        // ≈0.030 的软下限
+                float chord=2.0*DISK_H/soft;
+                float tau=clamp(dens*chord*0.26,0.0,2.1);
+                float alpha=1.0-exp(-tau);
+                // 高阶像（第 2 次及以后的穿越）只留 10%：
+                // 它们在屏幕上是绕黑洞一圈才落回来的像，采样步长在这个尺度
+                // 上根本不够细 —— 交点的 rho 会在相邻像素间跳 0.3~1.5，
+                // 叠上集束后就是一块硬边的死白色板（用户看到的"灰白马赛克"）。
+                // n≥1 的像本来就有专门的解析环项在画（连续、无台阶），
+                // 这里再按全额累加就是重复计数。压到 10% 只用来补一点通透感。
+                passN++;
+                float passW=(passN<2)?1.0:0.10;
+                col+=dc*alpha*trans*passW;
+                trans*=exp(-tau*passW);
+              }
+              }
+            }
+
+            if(abs(pos.y)<yMinAbs)yMinAbs=abs(pos.y);
+            vec3 seg=pos-prevPos;
+            prevPos=pos;u=un;du=dun;phi=phin;
+
+            if(u*RS>0.995)break;                       // 落入视界
+            if(u<1.0/ESCAPE_R&&du<0.0){                // 已逃逸
+              dirOut=rayTangent(u,du,phi,er,et);escaped=1.0;break;
+            }
+            if(trans<0.03){dirOut=normalize(seg);escaped=1.0;break;}
+            // 步数用尽：b 已判定会逃逸的光线只是还没走完，按当前方向采样星空；
+            // 注定被吞掉的则维持黑色。
+            if(i==MAX_STEPS-1&&willFall<0.5){dirOut=rayTangent(u,du,phi,er,et);escaped=1.0;}
+          }
+
+          // ---- 光子环：n≥1 的像，解析求和 ----
+          // b 略大于 b_crit 的光线会绕着黑洞转 n 圈，每半圈穿过一次盘面，
+          // 交点在 rho≈r_ph 附近。逐圈积分要上千步（实测 620 步只够绕 0.7 圈，
+          // 所以紧贴阴影的那一圈亮环原来是**完全缺失**的，画面上就是盘"断开"）。
+          // 这些像沿 b 方向按 e^(-n·π) 几何收敛，直接闭式求和：
+          //   Σ_n exp(-n·k·(b-b_crit))  ≈ 1/(1-exp(-k·db))
+          // 注意：必须是**逃逸**的光线。被吞掉的光线（b<b_crit）也会贴着盘面螺旋下坠，
+          // 上面两个量会跟着变亮，结果把整个阴影填满（试过，黑洞直接消失）。
+          if(willFall<0.5){
+            float db=max(bImp-2.5981,0.0);
+            // 内缘锐（贴着视界，不能糊进阴影），外缘柔（高斯收尾）。
+            // 这条软尾巴就是"光被扭曲后的光晕"，而不是一根画上去的细线。
+            float inner=smoothstep(2.542,2.606,bImp);
+            float outer=exp(-pow(db/0.38,2.0));
+            // 关键的一层调制：光线轨道离盘面越远，能捡到的盘光越少。
+            // 没有它，环会均匀地围一圈，看起来像个发光甜甜圈；
+            // 有了它，水平方向（轨道几乎贴着盘面）最亮，
+            // 上下两段被压薄——这才是《星际穿越》那张图的比例。
+            float planeClose=mix(0.30,1.0,exp(-pow(yMinAbs/(DISK_H*5.0),2.0)));
+            float ringWin=inner*outer*planeClose;
+            if(ringWin>0.004){
+              // 半径与多普勒全部从**连续量**导出（b 与屏幕方位角），
+              // 不再从积分步上取点。上一版用 pNear —— 那是"离赤道最近的
+              // 那一步"的坐标，而步长是自适应的：相邻像素落在不同步相位上，
+              // rhoP、DP 随之成块跳变，环上就出现马赛克色块。
+              // 现在 rhoP(db) 与 DP(屏幕方位) 都是 b、uv 的光滑函数。
+              float rhoP=mix(R_IN*1.03,R_OUT*0.90,1.0-exp(-db/0.72));
+              // 屏幕 +x 对应盘的迎面侧（与逐点 dot(vh,nobs) 同一约定），
+              // 所以 sx 直接就是多普勒的符号项：右侧 D>1，左侧 D<1。
+              // 0.82 是"收敛系数"：纯 ±1 会把左半圈直接压没，环就断了。
+              float sx=uv.x/max(length(uv),1e-4)*0.82;
+              float betaP=min(0.72,sqrt(0.5*RS/max(rhoP,1.15)));
+              float DP=1.0/(sqrt(1.0-betaP*betaP)*(1.0-betaP*sx));
+              // 距临界越近，堆叠的圈数越多 → 越亮
+              float stack=1.0-exp(-6.0*db);
+              float w=ringWin*(0.50+0.50*stack);
+              float densP;vec3 dcP=diskBandColor(rhoP,DP,densP);
+              // n≥1 的像是绕行多圈叠加出来的，湍流的暗纹早被抹平了。
+              // 直接沿用单点的 densP 会让环出现"随气流明灭"的断口
+              // （实测 180° 附近从 249 掉到 10），所以这里给它一个底、压掉一半起伏。
+              densP=mix(0.72,densP,0.42);
+              // 暗红余烬下限：多普勒把背向侧压到接近全黑时，环会在左侧
+              // "断"成两截。留一层恒定极暗的红，几何上始终闭合，
+              // 但亮度只有迎面的 1/8 左右，"右明左暗"的对比仍然成立。
+              dcP=max(dcP,vec3(0.360,0.072,0.024));
+              // 近侧盘挡在环前面时 trans 会掉到 0.03，环被压没 → 左下方
+              // 盘与环的交接处出现一个生硬的"断角"。环是绕行多圈的叠加像，
+              // 本来就有一部分光从盘的缝隙里漏出来，所以给它一个透射下限，
+              // 让盘缘和环平滑咬合，而不是两条亮带互相切一刀。
+              float ringT=mix(trans,1.0,0.55);
+              col+=dcP*densP*ringT*w*1.12*uDbg.x;
+            }
+          }
+
+          // 逃逸的光线带着被弯折过的方向去采样星空 —— 爱因斯坦环就出在这里
+          if(escaped>0.5)col+=sky(dirOut)*trans;
+
+          // ACES 近似：高光柔和肩部，不会像线性除法那样把中间调整体抬亮，
+          // 也保住"迎面偏蓝、背面偏红"的色相差别
+          col*=0.92;
+          col=clamp((col*(2.51*col+0.03))/(col*(2.43*col+0.59)+0.14),0.0,1.0);
+
+          float vd=length((vUv-uCenter)*vec2(uRes.x/max(uRes.y,1.0),1.0));
+          col*=1.0-0.52*smoothstep(0.34,1.04,vd);
+          gl_FragColor=vec4(max(col,0.0),1.0);
+        }`;
+
+      function createBlackHole(){
+        bhHost=$('#bh-view');if(!bhHost)return;
+        bhRenderer=new THREE.WebGLRenderer({antialias:false,alpha:false,powerPreference:'high-performance'});
+        // 视口里是柔和的辉光与细星点，1.1 倍像素比足够；再高只是白烧填充率
+        bhRatio=Math.min(devicePixelRatio||1,1.1)*bhScale;
+        bhRenderer.setPixelRatio(bhRatio);bhRenderer.setClearColor(0x03050a,1);
+        bhHost.appendChild(bhRenderer.domElement);
+        bhScene=new THREE.Scene();
+        bhCamera=new THREE.OrthographicCamera(-1,1,1,-1,-1,1);
+        bhMat=new THREE.ShaderMaterial({depthTest:false,depthWrite:false,toneMapped:false,
+          uniforms:{uRes:{value:new THREE.Vector2(1,1)},uTime:{value:0},
+            uOrbit:{value:new THREE.Vector2(bhAz,bhEl)},uCenter:{value:new THREE.Vector2(.575,.455)},uDbg:{value:new THREE.Vector2(1,1)},uMouse:{value:new THREE.Vector2(.5,.5)},uMouseK:{value:0}},
+          vertexShader:`varying vec2 vUv;void main(){vUv=uv;gl_Position=vec4(position.xy,0.0,1.0);}`,
+          fragmentShader:BH_FRAG});
+        bhQuad=new THREE.Mesh(new THREE.PlaneGeometry(2,2),bhMat);
+        // 顶点着色器直接输出裁剪坐标，但 three 仍会在 CPU 侧做剔除，这里关掉
+        bhQuad.frustumCulled=false;bhQuad.position.z=-.5;bhScene.add(bhQuad);
+        bindBlackHoleInput();bhResize();addEventListener('resize',bhResize);
+      }
+      function bhResize(){
+        if(!bhRenderer||!bhHost)return;
+        const w=Math.round(bhHost.clientWidth),h=Math.round(bhHost.clientHeight);
+        if(w<2||h<2)return;   // 手机端隐藏时宽高为 0，跳过
+        bhRenderer.setPixelRatio(bhRatio);bhRenderer.setSize(w,h,false);
+        bhRenderer.domElement.style.width='100%';bhRenderer.domElement.style.height='100%';
+        bhMat.uniforms.uRes.value.set(w,h);
+      }
+      // 拖拽 = 真的在移动相机：横向绕黑洞公转，纵向抬降视角（限位避免看到极点）
+      function bindBlackHoleInput(){
+        const el=bhHost;
+        let hx=0,hy=0;
+        el.addEventListener('pointerdown',e=>{bhDown=true;bhPX=e.clientX;bhPY=e.clientY;el.classList.add('dragging');try{el.setPointerCapture(e.pointerId);}catch{}});
+        el.addEventListener('pointermove',e=>{
+          // 未拖拽时的悬停也会让相机极轻微摆动，说明这是个可以看的立体物
+          const r=el.getBoundingClientRect();
+          hx=((e.clientX-r.left)/Math.max(1,r.width)*2-1);
+          hy=((e.clientY-r.top)/Math.max(1,r.height)*2-1);
+          bhHoverX=hx;bhHoverY=hy;
+          // 鼠标引力：vUv 的 y 是自下而上，所以要 1 - 比例
+          bhMouseU=(e.clientX-r.left)/Math.max(1,r.width);
+          bhMouseV=1-(e.clientY-r.top)/Math.max(1,r.height);
+          // 拖拽时把引力降到 0.35：两个交互都保留，但公转读得清
+          bhMouseKT=bhDown?0.35:1;
+          if(!running)bhSchedule();
+          if(!bhDown)return;
+          bhAzT=THREE.MathUtils.clamp(bhAzT+(e.clientX-bhPX)*.0042,-1.9,1.9);
+          bhElT=THREE.MathUtils.clamp(bhElT-(e.clientY-bhPY)*.0022,-.20,.34);
+          bhPX=e.clientX;bhPY=e.clientY;
+        });
+        el.addEventListener('pointerleave',()=>{bhHoverX=0;bhHoverY=0;bhMouseKT=0;bhSchedule();});
+        const end=e=>{if(!bhDown)return;bhDown=false;el.classList.remove('dragging');bhMouseKT=1;if(!running)bhSchedule();try{el.releasePointerCapture(e.pointerId);}catch{}};
+        el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);
+      }
+      function bhSchedule(){if(!bhPending){bhPending=true;requestAnimationFrame(bhFrame);}}
+      function bhFrame(now){
+        bhPending=false;
+        if(current===null||!bhRenderer||document.hidden)return;   // 只在黑洞分类页渲染
+        if(bhHost.clientWidth<2||bhHost.clientHeight<2)return;    // 手机端视口隐藏，直接不跑
+        const dt=Math.min(.05,(now-bhLast||16)/1000);bhLast=now;bhTime+=dt;
+        const k=Math.min(1,dt*5.0);
+        bhAz+=(bhAzT-bhAz)*k;bhEl+=(bhElT-bhEl)*k;
+        bhHoverK+=(1-bhHoverK)*Math.min(1,dt*2.2);
+        const u=bhMat.uniforms;
+        u.uTime.value=bhTime;
+        u.uOrbit.value.set(bhAz+bhHoverX*.05*bhHoverK,THREE.MathUtils.clamp(bhEl-bhHoverY*.045*bhHoverK,-.22,.36));
+        // 鼠标引力强度做缓动：进出视口时不跳变
+        bhMouseK+=(bhMouseKT-bhMouseK)*Math.min(1,dt*5.5);
+        if(bhMouseK<0.002)bhMouseK=0;
+        u.uMouseK.value=bhMouseK;
+        u.uMouse.value.set(bhMouseU,bhMouseV);
+        bhRenderer.render(bhScene,bhCamera);
+        bhFrames++;
+        // 自适应分辨率：用"丢帧数"驱动，而不是平均帧间隔。
+        // 帧间隔被 vsync 压在 16.7ms，永远看不出还有多少余量，
+        // 只看平均值的话它只会一路往下掉、再也升不回来。
+        // dt>25ms 才算丢了一帧（2 帧 = 33ms）；>60ms 的是切标签/截图，忽略。
+        if(bhWarm<120)bhWarm++;
+        else if(dt<0.06){
+          bhSampleN++;
+          if(dt>0.025)bhMissed++;
+          if(bhSampleN>=90){
+            let next=bhScale;
+            if(bhMissed>7){
+              next=Math.max(0.66,bhScale-0.07);
+              bhClean=0;                      // 刚掉过帧，重新攒"干净窗口"
+            }else if(bhMissed===0){
+              // 升档要更保守：必须连续多个窗口一帧不丢才敢升，
+              // 否则会在 0.78↔0.90 之间来回跳，肉眼能看到清晰度在抖。
+              if(++bhClean>=6)next=Math.min(0.95,bhScale+0.04);
+            }else bhClean=0;
+            bhSampleN=0;bhMissed=0;
+            if(next!==bhScale){bhScale=next;bhRatio=Math.min(devicePixelRatio||1,1.1)*bhScale;bhResize();}
+          }
+        }
+        bhSchedule();
+      }
+      // ============ 星际尘埃带 ============
+      // 螺旋臂**之间**那一层暗褐粒子。它不是发光体，作用是"吸收"：
+      // 用 NormalBlending 的暗色粒子覆盖在已经画好的加法混合光之上，
+      // 把背后的星光压暗 —— 真实星系照片里那种沟壑纵横的立体感就是这么来的。
+      // 单靠加法混合永远做不出遮挡，所以这一层必须是独立绘制、独立混合模式。
+      function buildDustLanes(){
+        const pos=new Float32Array(DUST_COUNT*3),col=new Float32Array(DUST_COUNT*3);
+        const sz=new Float32Array(DUST_COUNT),al=new Float32Array(DUST_COUNT),sec=new Float32Array(DUST_COUNT);
+        const random=seeded(77331),sw=new THREE.Color();
+        for(let i=0;i<DUST_COUNT;i++){
+          const o=i*3;
+          // 半径分布略偏外盘：尘埃在核球里会被烤掉，真实的尘埃带都在中外部
+          // 起点 1.30 世界（约 82px）：核球内不铺尘埃。
+          // 真实星系的核心区尘埃确实少（被辐射清空），而且这样不会把白核压灰。
+          const radius=1.30+Math.pow(random(),.85)*3.95;
+          // ---- 关键：落在臂**之间** ----
+          // 粒子旋臂是 arm*72°+r*1.24；尘埃整体偏半个臂距（36°），
+          // 并且随半径缓慢漂移（-r*0.22），于是它沿着臂的内侧蜿蜒，
+          // 而不是一圈同心环。
+          const arm=i%5;
+          // 抖动从 ±0.30 收到 ±0.15：收到这个量级，尘埃才成"条带"，
+          // 再宽就摊成一层均匀的褐雾（实测压暗了 31% 但只有 1.7% 区域成沟壑）。
+          const angle=arm*1.25664+radius*1.24+Math.PI/5-radius*.22+(random()-.5)*.15;
+          const thick=.18*Math.exp(-radius*.5)+.035+radius*.016;
+          pos[o]=Math.cos(angle)*radius;
+          pos[o+1]=Math.sin(angle)*radius;
+          pos[o+2]=(random()+random()-1)*thick;
+          // 暗红 / 深褐：R 最高、G 次之、B 极低。再往蓝里偏一点就成了灰雾。
+          // 吸收式混合下，color 实际上被忽略（只用到 alpha），但保留暖色便于以后
+          // 换成 NormalBlending 做对比；这里写的是深褐。
+          const warm=.55+random()*.45;
+          sw.setRGB(0.150*warm+0.035,0.062*warm+0.016,0.034*warm+0.010);
+          col[o]=sw.r;col[o+1]=sw.g;col[o+2]=sw.b;
+          // 尺寸比发光粒子稍大（尘埃是团絮，不是点），但透明度极低
+          // 尘埃是团絮不是点：.055-.195 世界单位，投影约 3.6-13px。
+          // 上一版 .026-.078（1.7-5px）太碎，叠不成"带"，看不出遮挡。
+          sz[i]=.060+Math.pow(random(),1.5)*.150;
+          al[i]=.24+Math.pow(random(),1.2)*.34;
+          sec[i]=((angle/6.2831853)%1+1)%1;
+        }
+        dustGeometry=new THREE.BufferGeometry();
+        dustGeometry.setAttribute('position',new THREE.BufferAttribute(pos,3).setUsage(THREE.DynamicDrawUsage));
+        dustGeometry.setAttribute('color',new THREE.BufferAttribute(col,3).setUsage(THREE.DynamicDrawUsage));
+        dustGeometry.setAttribute('aSize',new THREE.BufferAttribute(sz,1));
+        dustGeometry.setAttribute('aAlpha',new THREE.BufferAttribute(al,1));
+        dustGeometry.setAttribute('aSector',new THREE.BufferAttribute(sec,1));
+        const mat=new THREE.ShaderMaterial({
+          transparent:true,depthWrite:false,depthTest:false,toneMapped:false,
+          // ---- 关键：纯吸收（乘法）混合 ----
+          // 结果 = dst × (1 - alpha)。只压暗、绝不加亮。
+          // 之前用 NormalBlending 是错的：暗褐色叠在**纯黑**背景上等于往黑里加褐，
+          // 实测盘面平均亮度反而从 1.86 升到 1.91 —— 尘埃不但没挡住光，还糊了一层褐雾。
+          // 真实的尘埃只做减法（吸收），在黑底上本来就不可见，只在有光的旋臂上显形。
+          blending:THREE.CustomBlending,
+          blendEquation:THREE.AddEquation,
+          blendSrc:THREE.ZeroFactor,
+          blendDst:THREE.OneMinusSrcAlphaFactor,
+          blendEquationAlpha:THREE.AddEquation,
+          blendSrcAlpha:THREE.ZeroFactor,
+          blendDstAlpha:THREE.OneFactor,
+          uniforms:{uScale:{value:innerHeight/(2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2)))},
+            uPixelRatio:{value:renderer.getPixelRatio()},uGalaxyMat:{value:galaxyMat},uSpin:{value:0}},
+          vertexShader:`
+            attribute vec3 color;attribute float aSize;attribute float aAlpha;attribute float aSector;
+            uniform float uScale;uniform float uPixelRatio;uniform mat3 uGalaxyMat;uniform float uSpin;
+            varying vec3 vColor;varying float vAlpha;varying float vSec;
+            void main(){
+              // 与发光粒子完全同一套差速自转，否则尘埃会和旋臂错开、露出穿帮
+              float om=pow(max(length(position.xy),0.10),-0.70);
+              float ang=uSpin*om;
+              float ca=cos(ang),sa=sin(ang);
+              vec3 local=vec3(position.x*ca-position.y*sa,position.x*sa+position.y*ca,position.z);
+              vec3 p=uGalaxyMat*local;
+              vec4 mv=modelViewMatrix*vec4(p,1.0);
+              gl_Position=projectionMatrix*mv;
+              float dist=max(1.0,-mv.z);
+              gl_PointSize=clamp(aSize*uScale/dist,uPixelRatio*1.0,26.0*uPixelRatio);
+              vColor=color;
+              vAlpha=aAlpha;
+              vSec=aSector+ang/6.2831853;
+            }`,
+          fragmentShader:`
+            varying vec3 vColor;varying float vAlpha;varying float vSec;
+            void main(){
+              vec2 q=gl_PointCoord-vec2(0.5);
+              float d2=dot(q,q);
+              if(d2>0.25)discard;
+              // 尘埃必须是极软的团絮，边缘完全化开；有硬边就成了褐色圆点
+              float a=exp(-d2*7.0)*(1.0-smoothstep(0.10,0.25,d2));
+              gl_FragColor=vec4(vColor,clamp(a*vAlpha,0.0,1.0));
+            }`});
+        dustPoints=new THREE.Points(dustGeometry,mat);
+        dustPoints.frustumCulled=false;
+        // 必须排在发光粒子**之后**：它要给已经画好的光做减法。
+        // depthTest 关掉，直接按 renderOrder 覆盖。
+        dustPoints.renderOrder=1;
+        scene.add(dustPoints);
+      }
+
+      // ============ 后处理泛光（自研 Bloom，不引 EffectComposer） ============
+      // 这是真的后处理，不是"画一个光斑"：
+      //   ① 场景渲染到 rtScene（全分辨率，锐利度一点不损失）
+      //   ② 亮部提取 + 降采样 → H1(/2) → 可分离高斯 H/V → Q2(/4) → 再 → E2(/8)
+      //   ③ 合成：base + 三级模糊各自加权
+      // 两个关键设计：
+      //   · 亮部提取用**软阈值**（knee），硬阈值会在高光边缘留下一圈可见的台阶。
+      //   · 合成时对泛光做 g/(1+g) 的软肩。8 位 RT 存不了 >1 的值，
+      //     直接相加会把一大片区域钳成纯白、和外围形成硬边 —— 那就是"白盘子"而不是光球。
+      //     g/(1+g) 把任意强度压进 (0,1)，光球边缘才是平滑过渡。
+      // 只在首页启用：进入分类页时 bloomK 缓动到 0，整条链路直接跳过（零开销），
+      // 保证黑洞页那套已验证的性能与画面完全不受影响。
+      const BLOOM_VERT=`varying vec2 vUv;void main(){vUv=uv;gl_Position=vec4(position.xy,0.0,1.0);}`;
+      const BL_BRIGHT=`
+        precision highp float;
+        varying vec2 vUv;
+        uniform sampler2D tDiffuse;uniform vec2 uTexel;
+        uniform float uThreshold,uKnee;
+        void main(){
+          vec3 c=texture2D(tDiffuse,vUv+uTexel*vec2(-0.5,-0.5)).rgb
+                +texture2D(tDiffuse,vUv+uTexel*vec2( 0.5,-0.5)).rgb
+                +texture2D(tDiffuse,vUv+uTexel*vec2(-0.5, 0.5)).rgb
+                +texture2D(tDiffuse,vUv+uTexel*vec2( 0.5, 0.5)).rgb;
+          c*=0.25;
+          float l=max(max(c.r,c.g),c.b);
+          float k=max(uKnee,1e-4);
+          float soft=clamp(l-uThreshold+k,0.0,2.0*k);
+          soft=soft*soft/(4.0*k);
+          float contrib=max(soft,l-uThreshold)/max(l,1e-4);
+          gl_FragColor=vec4(c*contrib,1.0);
+        }`;
+      const BL_BLUR=`
+        precision highp float;
+        varying vec2 vUv;
+        uniform sampler2D tDiffuse;uniform vec2 uDir;
+        void main(){
+          vec3 s=texture2D(tDiffuse,vUv).rgb*0.2270270270;
+          s+=texture2D(tDiffuse,vUv+uDir*1.3846153846).rgb*0.3162162162;
+          s+=texture2D(tDiffuse,vUv-uDir*1.3846153846).rgb*0.3162162162;
+          s+=texture2D(tDiffuse,vUv+uDir*3.2307692308).rgb*0.0702702703;
+          s+=texture2D(tDiffuse,vUv-uDir*3.2307692308).rgb*0.0702702703;
+          gl_FragColor=vec4(s,1.0);
+        }`;
+      // 合成：四级模糊各自加权，最后做一次 g/(1+g) 的软肩。
+      // 为什么必须分四级：光球要"平滑过渡到 200px"，就要求模糊半径覆盖到那个尺度。
+      // 只有 1/2、1/4、1/8 三级时，最大有效半径只有约 13px，光晕在 60px 就断了；
+      // 加一级 1/16（1440 宽时只有 90px 宽）才能把半径拉到 ~50px。
+      const BL_COMP=`
+        precision highp float;
+        varying vec2 vUv;
+        uniform sampler2D tScene,tB0,tB1,tB2,tB3;
+        uniform float uW0,uW1,uW2,uW3,uStrength;
+        uniform vec3 uTint;
+        void main(){
+          vec3 base=texture2D(tScene,vUv).rgb;
+          vec3 g=texture2D(tB0,vUv).rgb*uW0
+                +texture2D(tB1,vUv).rgb*uW1
+                +texture2D(tB2,vUv).rgb*uW2
+                +texture2D(tB3,vUv).rgb*uW3;
+          // 软肩：8 位 RT 存不了 >1 的值，直接相加会把一大片钳成纯白、与外围形成硬边。
+          g=g/(1.0+g);
+          // 泛光偏暖：亮部提取出来的是"白核"的近白色，直接相加会把外圈的金色
+          // 一起冲成中性白（实测暖色像素占比从 18.9% 掉到 7.2%）。
+          // 真实物理里色温高的光源辉光也是暖的，这里给一个轻微暖偏。
+          g*=uTint;
+          gl_FragColor=vec4(base+g*uStrength,1.0);
+        }`;
+
+      // 每一级的降采样倍率与"额外扩散"：后者让第 i 级的模糊半径明显大于
+      // 朴素的倍率，否则各级光晕会挤在同一个尺度上、叠成一个硬边。
+      const BLOOM_DIV=[2,4,8,16];
+      const BLOOM_SPREAD=[1.0,1.55,2.10,2.90];
+      let rtScene=null,bloomRT=[];      // bloomRT[i] = {a,b}
+      let bloomScene=null,bloomCam=null,bloomQuad=null;
+      let matBright=null,matBlurH=null,matBlurV=null,matComp=null;
+      let bloomK=0,bloomPasses=0,sceneDrawCalls=0;
+      // 参数是扫描出来的（.checks/bloom-decide.cjs 逐档对比"核心亮度 vs 旋臂是否被泛白"）：
+      //   阈值 0.42 —— 旋臂 p90 只有 21/255≈0.08，远在阈值之下，泛光只由核球驱动。
+      //   阈值再低（0.28）会把盘面整体抬亮 2.2 倍、锐利度明显下降。
+      const BLOOM_THRESHOLD=.42,BLOOM_KNEE=.22;
+      const BLOOM_W=[1.05,.92,.78,.60],BLOOM_STRENGTH=5.00;
+
+      function makeRT(w,h){
+        const rt=new THREE.WebGLRenderTarget(Math.max(1,Math.round(w)),Math.max(1,Math.round(h)),{
+          minFilter:THREE.LinearFilter,magFilter:THREE.LinearFilter,format:THREE.RGBAFormat,
+          type:THREE.UnsignedByteType,depthBuffer:false,stencilBuffer:false,generateMipmaps:false
+        });
+        // 关掉色彩管理的情况下这就是"原样进出"，不做任何 sRGB 解码，
+        // 否则整幅画面会被抬亮一次（这个坑在星云那轮踩过）。
+        rt.texture.colorSpace=THREE.NoColorSpace;
+        rt.texture.wrapS=rt.texture.wrapT=THREE.ClampToEdgeWrapping;
+        return rt;
+      }
+      function buildBloom(){
+        bloomScene=new THREE.Scene();
+        bloomCam=new THREE.OrthographicCamera(-1,1,1,-1,0,1);
+        matBright=new THREE.ShaderMaterial({uniforms:{tDiffuse:{value:null},uTexel:{value:new THREE.Vector2()},
+          uThreshold:{value:BLOOM_THRESHOLD},uKnee:{value:BLOOM_KNEE}},
+          vertexShader:BLOOM_VERT,fragmentShader:BL_BRIGHT,depthTest:false,depthWrite:false,toneMapped:false});
+        const mkBlur=()=>new THREE.ShaderMaterial({uniforms:{tDiffuse:{value:null},uDir:{value:new THREE.Vector2()}},
+          vertexShader:BLOOM_VERT,fragmentShader:BL_BLUR,depthTest:false,depthWrite:false,toneMapped:false});
+        matBlurH=mkBlur();matBlurV=mkBlur();
+        matComp=new THREE.ShaderMaterial({uniforms:{tScene:{value:null},
+          tB0:{value:null},tB1:{value:null},tB2:{value:null},tB3:{value:null},
+          uW0:{value:BLOOM_W[0]},uW1:{value:BLOOM_W[1]},uW2:{value:BLOOM_W[2]},uW3:{value:BLOOM_W[3]},
+          uStrength:{value:BLOOM_STRENGTH},uTint:{value:new THREE.Vector3(1.00,0.945,0.855)}},
+          vertexShader:BLOOM_VERT,fragmentShader:BL_COMP,depthTest:false,depthWrite:false,toneMapped:false});
+        bloomQuad=new THREE.Mesh(new THREE.PlaneGeometry(2,2),matComp);
+        bloomQuad.frustumCulled=false;bloomQuad.position.z=-.5;
+        bloomScene.add(bloomQuad);
+        resizeBloom();
+      }
+      function resizeBloom(){
+        if(!bloomScene)return;
+        const dpr=renderer.getPixelRatio();
+        const W=Math.max(16,Math.round(innerWidth*dpr)),H=Math.max(16,Math.round(innerHeight*dpr));
+        if(rtScene)rtScene.dispose();
+        bloomRT.forEach(o=>{o.a.dispose();o.b.dispose();});
+        rtScene=makeRT(W,H);
+        bloomRT=BLOOM_DIV.map(d=>({a:makeRT(W/d,H/d),b:makeRT(W/d,H/d)}));
+        matComp.uniforms.tScene.value=rtScene.texture;
+        matComp.uniforms.tB0.value=bloomRT[0].b.texture;
+        matComp.uniforms.tB1.value=bloomRT[1].b.texture;
+        matComp.uniforms.tB2.value=bloomRT[2].b.texture;
+        matComp.uniforms.tB3.value=bloomRT[3].b.texture;
+      }
+      function bloomPass(mat,target){
+        bloomQuad.material=mat;
+        renderer.setRenderTarget(target);
+        renderer.render(bloomScene,bloomCam);
+        bloomPasses++;
+      }
+      // 一次完整的 bloom 帧：场景 → 亮部 → 四级可分离高斯 → 合成上屏
+      function renderWithBloom(){
+        bloomPasses=0;
+        renderer.setRenderTarget(rtScene);
+        renderer.render(scene,camera);
+        sceneDrawCalls=renderer.info.render.calls;
+        // ① 亮部提取 + 降采样到 1/2（只有这一级读全分辨率场景）
+        // 注意写进 .b 而不是 .a：第一级模糊的输入就是它，
+        // 如果写进 .a 再从 .a 采样就是"同一纹理读写"（自反馈），GL 会返回黑 —— 这个坑踩过。
+        matBright.uniforms.tDiffuse.value=rtScene.texture;
+        matBright.uniforms.uTexel.value.set(1/rtScene.width,1/rtScene.height);
+        bloomPass(matBright,bloomRT[0].b);
+        // ② 逐级：横向模糊（同时降采样）→ 纵向模糊
+        for(let i=0;i<BLOOM_DIV.length;i++){
+          const src=(i===0)?bloomRT[0].b:bloomRT[i-1].b;
+          const node=bloomRT[i];
+          const sp=BLOOM_SPREAD[i];
+          matBlurH.uniforms.tDiffuse.value=src.texture;
+          matBlurH.uniforms.uDir.value.set(sp/src.width,0);
+          bloomPass(matBlurH,node.a);
+          matBlurV.uniforms.tDiffuse.value=node.a.texture;
+          matBlurV.uniforms.uDir.value.set(0,sp/node.a.height);
+          bloomPass(matBlurV,node.b);
+        }
+        // ③ 合成上屏
+        matComp.uniforms.uStrength.value=BLOOM_STRENGTH*bloomK;
+        bloomPass(matComp,null);
+      }
+
+      // 鼠标视差：只写目标值，实际缓动在 frame 里做，避免在 rAF 中分配对象
+      function onPointerMove(event){const w=innerWidth,h=innerHeight;tgtX=((event.clientX/w)*2-1)*1.2;tgtY=-((event.clientY/h)*2-1)*.85;lastPointer=performance.now();if(!running)schedule();}
+      // 滚轮缩放：指数步进 + 双重夹值，滚一格不会跳
+      function onWheel(event){
+        if(event.ctrlKey)return;
+        // 分类页里滚轮只服务左侧列表，绝不缩放被遮住的星系。
+        // （第十九轮起所有分类页都走黑洞，右栏不再有可缩放的第二套视口）
+        if(current!==null)return;
+        const target=event.target;
+        if(target&&target.closest&&target.closest('.tool-list'))return; // 列表自己滚动
+        event.preventDefault();
+        // deltaY < 0（滚轮向上）应拉近，所以指数取正号
+        zoomTarget=THREE.MathUtils.clamp(zoomTarget*Math.exp(event.deltaY*ZOOM_STEP),zoomMin,zoomMax);
+        lastPointer=performance.now();if(!running)schedule();
+      }
+      // 把 Dock 按钮的屏幕位置反算成星系盘面上的世界角度，用来点亮对应方向的粒子
+      // （横向分量做艺术化放大，让九个按钮的高光沿盘沿明显滑动，而不是全挤在正下方）
+      const HOVER_LIFT=SQUASH*2.5;
+      function hoverCategory(button){const rect=button.getBoundingClientRect(),dx=rect.left+rect.width/2-innerWidth/2,dy=rect.top+rect.height/2-innerHeight*.5,angle=Math.atan2(-dy/HOVER_LIFT,dx);hoverAngle=((angle/(Math.PI*2))%1+1)%1;hoverTarget=1;if(!running)schedule();}
+
+      function makeCategoryShape(name){
+        let seed=2166136261;for(const ch of name){seed^=ch.charCodeAt(0);seed=Math.imul(seed,16777619);}const out=new Float32Array(positions.length),tint=new Float32Array(colors.length),random=seeded(seed),accent=new THREE.Color(colorFor(name));
+        // 背景星尘不参与形变，只整体压暗，让前景面板更干净
+        for(let i=0;i<SKY_COUNT*3;i++){out[i]=homePositions[i];tint[i]=homeColors[i]*.62;}
+        // 星系层重排成按分类强调色着色的紧凑盘面
+        // 分类页的盘面：核心那段保持球形聚在中心（否则分类页会失去"核"），
+        // 旋臂那段重排成更紧的螺线。垂直厚度比首页薄，因为分类页相机拉到 26。
+        for(let i=0;i<GALAXY_COUNT;i++){
+          const o=(SKY_COUNT+i)*3;
+          if(i<CORE_COUNT){
+            const t2=random()*6.2831853,p2=Math.acos(2*random()-1),r=Math.pow(random(),1.6)*.50;
+            out[o]=Math.sin(p2)*Math.cos(t2)*r;out[o+1]=Math.sin(p2)*Math.sin(t2)*r;out[o+2]=Math.cos(p2)*r*.88;
+          }else{
+            const radius=.30+Math.sqrt(random())*4.60,arm=i%5;
+            const a=arm*1.25664+radius*1.35+(random()-.5)*.34;
+            out[o]=Math.cos(a)*radius;out[o+1]=Math.sin(a)*radius;out[o+2]=(random()-.5)*.18;
+          }
+          const brightness=.62+random()*.55;
+          tint[o]=accent.r*brightness;tint[o+1]=accent.g*brightness;tint[o+2]=accent.b*brightness;
+        }
+        return{positions:out,colors:tint};
+      }
+      function morphToCategory(name){const shape=makeCategoryShape(name);categoryPositions=shape.positions;categoryColors=shape.colors;morphTween={start:positions.slice(),startColors:colors.slice(),startTime:performance.now(),duration:850};camDistTween={start:camDist,target:LIST_DIST,startTime:performance.now(),duration:850};hoverTarget=0;}
+      function schedule(){if(!rafPending){rafPending=true;requestAnimationFrame(frame);}}
+      // 每帧重建盘面矩阵（倾斜 + 进动 + 自转），三件套与 galaxyMat 都是预分配的
+      function updateGalaxyMatrix(){
+        const w=wobbleT*WOBBLE_SLOW;   // 进动周期约 108 秒
+        gTilt=DISC_TILT+Math.sin(w)*.042;
+        gSway=Math.sin(w*.74+1.1)*.062;
+        // 自转**不再**放进这个矩阵：自转已经是逐粒子的差速旋转（着色器里按半径算），
+        // 这里只保留倾斜 + 摆动。若还叠一层整体旋转，等于给差速旋转再加一个刚体转速，
+        // 内圈会比外圈快两倍，差速就被抹平了。
+        gSpin=0;
+        matA.makeRotationX(gTilt);matB.makeRotationY(gSway);
+        matA.multiply(matB);galaxyMat.setFromMatrix4(matA);
+      }
+      function frame(now){
+        rafPending=false;
+        const dt=Math.min(.05,(now-last||16)/1000);last=now;
+        if(running){
+          wobbleT+=dt;
+          // 主星系自转累加：极慢，悬停时才略微加快
+          spinning+=dt*(SPIN_BASE+hoverS*SPIN_HOVER);
+        }
+        updateGalaxyMatrix();
+        // 鼠标视差：停下 1.8s 后缓动复位
+        if(now-lastPointer>1800){const d=Math.min(1,dt*1.2);tgtX-=tgtX*d;tgtY-=tgtY*d;}
+        const easeK=Math.min(1,dt*3.4);parX+=(tgtX-parX)*easeK;parY+=(tgtY-parY)*easeK;
+        hoverS+=(hoverTarget-hoverS)*Math.min(1,dt*6);
+        // 滚轮缩放：目标值在 onWheel 里夹好，这里只做缓动
+        if(camDistTween){const t=Math.min(1,(now-camDistTween.startTime)/camDistTween.duration),e=t*t*(3-2*t);camDist=camDistTween.start+(camDistTween.target-camDistTween.start)*e;if(t===1){camDist=camDistTween.target;camDistTween=null;}}
+        zoom+=(zoomTarget-zoom)*Math.min(1,dt*ZOOM_DAMP);
+        // 最终距离再夹一次：保证 camera.position.z = dist*cos(21°) 严格落在 [10,40]
+        const dist=THREE.MathUtils.clamp(camDist*fitPull*zoom,MIN_DIST,MAX_DIST),pScale=dist/HOME_DIST;
+        camera.position.set(parX*pScale,CAM_DIR.y*dist+parY*pScale,CAM_DIR.z*dist);
+        camera.lookAt(0,0,0);camera.rotateZ(parX*.004);
+        const uniforms=points.material.uniforms;uniforms.uHoverStrength.value=hoverS;
+        // 差速自转由着色器按半径分配，CPU 只送一个累积相位。
+        // uHoverAngle 不再需要减掉自转量 —— 扇区角在着色器里跟着粒子一起转。
+        if(hoverS>.001)uniforms.uHoverAngle.value=hoverAngle;
+        // 星场按各自 aPar 偏移：近星动得快，远星动得慢
+        uniforms.uSkyShift.value.set(-parX*SKY_PAR,-parY*SKY_PAR,0);
+        // 同一个相位送进尘埃层，两层才不会错开
+        uniforms.uSpin.value=spinning;
+        if(dustPoints){dustPoints.material.uniforms.uSpin.value=spinning;
+          dustPoints.material.uniforms.uGalaxyMat.value.copy(galaxyMat);}
+        if(morphTween){const t=Math.min(1,(now-morphTween.startTime)/morphTween.duration),e=t*t*(3-2*t);for(let i=0;i<positions.length;i++){positions[i]=morphTween.start[i]+(categoryPositions[i]-morphTween.start[i])*e;colors[i]=morphTween.startColors[i]+(categoryColors[i]-morphTween.startColors[i])*e;}geometry.attributes.position.needsUpdate=true;geometry.attributes.color.needsUpdate=true;if(t===1)morphTween=null;}
+        // 只在首页开泛光。进入分类页缓动到 0 后直接走原路径，
+        // 黑洞页的性能与画面完全不受这条链路影响。
+        const bloomGoal=current===null?1:0;
+        bloomK+=(bloomGoal-bloomK)*Math.min(1,dt*4.5);
+        if(bloomGoal===0&&bloomK<0.004)bloomK=0;else if(bloomGoal===1&&bloomK>0.996)bloomK=1;
+        if(bloomK>0.004&&rtScene){renderWithBloom();}
+        else{renderer.setRenderTarget(null);renderer.render(scene,camera);sceneDrawCalls=renderer.info.render.calls;bloomPasses=1;}
+        if(running||morphTween||camDistTween)schedule();
+      }
+      function resize(){if(!renderer)return;fitPull=innerWidth<innerHeight?1.35:1;zoomBounds();
+        zoomTarget=Math.min(zoomMax,Math.max(zoomMin,zoomTarget));zoom=Math.min(zoomMax,Math.max(zoomMin,zoom));
+        camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.35));renderer.setSize(innerWidth,innerHeight);
+        const uScale=innerHeight/(2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))),dpr=renderer.getPixelRatio();
+        points.material.uniforms.uScale.value=uScale;points.material.uniforms.uPixelRatio.value=dpr;
+        if(dustPoints){dustPoints.material.uniforms.uScale.value=uScale;dustPoints.material.uniforms.uPixelRatio.value=dpr;}
+        resizeBloom();
+        renderer.setRenderTarget(null);renderer.render(scene,camera);schedule();}
+      function enableInspector(){if(!new URLSearchParams(location.search).has('inspect'))return;Object.defineProperty(window,'spaceNav',{value:Object.freeze({getState:()=>({particleCount:geometry.attributes.position.count,pointsObjects:scene.children.filter(o=>o.isPoints).length,skyParallax:SKY_PAR,drawCalls:renderer.info.render.calls,cameraZ:Number(camera.position.z.toFixed(3)),cameraY:Number(camera.position.y.toFixed(2)),cameraDist:Number(camDist.toFixed(2)),zoom:Number(zoom.toFixed(4)),zoomTarget:Number(zoomTarget.toFixed(4)),zoomRange:[Number(zoomMin.toFixed(4)),Number(zoomMax.toFixed(4))],orbitDist:Number(THREE.MathUtils.clamp(camDist*fitPull*zoom,MIN_DIST,MAX_DIST).toFixed(3)),distLimits:[Number(MIN_DIST.toFixed(2)),Number(MAX_DIST.toFixed(2))],zLimits:[Z_MIN,Z_MAX],cameraElevationDeg:Number((Math.atan2(camera.position.y,camera.position.z)*180/Math.PI).toFixed(1)),galaxyTiltX:Number(gTilt.toFixed(3)),spinZ:Number(spinning.toFixed(5)),spinRate:Number((SPIN_BASE+hoverS*SPIN_HOVER).toFixed(5)),hoverStrength:Number(hoverS.toFixed(3)),hoverAngle:Number(hoverAngle.toFixed(4)),parallaxX:Number(parX.toFixed(3)),parallaxY:Number(parY.toFixed(3)),skyShift:[Number(points.material.uniforms.uSkyShift.value.x.toFixed(3)),Number(points.material.uniforms.uSkyShift.value.y.toFixed(3))],skyCount:SKY_COUNT,tinyCount:TINY_COUNT,bigCount:BIG_COUNT,galaxyCount:GALAXY_COUNT,
+          // 渲染层结构的自证：贴图层必须为 0（本轮把所有 Texture 都删了）
+          textureLayers:scene.children.filter(o=>o.isMesh).length,
+          nebulaPlanes:0,
+          particleLayers:scene.children.filter(o=>o.isPoints).length,
+          coreParticles:CORE_COUNT,armParticles:ARM_COUNT,dustParticles:DUST_COUNT,
+          spinPhase:Number(spinning.toFixed(4)),
+          dustUniformSpin:Number(dustPoints?dustPoints.material.uniforms.uSpin.value:0),
+          dustDrawBlending:dustPoints?dustPoints.material.blending:-1,
+          drawCallsHome:renderer.info.render.calls,
+          bloomK:Number(bloomK.toFixed(3)),bloomPasses,sceneDrawCalls,bloomThreshold:BLOOM_THRESHOLD,bloomStrength:BLOOM_STRENGTH,
+          coreHot:CORE_HOT,
+          galaxyTiltDeg:Number((gTilt*180/Math.PI).toFixed(2)),
+          cameraElevationDeg2:Number((CAM_ELEV*180/Math.PI).toFixed(1)),
+          currentCategory:current,categoryCounts:Object.fromEntries([...groups].map(([k,v])=>[k,v.length])),listCount:list.querySelectorAll('.tool-item').length,sortedScores:[...list.querySelectorAll('.score')].map(e=>Number(e.textContent)),rendererPixelRatio:renderer.getPixelRatio()}),
+        // 右侧黑洞视口探针：帧数、绘制调用、尺寸、拖拽状态
+        blackHole:()=>({active:current!==null,frames:bhFrames,drawCalls:bhRenderer?bhRenderer.info.render.calls:0,
+          size:bhRenderer?[bhRenderer.domElement.width,bhRenderer.domElement.height]:[0,0],
+          az:Number(bhAz.toFixed(3)),el:Number(bhEl.toFixed(3)),azTarget:Number(bhAzT.toFixed(3)),elTarget:Number(bhElT.toFixed(3)),
+          pixelRatio:Number(bhRatio.toFixed(3)),scale:Number(bhScale.toFixed(2)),missed:bhMissed,
+          mouse:[Number(bhMouseU.toFixed(4)),Number(bhMouseV.toFixed(4))],mouseK:Number(bhMouseK.toFixed(3)),
+          center:bhMat?[bhMat.uniforms.uCenter.value.x,bhMat.uniforms.uCenter.value.y]:[0,0],
+          canvases:document.querySelectorAll('canvas').length}),
+        // 只读几何探针：把星系粒子按盘面矩阵投影到屏幕坐标并统计色彩/尺寸梯度
+        projection:()=>{const v=new THREE.Vector3();let x0=Infinity,x1=-Infinity,y0=Infinity,y1=-Infinity;const ring=[{n:0,r:0,g:0,b:0},{n:0,r:0,g:0,b:0},{n:0,r:0,g:0,b:0}];const sizeRing=[{n:0,v:0},{n:0,v:0},{n:0,v:0}];
+          for(let i=SKY_COUNT;i<TOTAL_COUNT;i++){v.fromBufferAttribute(geometry.attributes.position,i);const radius=Math.hypot(v.x,v.y);v.applyMatrix3(galaxyMat).project(camera);if(v.x<x0)x0=v.x;if(v.x>x1)x1=v.x;if(v.y<y0)y0=v.y;if(v.y>y1)y1=v.y;
+            const band=radius<1.6?0:radius<3.4?1:2;ring[band].n++;ring[band].r+=colors[i*3];ring[band].g+=colors[i*3+1];ring[band].b+=colors[i*3+2];sizeRing[band].n++;sizeRing[band].v+=sizes[i];}
+          const avg=o=>[o.r/o.n,o.g/o.n,o.b/o.n].map(n=>Number(n.toFixed(3)));
+          return {ndcWidth:Number((x1-x0).toFixed(3)),ndcHeight:Number((y1-y0).toFixed(3)),aspect:Number(((x1-x0)/(y1-y0)).toFixed(2)),screenCoverage:Number((((x1-x0)/2)*((y1-y0)/2)).toFixed(3)),colorBands:ring.map(avg),sizeBands:sizeRing.map(o=>Number((o.v/o.n).toFixed(4)))};},
+        // 视差状态：三层各自的位移量（世界单位）
+        // 只报"相对各自基准点"的局部偏移，否则会把相机自身的位移算进去，量出来全是相机在动
+        parallaxState:()=>{
+          const base=new THREE.Vector3().copy(camera.position).addScaledVector(viewDir,NEB_FAR_D);
+          const offFar=nebulaFar.position.clone().sub(base);
+          base.copy(camera.position).addScaledVector(viewDir,NEB_NEAR_D);
+          const offNear=nebulaNear.position.clone().sub(base);
+          const sky=points.material.uniforms.uSkyShift.value;
+          return {far:[+offFar.x.toFixed(2),+offFar.y.toFixed(2)],
+            near:[+offNear.x.toFixed(2),+offNear.y.toFixed(2)],
+            sky:[+sky.x.toFixed(2),+sky.y.toFixed(2)],
+            factors:{far:NEB_FAR_PAR,near:NEB_NEAR_PAR,sky:SKY_PAR},
+            dists:{far:NEB_FAR_D,near:NEB_NEAR_D,starNear:240},
+            parX:+parX.toFixed(3),parY:+parY.toFixed(3)};},
+        // 主星探针：返回屏幕坐标与像素直径，供星芒形状的像素级验证
+        bigStars:()=>{const v=new THREE.Vector3(),out=[];
+          for(let i=TINY_COUNT;i<SKY_COUNT;i++){v.fromBufferAttribute(geometry.attributes.position,i);
+            const p0=v.clone();v.project(camera);if(v.x<-1.2||v.x>1.2||v.y<-1.2||v.y>1.2)continue;
+            const sx=(v.x*.5+.5)*innerWidth,sy=(-v.y*.5+.5)*innerHeight;
+            const dist=Math.max(1,camera.position.distanceTo(p0));
+            out.push({i,sx:Math.round(sx),sy:Math.round(sy),px:Math.round(sizes[i]*points.material.uniforms.uScale.value/dist)});}
+          return out;},
+        // 背景层探针：统计真正落进画面的星尘数量与平均亮度，确认"看起来不空"
+        skyProjection:()=>{const v=new THREE.Vector3();let onScreen=0,litPixels=0,sumAlpha=0;
+          for(let i=0;i<SKY_COUNT;i++){v.fromBufferAttribute(geometry.attributes.position,i);const k=pars[i];v.x-=parX*SKY_PAR*k;v.y-=parY*SKY_PAR*k;v.project(camera);
+            if(v.x>-1&&v.x<1&&v.y>-1&&v.y<1&&v.z<1){onScreen++;sumAlpha+=alphas[i];}}
+          return {onScreen,onScreenPct:Number((onScreen/SKY_COUNT*100).toFixed(1)),avgAlpha:Number((sumAlpha/Math.max(1,onScreen)).toFixed(3))};}}),writable:false});}
+      function openCategory(name){current=name;renderList(name);app.classList.add('list-mode');$('#home-view').inert=true;$('#list-view').inert=false;morphToCategory(name);
+        // 第十九轮：行星发动机方案全线回滚，9 个分类页统一用黑洞视口。
+        // 切到分类页后右栏才有尺寸，这里补一次测量再启动黑洞循环。
+        bhLast=0;bhWarm=0;bhResize();bhSchedule();
+        schedule();}
+      function backHome(){current=null;app.classList.remove('list-mode');$('#home-view').inert=false;$('#list-view').inert=true;categoryPositions=homePositions.slice();categoryColors=homeColors.slice();morphTween={start:positions.slice(),startColors:colors.slice(),startTime:performance.now(),duration:reduced?120:700};camDistTween={start:camDist,target:HOME_DIST,duration:reduced?120:700,startTime:performance.now()};schedule();}
+      $('#back').addEventListener('click',backHome);$('#reload').addEventListener('click',()=>location.reload());$('#continue-demo').addEventListener('click',()=>status.hidden=true);
+      async function load(){try{const response=await fetch('./data/tools.json',{cache:'no-cache'});if(!response.ok)throw new Error(`HTTP ${response.status}`);const data=await response.json();if(!Array.isArray(data))throw new Error('数据格式不是平铺数组');buildData(data);createScene();status.hidden=true;clearTimeout(window.__spaceModuleTimer);}catch(error){console.error(error);buildData(DEMO_TOOLS);createScene();setStatus('使用演示数据',`真实 tools.json 加载失败（${error.message}），当前显示 3 条测试数据。`,true);clearTimeout(window.__spaceModuleTimer);}}
+      if(reduced)running=false;load();
+    })();
+  </script>
+</body>
+</html>

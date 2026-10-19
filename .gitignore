@@ -1,0 +1,23 @@
+# ---- 本地验证产物（截图 / 探针脚本 / 一次性调试件，约 92MB）----
+.checks/
+
+# ---- 会话记忆与开发过程日志 ----
+# 含个人称呼与逐轮开发记录，属于工作台私有上下文，不入公开仓库
+.workbuddy/
+
+# ---- 数据中间快照 ----
+# 站点唯一数据源是 data/tools.json（必须提交）；下面两个是分类比对用的临时快照
+data/tools_before.json
+data/tools_prev.json
+
+# ---- 常见临时产物 ----
+tmp/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- 本地环境变量（即使将来误建也不入库）----
+.env
+.env.*

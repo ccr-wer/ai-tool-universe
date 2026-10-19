@@ -1,0 +1,5096 @@
+[
+  {
+    "id": "ecc",
+    "name": "ECC",
+    "url": "https://github.com/affaan-m/ECC",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "JavaScript"
+    ],
+    "summary": "The agent harness performance optimizati…",
+    "source": "github",
+    "score": 93,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "rea",
+    "name": "rea",
+    "url": "https://github.com/morluto/rea",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Reverse engineer anything with agents, f…",
+    "source": "github",
+    "score": 93,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "hermes-agent",
+    "name": "hermes-agent",
+    "url": "https://github.com/NousResearch/hermes-agent",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "The agent that grows with you",
+    "source": "github",
+    "score": 92,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "deepseek-harness",
+    "name": "deepseek-harness",
+    "url": "https://github.com/deepseek-ai/deepseek-harness",
+    "category": "uncategorized",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "DeepSeek Harness: Everything is a Plugin…",
+    "source": "github",
+    "score": 92,
+    "date_added": "2026-10-15"
+  },
+  {
+    "id": "firecrawl",
+    "name": "firecrawl",
+    "url": "https://github.com/firecrawl/firecrawl",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Supercharge your AI agents with data fro…",
+    "source": "github",
+    "score": 90,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "autogpt",
+    "name": "AutoGPT",
+    "url": "https://github.com/Significant-Gravitas/AutoGPT",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "AutoGPT is the vision of accessible AI f…",
+    "source": "github",
+    "score": 90,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "ohmyzsh",
+    "name": "ohmyzsh",
+    "url": "https://github.com/ohmyzsh/ohmyzsh",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Shell"
+    ],
+    "summary": "🙃 A delightful community-driven (with 2,…",
+    "source": "github",
+    "score": 90,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "n8n",
+    "name": "n8n",
+    "url": "https://github.com/n8n-io/n8n",
+    "category": "效率与办公",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Fair-code workflow automation platform w…",
+    "source": "github",
+    "score": 90,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "ollama",
+    "name": "ollama",
+    "url": "https://github.com/ollama/ollama",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Go"
+    ],
+    "summary": "Get up and running with Kimi, GLM, MiniM…",
+    "source": "github",
+    "score": 89,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "prompts-chat",
+    "name": "prompts.chat",
+    "url": "https://github.com/f/prompts.chat",
+    "category": "对话与助手",
+    "tags": [
+      "开源",
+      "HTML"
+    ],
+    "summary": "f.k.a. Awesome ChatGPT Prompts. Share, d…",
+    "source": "github",
+    "score": 89,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "transformers",
+    "name": "transformers",
+    "url": "https://github.com/huggingface/transformers",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "🤗 Transformers: the model-definition fra…",
+    "source": "github",
+    "score": 89,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "ponytail",
+    "name": "ponytail",
+    "url": "https://github.com/DietrichGebert/ponytail",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "JavaScript"
+    ],
+    "summary": "Makes your AI agent think like the lazie…",
+    "source": "github",
+    "score": 89,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "stable-diffusion-webui",
+    "name": "stable-diffusion-webui",
+    "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Stable Diffusion web UI",
+    "source": "github",
+    "score": 89,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "langchain",
+    "name": "langchain",
+    "url": "https://github.com/langchain-ai/langchain",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "The agent engineering platform.",
+    "source": "github",
+    "score": 88,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "dify",
+    "name": "dify",
+    "url": "https://github.com/langgenius/dify",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Build Agentic workflows, RAG pipelines, …",
+    "source": "github",
+    "score": 88,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "open-webui",
+    "name": "open-webui",
+    "url": "https://github.com/open-webui/open-webui",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "User-friendly AI Interface (Supports Oll…",
+    "source": "github",
+    "score": 88,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "langflow",
+    "name": "langflow",
+    "url": "https://github.com/langflow-ai/langflow",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Langflow is a powerful tool for building…",
+    "source": "github",
+    "score": 88,
+    "date_added": "2026-10-15"
+  },
+  {
+    "id": "system-prompts-and-models-of-ai-tools",
+    "name": "system-prompts-and-models-of-ai-tools",
+    "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+    "category": "编程与开发",
+    "tags": [
+      "开源"
+    ],
+    "summary": "FULL Augment Code, Claude Code, Cluely, …",
+    "source": "github",
+    "score": 88,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "spec-kit",
+    "name": "spec-kit",
+    "url": "https://github.com/github/spec-kit",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "💫 Toolkit to help you get started with S…",
+    "source": "github",
+    "score": 88,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "awesome-llm-apps",
+    "name": "awesome-llm-apps",
+    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "100+ AI Agents, Agent Skills and RAG App…",
+    "source": "github",
+    "score": 88,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "moneyprinterturbo",
+    "name": "MoneyPrinterTurbo",
+    "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+    "category": "视频与音频",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Gener…",
+    "source": "github",
+    "score": 87,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "graphify",
+    "name": "graphify",
+    "url": "https://github.com/Graphify-Labs/graphify",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Turn any codebase, with its docs, SQL sc…",
+    "source": "github",
+    "score": 87,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "comfyui",
+    "name": "ComfyUI",
+    "url": "https://github.com/Comfy-Org/ComfyUI",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "The most powerful and modular diffusion …",
+    "source": "github",
+    "score": 87,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "ui-ux-pro-max-skill",
+    "name": "ui-ux-pro-max-skill",
+    "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "An AI skill that provides design intelli…",
+    "source": "github",
+    "score": 87,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "ui",
+    "name": "ui",
+    "url": "https://github.com/shadcn-ui/ui",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Composable, accessible components with t…",
+    "source": "github",
+    "score": 87,
+    "date_added": "2026-10-15"
+  },
+  {
+    "id": "awesome-hacking",
+    "name": "Awesome-Hacking",
+    "url": "https://github.com/Hack-with-Github/Awesome-Hacking",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源"
+    ],
+    "summary": "A collection of various awesome lists fo…",
+    "source": "github",
+    "score": 87,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "excalidraw",
+    "name": "excalidraw",
+    "url": "https://github.com/excalidraw/excalidraw",
+    "category": "效率与办公",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Virtual whiteboard for sketching hand-dr…",
+    "source": "github",
+    "score": 87,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "browser-use",
+    "name": "browser-use",
+    "url": "https://github.com/browser-use/browser-use",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Open-source Python library for AI browse…",
+    "source": "github",
+    "score": 86,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "caveman",
+    "name": "caveman",
+    "url": "https://github.com/JuliusBrussee/caveman",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Go"
+    ],
+    "summary": "🪨 why use many token when few token do t…",
+    "source": "github",
+    "score": 86,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "tradingagents",
+    "name": "TradingAgents",
+    "url": "https://github.com/TauricResearch/TradingAgents",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "TradingAgents: Multi-Agents LLM Financia…",
+    "source": "github",
+    "score": 86,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "gemini-cli",
+    "name": "gemini-cli",
+    "url": "https://github.com/google-gemini/gemini-cli",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "An open-source AI agent that brings the …",
+    "source": "github",
+    "score": 86,
+    "date_added": "2026-10-15"
+  },
+  {
+    "id": "generative-ai-for-beginners",
+    "name": "generative-ai-for-beginners",
+    "url": "https://github.com/microsoft/generative-ai-for-beginners",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Jupyter Notebook"
+    ],
+    "summary": "21 Lessons, Get Started Building with Ge…",
+    "source": "github",
+    "score": 86,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "puppeteer",
+    "name": "puppeteer",
+    "url": "https://github.com/puppeteer/puppeteer",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "JavaScript API for Chrome and Firefox",
+    "source": "github",
+    "score": 85,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "stirling-pdf",
+    "name": "Stirling-PDF",
+    "url": "https://github.com/Stirling-Tools/Stirling-PDF",
+    "category": "写作与文本处理",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "#1 PDF Application on GitHub that lets y…",
+    "source": "github",
+    "score": 85,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "claude-mem",
+    "name": "claude-mem",
+    "url": "https://github.com/thedotmack/claude-mem",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Persistent Context Across Sessions for E…",
+    "source": "github",
+    "score": 85,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "agent-reach",
+    "name": "Agent-Reach",
+    "url": "https://github.com/Panniantong/Agent-Reach",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Give your AI agent eyes to see the entir…",
+    "source": "github",
+    "score": 85,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "playwright",
+    "name": "playwright",
+    "url": "https://github.com/microsoft/playwright",
+    "category": "效率与办公",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Playwright is a framework for Web Testin…",
+    "source": "github",
+    "score": 85,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "llms-from-scratch",
+    "name": "LLMs-from-scratch",
+    "url": "https://github.com/rasbt/LLMs-from-scratch",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Jupyter Notebook"
+    ],
+    "summary": "Implement a ChatGPT-like LLM in PyTorch …",
+    "source": "github",
+    "score": 85,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "paperclip",
+    "name": "paperclip",
+    "url": "https://github.com/paperclipai/paperclip",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "The open-source app everyone uses to man…",
+    "source": "github",
+    "score": 85,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "vllm",
+    "name": "vllm",
+    "url": "https://github.com/vllm-project/vllm",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "A high-throughput and memory-efficient i…",
+    "source": "github",
+    "score": 85,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "rtk",
+    "name": "rtk",
+    "url": "https://github.com/rtk-ai/rtk",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "CLI proxy that reduces LLM token consump…",
+    "source": "github",
+    "score": 84,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "openhands",
+    "name": "OpenHands",
+    "url": "https://github.com/OpenHands/OpenHands",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "🙌 OpenHands: AI-Driven Development",
+    "source": "github",
+    "score": 84,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "archify",
+    "name": "archify",
+    "url": "https://github.com/tt-a1i/archify",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "JavaScript"
+    ],
+    "summary": "Turn any idea, plan, or codebase into a …",
+    "source": "github",
+    "score": 84,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "ghidra",
+    "name": "ghidra",
+    "url": "https://github.com/NationalSecurityAgency/ghidra",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Java"
+    ],
+    "summary": "Ghidra is a software reverse engineering…",
+    "source": "github",
+    "score": 84,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "ragflow",
+    "name": "ragflow",
+    "url": "https://github.com/infiniflow/ragflow",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Go"
+    ],
+    "summary": "RAGFlow is a leading open-source Retriev…",
+    "source": "github",
+    "score": 84,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "paddleocr",
+    "name": "PaddleOCR",
+    "url": "https://github.com/PaddlePaddle/PaddleOCR",
+    "category": "写作与文本处理",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Turn any PDF or image document into stru…",
+    "source": "github",
+    "score": 84,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "crawl4ai",
+    "name": "crawl4ai",
+    "url": "https://github.com/unclecode/crawl4ai",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Open-source web crawler and scraper for …",
+    "source": "github",
+    "score": 84,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "hello-agents",
+    "name": "hello-agents",
+    "url": "https://github.com/datawhalechina/hello-agents",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "📚 《从零开始构建智能体》——从零开始的智能体原理与实践教程",
+    "source": "github",
+    "score": 84,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "understand-anything",
+    "name": "Understand-Anything",
+    "url": "https://github.com/Egonex-AI/Understand-Anything",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Graphs that teach > graphs that impress.…",
+    "source": "github",
+    "score": 84,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "lobehub",
+    "name": "lobehub",
+    "url": "https://github.com/lobehub/lobehub",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "🤯 LobeHub is your Chief Agent Operator, …",
+    "source": "github",
+    "score": 84,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "scrapling",
+    "name": "Scrapling",
+    "url": "https://github.com/D4Vinci/Scrapling",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "🕷️ An adaptive Web Scraping framework th…",
+    "source": "github",
+    "score": 84,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "deer-flow",
+    "name": "deer-flow",
+    "url": "https://github.com/bytedance/deer-flow",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "An open-source long-horizon SuperAgent h…",
+    "source": "github",
+    "score": 84,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "llm-course",
+    "name": "llm-course",
+    "url": "https://github.com/mlabonne/llm-course",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源"
+    ],
+    "summary": "Course to get into Large Language Models…",
+    "source": "github",
+    "score": 84,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "unsloth",
+    "name": "unsloth",
+    "url": "https://github.com/unslothai/unsloth",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Local UI to run and train LLMs and diffu…",
+    "source": "github",
+    "score": 83,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "omniroute",
+    "name": "OmniRoute",
+    "url": "https://github.com/diegosouzapw/OmniRoute",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Never stop coding. Free MIT AI gateway: …",
+    "source": "github",
+    "score": 83,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "hoppscotch",
+    "name": "hoppscotch",
+    "url": "https://github.com/hoppscotch/hoppscotch",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Open-Source API Development Ecosystem • …",
+    "source": "github",
+    "score": 83,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "awesome-claude-skills",
+    "name": "awesome-claude-skills",
+    "url": "https://github.com/ComposioHQ/awesome-claude-skills",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "A curated list of awesome Claude Skills,…",
+    "source": "github",
+    "score": 83,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "daytona",
+    "name": "daytona",
+    "url": "https://github.com/daytonaio/daytona",
+    "category": "编程与开发",
+    "tags": [
+      "开源"
+    ],
+    "summary": "Daytona is a Secure and Elastic Infrastr…",
+    "source": "github",
+    "score": 83,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "prompt-engineering-guide",
+    "name": "Prompt-Engineering-Guide",
+    "url": "https://github.com/dair-ai/Prompt-Engineering-Guide",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "MDX"
+    ],
+    "summary": "🐙 Guides, papers, lessons, notebooks and…",
+    "source": "github",
+    "score": 83,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "headroom",
+    "name": "headroom",
+    "url": "https://github.com/headroomlabs-ai/headroom",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Compress tool outputs, logs, files, and …",
+    "source": "github",
+    "score": 83,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "redis",
+    "name": "redis",
+    "url": "https://github.com/redis/redis",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "C"
+    ],
+    "summary": "For developers, who are building real-ti…",
+    "source": "github",
+    "score": 83,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "affine",
+    "name": "AFFiNE",
+    "url": "https://github.com/toeverything/AFFiNE",
+    "category": "写作与文本处理",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "There can be more than Notion and Miro. …",
+    "source": "github",
+    "score": 83,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "appflowy",
+    "name": "AppFlowy",
+    "url": "https://github.com/AppFlowy-IO/AppFlowy",
+    "category": "写作与文本处理",
+    "tags": [
+      "开源",
+      "Dart"
+    ],
+    "summary": "Bring projects, wikis, and teams togethe…",
+    "source": "github",
+    "score": 83,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "learn-claude-code",
+    "name": "learn-claude-code",
+    "url": "https://github.com/shareAI-lab/learn-claude-code",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Bash is all you need - A nano claude cod…",
+    "source": "github",
+    "score": 83,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "llamafactory",
+    "name": "LlamaFactory",
+    "url": "https://github.com/hiyouga/LlamaFactory",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Unified Efficient Fine-Tuning of 100+ LL…",
+    "source": "github",
+    "score": 83,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "system-prompts-leaks",
+    "name": "system_prompts_leaks",
+    "url": "https://github.com/asgeirtj/system_prompts_leaks",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Documented system prompts from Anthropic…",
+    "source": "github",
+    "score": 82,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "gpt4free",
+    "name": "gpt4free",
+    "url": "https://github.com/xtekky/gpt4free",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "The official gpt4free repository | vario…",
+    "source": "github",
+    "score": 82,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "openmontage",
+    "name": "OpenMontage",
+    "url": "https://github.com/calesthio/OpenMontage",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "World's first open-source, agentic video…",
+    "source": "github",
+    "score": 82,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "photocraft",
+    "name": "photocraft",
+    "url": "https://github.com/storytold/photocraft",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "PhotoCraft: An open-source, photo editor…",
+    "source": "github",
+    "score": 82,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "voicestudio",
+    "name": "VoiceStudio",
+    "url": "https://github.com/debpalash/VoiceStudio",
+    "category": "视频与音频",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "VoiceStudio is the open-source, fully-lo…",
+    "source": "github",
+    "score": 82,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "gpt-sovits",
+    "name": "GPT-SoVITS",
+    "url": "https://github.com/RVC-Boss/GPT-SoVITS",
+    "category": "视频与音频",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "1 min voice data can also be used to tra…",
+    "source": "github",
+    "score": 82,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "localstack",
+    "name": "localstack",
+    "url": "https://github.com/localstack/localstack",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "💻 A fully functional local AWS cloud sta…",
+    "source": "github",
+    "score": 82,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "mem0",
+    "name": "mem0",
+    "url": "https://github.com/mem0ai/mem0",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "The Memory Layer for AI Agents - Drop-in…",
+    "source": "github",
+    "score": 82,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "anything-llm",
+    "name": "anything-llm",
+    "url": "https://github.com/Mintplex-Labs/anything-llm",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "JavaScript"
+    ],
+    "summary": "Stop renting your intelligence. Own it w…",
+    "source": "github",
+    "score": 82,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "memos",
+    "name": "memos",
+    "url": "https://github.com/usememos/memos",
+    "category": "效率与办公",
+    "tags": [
+      "开源",
+      "Go"
+    ],
+    "summary": "A personal timeline for quick notes. Wri…",
+    "source": "github",
+    "score": 82,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "minimind",
+    "name": "minimind",
+    "url": "https://github.com/jingyaogong/minimind",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "🧠 Train a 64M-parameter LLM from scratch…",
+    "source": "github",
+    "score": 82,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "flowise",
+    "name": "Flowise",
+    "url": "https://github.com/FlowiseAI/Flowise",
+    "category": "效率与办公",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Build AI Agents, Visually",
+    "source": "github",
+    "score": 81,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "whisper-cpp",
+    "name": "whisper.cpp",
+    "url": "https://github.com/ggml-org/whisper.cpp",
+    "category": "视频与音频",
+    "tags": [
+      "开源",
+      "C++"
+    ],
+    "summary": "Port of OpenAI's Whisper model in C/C++",
+    "source": "github",
+    "score": 81,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "voicebox",
+    "name": "voicebox",
+    "url": "https://github.com/jamiepine/voicebox",
+    "category": "视频与音频",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "The open-source AI voice studio. Clone, …",
+    "source": "github",
+    "score": 81,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "i-have-adhd",
+    "name": "i-have-adhd",
+    "url": "https://github.com/ayghri/i-have-adhd",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "A skill to stop your coding agent from b…",
+    "source": "github",
+    "score": 81,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "imhex",
+    "name": "ImHex",
+    "url": "https://github.com/WerWolv/ImHex",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "C++"
+    ],
+    "summary": "🔍 A Hex Editor for Reverse Engineers, Pr…",
+    "source": "github",
+    "score": 81,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "serviette",
+    "name": "serviette",
+    "url": "https://github.com/pathwaycom/serviette",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Ready-to-run cloud templates for RAG, AI…",
+    "source": "github",
+    "score": 81,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "ai-agent-book",
+    "name": "ai-agent-book",
+    "url": "https://github.com/bojieli/ai-agent-book",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书…",
+    "source": "github",
+    "score": 81,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "meilisearch",
+    "name": "meilisearch",
+    "url": "https://github.com/meilisearch/meilisearch",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "A lightning-fast search engine API bring…",
+    "source": "github",
+    "score": 81,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "joplin",
+    "name": "joplin",
+    "url": "https://github.com/laurent22/joplin",
+    "category": "效率与办公",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Joplin - the privacy-focused note taking…",
+    "source": "github",
+    "score": 81,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "yolov5",
+    "name": "yolov5",
+    "url": "https://github.com/ultralytics/yolov5",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Ultralytics YOLOv5 in PyTorch for object…",
+    "source": "github",
+    "score": 81,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "nanobot",
+    "name": "nanobot",
+    "url": "https://github.com/HKUDS/nanobot",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Ultra-lightweight, open-source, self-hos…",
+    "source": "github",
+    "score": 80,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "localai",
+    "name": "LocalAI",
+    "url": "https://github.com/mudler/LocalAI",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "Go"
+    ],
+    "summary": "LocalAI is the open-source AI engine. Ru…",
+    "source": "github",
+    "score": 80,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "agentic-awesome-skills",
+    "name": "agentic-awesome-skills",
+    "url": "https://github.com/sickn33/agentic-awesome-skills",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "AAS Core is the local, agent-first contr…",
+    "source": "github",
+    "score": 80,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "open-code-review",
+    "name": "open-code-review",
+    "url": "https://github.com/alibaba/open-code-review",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Go"
+    ],
+    "summary": "Secure, fast, efficient, battle-tested a…",
+    "source": "github",
+    "score": 80,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "githubdaily",
+    "name": "GitHubDaily",
+    "url": "https://github.com/GitHubDaily/GitHubDaily",
+    "category": "编程与开发",
+    "tags": [
+      "开源"
+    ],
+    "summary": "坚持分享 GitHub 上高质量、有趣实用的开源技术教程、开发者工具、编程网站、…",
+    "source": "github",
+    "score": 80,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "bruno",
+    "name": "bruno",
+    "url": "https://github.com/usebruno/bruno",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "JavaScript"
+    ],
+    "summary": "Opensource IDE For Exploring and Testing…",
+    "source": "github",
+    "score": 80,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "x64dbg",
+    "name": "x64dbg",
+    "url": "https://github.com/x64dbg/x64dbg",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "C++"
+    ],
+    "summary": "An open-source user mode debugger for Wi…",
+    "source": "github",
+    "score": 80,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "llama-index",
+    "name": "llama_index",
+    "url": "https://github.com/run-llama/llama_index",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "LlamaIndex is the document processing pl…",
+    "source": "github",
+    "score": 80,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "jeecgboot",
+    "name": "JeecgBoot",
+    "url": "https://github.com/jeecgboot/JeecgBoot",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Java"
+    ],
+    "summary": "【低代码v2.0，一句话即可生成整个系统】企业级AI低代码平台，一键生成前后端代…",
+    "source": "github",
+    "score": 80,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "huginn",
+    "name": "huginn",
+    "url": "https://github.com/huginn/huginn",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Ruby"
+    ],
+    "summary": "Create agents that monitor and act on yo…",
+    "source": "github",
+    "score": 80,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "made-with-ml",
+    "name": "Made-With-ML",
+    "url": "https://github.com/GokuMohandas/Made-With-ML",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Jupyter Notebook"
+    ],
+    "summary": "Learn how to develop, deploy and iterate…",
+    "source": "github",
+    "score": 80,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "open-source-ios-apps",
+    "name": "open-source-ios-apps",
+    "url": "https://github.com/dkhamsing/open-source-ios-apps",
+    "category": "开发者作品",
+    "tags": [
+      "开源"
+    ],
+    "summary": ":iphone: Collaborative List of Open-Sour…",
+    "source": "github",
+    "score": 80,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "pixijs",
+    "name": "pixijs",
+    "url": "https://github.com/pixijs/pixijs",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "The HTML5 Creation Engine: Create beauti…",
+    "source": "github",
+    "score": 80,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "chatbox",
+    "name": "chatbox",
+    "url": "https://github.com/chatboxai/chatbox",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Powerful AI Client",
+    "source": "github",
+    "score": 79,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "astrbot",
+    "name": "AstrBot",
+    "url": "https://github.com/AstrBotDevs/AstrBot",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "AI Agent Assistant & development framewo…",
+    "source": "github",
+    "score": 79,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "codebase-memory-mcp",
+    "name": "codebase-memory-mcp",
+    "url": "https://github.com/DeusData/codebase-memory-mcp",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "C"
+    ],
+    "summary": "High-performance code intelligence MCP s…",
+    "source": "github",
+    "score": 79,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "files",
+    "name": "Files",
+    "url": "https://github.com/files-community/Files",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "C#"
+    ],
+    "summary": "A modern file manager that helps users o…",
+    "source": "github",
+    "score": 79,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "streamlit",
+    "name": "streamlit",
+    "url": "https://github.com/streamlit/streamlit",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Streamlit — A faster way to build and sh…",
+    "source": "github",
+    "score": 79,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "herdr",
+    "name": "herdr",
+    "url": "https://github.com/herdrdev/herdr",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "the runtime your coding agents live on",
+    "source": "github",
+    "score": 79,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "yazi",
+    "name": "yazi",
+    "url": "https://github.com/sxyazi/yazi",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "💥 Blazing fast terminal file manager wri…",
+    "source": "github",
+    "score": 79,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "agno",
+    "name": "agno",
+    "url": "https://github.com/agno-agi/agno",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Build, run, and manage agent platforms.",
+    "source": "github",
+    "score": 79,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "milvus",
+    "name": "milvus",
+    "url": "https://github.com/milvus-io/milvus",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Go"
+    ],
+    "summary": "Milvus is a high-performance, cloud-nati…",
+    "source": "github",
+    "score": 79,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "langgraph",
+    "name": "langgraph",
+    "url": "https://github.com/langchain-ai/langgraph",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Build resilient agents.",
+    "source": "github",
+    "score": 79,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "deeptutor",
+    "name": "DeepTutor",
+    "url": "https://github.com/HKUDS/DeepTutor",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "DeepTutor: Lifelong Personalized Tutorin…",
+    "source": "github",
+    "score": 79,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "siyuan",
+    "name": "siyuan",
+    "url": "https://github.com/siyuan-note/siyuan",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "An open-source, privacy-first, self-host…",
+    "source": "github",
+    "score": 79,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "logseq",
+    "name": "logseq",
+    "url": "https://github.com/logseq/logseq",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Clojure"
+    ],
+    "summary": "A privacy-first, open-source platform fo…",
+    "source": "github",
+    "score": 79,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "airflow",
+    "name": "airflow",
+    "url": "https://github.com/apache/airflow",
+    "category": "效率与办公",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Apache Airflow - A platform to programma…",
+    "source": "github",
+    "score": 79,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "fastlane",
+    "name": "fastlane",
+    "url": "https://github.com/fastlane/fastlane",
+    "category": "效率与办公",
+    "tags": [
+      "开源",
+      "Ruby"
+    ],
+    "summary": "🚀 The easiest way to automate building a…",
+    "source": "github",
+    "score": 79,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "deepspeed",
+    "name": "DeepSpeed",
+    "url": "https://github.com/deepspeedai/DeepSpeed",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "DeepSpeed is a deep learning optimizatio…",
+    "source": "github",
+    "score": 79,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "this-up-votes-itself",
+    "name": "This up votes itself",
+    "url": "http://news.ycombinator.com/vote?for=3742902&dir=up&whence=%6e%65%77%65%73%74",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "This up votes itself",
+    "source": "hackernews",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "gemini-pro-3-imagines-the-hn-front-page-10-years-from-now",
+    "name": "Gemini Pro 3 imagines the HN front page 10 years from now",
+    "url": "https://dosaygo-studio.github.io/hn-front-page-2035/news",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Gemini Pro 3 imagines the HN front page …",
+    "source": "hackernews",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "quivr",
+    "name": "quivr",
+    "url": "https://github.com/The-Vibe-Company/quivr",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Go"
+    ],
+    "summary": "An open-source engine that turns continu…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "langchain-chatchat",
+    "name": "Langchain-Chatchat",
+    "url": "https://github.com/chatchat-space/Langchain-Chatchat",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Langchain-Chatchat（原Langchain-ChatGLM）基于…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "retrieval-based-voice-conversion-webui",
+    "name": "Retrieval-based-Voice-Conversion-WebUI",
+    "url": "https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI",
+    "category": "视频与音频",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Easily train a good VC model with voice …",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "khoj",
+    "name": "khoj",
+    "url": "https://github.com/khoj-ai/khoj",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Your AI second brain. Self-hostable. Get…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "chattts",
+    "name": "ChatTTS",
+    "url": "https://github.com/2noise/ChatTTS",
+    "category": "视频与音频",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "A generative speech model for daily dial…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "voxcpm",
+    "name": "VoxCPM",
+    "url": "https://github.com/OpenBMB/VoxCPM",
+    "category": "视频与音频",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "VoxCPM2: Tokenizer-Free TTS for Multilin…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "mockingbird",
+    "name": "MockingBird",
+    "url": "https://github.com/babysor/MockingBird",
+    "category": "视频与音频",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "🚀Clone a voice in 5 seconds to generate …",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "medusa",
+    "name": "medusa",
+    "url": "https://github.com/medusajs/medusa",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "The world's most flexible commerce platf…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "copilotkit",
+    "name": "CopilotKit",
+    "url": "https://github.com/CopilotKit/CopilotKit",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "The Frontend Stack for Agents & Generati…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "codewhale",
+    "name": "Codewhale",
+    "url": "https://github.com/codewhale-hq/Codewhale",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "Open-source Rust agent engine and termin…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "appsmith",
+    "name": "appsmith",
+    "url": "https://github.com/appsmithorg/appsmith",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Platform to build admin panels, internal…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "it-tools",
+    "name": "it-tools",
+    "url": "https://github.com/CorentinTh/it-tools",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Vue"
+    ],
+    "summary": "Collection of handy online tools for dev…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "shellcheck",
+    "name": "shellcheck",
+    "url": "https://github.com/koalaman/shellcheck",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Haskell"
+    ],
+    "summary": "ShellCheck, a static analysis tool for s…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "devdocs",
+    "name": "devdocs",
+    "url": "https://github.com/freeCodeCamp/devdocs",
+    "category": "写作与文本处理",
+    "tags": [
+      "开源",
+      "Ruby"
+    ],
+    "summary": "API Documentation Browser",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "lapce",
+    "name": "lapce",
+    "url": "https://github.com/lapce/lapce",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "Lightning-fast and Powerful Code Editor …",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "ai-website-cloner-template",
+    "name": "ai-website-cloner-template",
+    "url": "https://github.com/JCodesMore/ai-website-cloner-template",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Clone any website with one command using…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "continue",
+    "name": "continue",
+    "url": "https://github.com/continuedev/continue",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "open-source coding agent",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "newpipe",
+    "name": "NewPipe",
+    "url": "https://github.com/TeamNewPipe/NewPipe",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Java"
+    ],
+    "summary": "A libre lightweight streaming front-end …",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "pdfmathtranslate",
+    "name": "PDFMathTranslate",
+    "url": "https://github.com/PDFMathTranslate/PDFMathTranslate",
+    "category": "写作与文本处理",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "[EMNLP 2025 Demo] PDF scientific paper t…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "lightrag",
+    "name": "LightRAG",
+    "url": "https://github.com/HKUDS/LightRAG",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "[EMNLP2025] LightRAG: Simple and Fast Re…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "pageindex",
+    "name": "PageIndex",
+    "url": "https://github.com/VectifyAI/PageIndex",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "📑 PageIndex: Document Index for Vectorle…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "ai-engineering-hub",
+    "name": "ai-engineering-hub",
+    "url": "https://github.com/patchy631/ai-engineering-hub",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Jupyter Notebook"
+    ],
+    "summary": "In-depth tutorials on LLMs, RAGs and rea…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "vane",
+    "name": "Vane",
+    "url": "https://github.com/ItzCrazyKns/Vane",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Vane is an AI-powered answering engine.",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "graphrag",
+    "name": "graphrag",
+    "url": "https://github.com/microsoft/graphrag",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "A modular graph-based Retrieval-Augmente…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "openviking",
+    "name": "OpenViking",
+    "url": "https://github.com/volcengine/OpenViking",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Self-evolving Context Database for AI Ag…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "trilium",
+    "name": "Trilium",
+    "url": "https://github.com/TriliumNext/Trilium",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Build your personal knowledge base with …",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "sharex",
+    "name": "ShareX",
+    "url": "https://github.com/ShareX/ShareX",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "C#"
+    ],
+    "summary": "ShareX is a free and open-source applica…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "oh-my-claudecode",
+    "name": "oh-my-claudecode",
+    "url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Teams-first Multi-agent orchestration fo…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "xyflow",
+    "name": "xyflow",
+    "url": "https://github.com/xyflow/xyflow",
+    "category": "效率与办公",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "React Flow | Svelte Flow - Powerful open…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "open-notebook",
+    "name": "open-notebook",
+    "url": "https://github.com/lfnovo/open-notebook",
+    "category": "效率与办公",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "An Open Source implementation of Noteboo…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "colossalai",
+    "name": "ColossalAI",
+    "url": "https://github.com/hpcaitech/ColossalAI",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Making large AI models cheaper, faster a…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "mediapipe",
+    "name": "mediapipe",
+    "url": "https://github.com/google-ai-edge/mediapipe",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "C++"
+    ],
+    "summary": "Cross-platform, customizable ML solution…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "sglang",
+    "name": "sglang",
+    "url": "https://github.com/sgl-project/sglang",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "SGLang is a high-performance serving fra…",
+    "source": "github",
+    "score": 78,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "i-made-an-open-source-laptop-from-scratch",
+    "name": "I made an open-source laptop from scratch",
+    "url": "https://www.byran.ee/posts/creation/",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "I made an open-source laptop from scratc…",
+    "source": "hackernews",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "qwenpaw",
+    "name": "QwenPaw",
+    "url": "https://github.com/agentscope-ai/QwenPaw",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Your Personal AI Assistant; easy to inst…",
+    "source": "github",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "weknora",
+    "name": "WeKnora",
+    "url": "https://github.com/Tencent/WeKnora",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Go"
+    ],
+    "summary": "Open-source LLM knowledge platform: turn…",
+    "source": "github",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "aionui",
+    "name": "AionUi",
+    "url": "https://github.com/iOfficeAI/AionUi",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Open-source 24/7 Cowork app for OpenClaw…",
+    "source": "github",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "agentscope",
+    "name": "agentscope",
+    "url": "https://github.com/agentscope-ai/agentscope",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Build and run agents you can see, unders…",
+    "source": "github",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "diffusers",
+    "name": "diffusers",
+    "url": "https://github.com/huggingface/diffusers",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "🤗 Diffusers: State-of-the-art diffusion …",
+    "source": "github",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "meetily",
+    "name": "meetily",
+    "url": "https://github.com/Zackriya-Solutions/meetily",
+    "category": "效率与办公",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "Privacy first, AI meeting assistant with…",
+    "source": "github",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "deepseek-reasonix",
+    "name": "DeepSeek-Reasonix",
+    "url": "https://github.com/esengine/DeepSeek-Reasonix",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Go"
+    ],
+    "summary": "A reliable coding agent for complex soft…",
+    "source": "github",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "code-review-graph",
+    "name": "code-review-graph",
+    "url": "https://github.com/tirth8205/code-review-graph",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Local-first code intelligence graph for …",
+    "source": "github",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "go-zero",
+    "name": "go-zero",
+    "url": "https://github.com/zeromicro/go-zero",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Go"
+    ],
+    "summary": "A cloud-native Go microservices framewor…",
+    "source": "github",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "book-to-skill",
+    "name": "book-to-skill",
+    "url": "https://github.com/virgiliojr94/book-to-skill",
+    "category": "写作与文本处理",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Turn any technical book PDF into a Claud…",
+    "source": "github",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "qdrant",
+    "name": "qdrant",
+    "url": "https://github.com/qdrant/qdrant",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "Qdrant - High-performance, massive-scale…",
+    "source": "github",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "onyx",
+    "name": "onyx",
+    "url": "https://github.com/onyx-dot-app/onyx",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Open Source AI Platform - AI Chat with a…",
+    "source": "github",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "dragonfly",
+    "name": "dragonfly",
+    "url": "https://github.com/dragonflydb/dragonfly",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "C++"
+    ],
+    "summary": "A modern replacement for Redis and Memca…",
+    "source": "github",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "moneyprinterv2",
+    "name": "MoneyPrinterV2",
+    "url": "https://github.com/FujiwaraChoki/MoneyPrinterV2",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Automate the process of making money onl…",
+    "source": "github",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "invisible-dots",
+    "name": "invisible_dots",
+    "url": "https://github.com/feder-cr/invisible_dots",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Open-source, self-hosted alternative to …",
+    "source": "github",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "scrapegraph-ai",
+    "name": "Scrapegraph-ai",
+    "url": "https://github.com/ScrapeGraphAI/Scrapegraph-ai",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Python scraper based on AI",
+    "source": "github",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "carbon-lang",
+    "name": "carbon-lang",
+    "url": "https://github.com/carbon-language/carbon-lang",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "C++"
+    ],
+    "summary": "Carbon Language's main repository: docum…",
+    "source": "github",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "cognee",
+    "name": "cognee",
+    "url": "https://github.com/topoteretes/cognee",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Cognee is the open-source AI memory plat…",
+    "source": "github",
+    "score": 77,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "i-replaced-a-120k-bowling-center-system-with-1-600-in-esp32s",
+    "name": "I replaced a $120k bowling center system with $1,600 in ESP32s",
+    "url": "https://news.ycombinator.com/item?id=48968606",
+    "category": "编程与开发",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "I replaced a $120k bowling center system…",
+    "source": "hackernews",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "if-youtube-had-actual-channels",
+    "name": "If YouTube had actual channels",
+    "url": "https://ytch.xyz",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "If YouTube had actual channels",
+    "source": "hackernews",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "xiaozhi-esp32",
+    "name": "xiaozhi-esp32",
+    "url": "https://github.com/78/xiaozhi-esp32",
+    "category": "对话与助手",
+    "tags": [
+      "开源",
+      "C++"
+    ],
+    "summary": "An MCP-based chatbot | 一个基于MCP的聊天机器人",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "sim",
+    "name": "sim",
+    "url": "https://github.com/simstudioai/sim",
+    "category": "效率与办公",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Sim is the collaborative workspace to bu…",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "python-telegram-bot",
+    "name": "python-telegram-bot",
+    "url": "https://github.com/python-telegram-bot/python-telegram-bot",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "We have made you a wrapper you can't ref…",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "repomix",
+    "name": "repomix",
+    "url": "https://github.com/yamadashy/repomix",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "📦 Repomix is a powerful tool that packs …",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "invokeai",
+    "name": "InvokeAI",
+    "url": "https://github.com/invoke-ai/InvokeAI",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Invoke is a leading creative engine for …",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "pixelle-video",
+    "name": "Pixelle-Video",
+    "url": "https://github.com/ATH-MaaS/Pixelle-Video",
+    "category": "视频与音频",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "🚀 AI 全自动短视频引擎 | AI Fully Automated Short…",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "guizang-ppt-skill",
+    "name": "guizang-ppt-skill",
+    "url": "https://github.com/op7418/guizang-ppt-skill",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "HTML"
+    ],
+    "summary": "AI-agent Skill for generating polished H…",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "open-generative-ai",
+    "name": "Open-Generative-AI",
+    "url": "https://github.com/Anil-matcha/Open-Generative-AI",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "JavaScript"
+    ],
+    "summary": "Unrestricted Open-source alternative to …",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "flameshot",
+    "name": "flameshot",
+    "url": "https://github.com/flameshot-org/flameshot",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "C++"
+    ],
+    "summary": "Powerful yet simple to use screenshot so…",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "serena",
+    "name": "serena",
+    "url": "https://github.com/oraios/serena",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "A powerful MCP toolkit for coding, provi…",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "qwen-code",
+    "name": "qwen-code",
+    "url": "https://github.com/QwenLM/qwen-code",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "An open-source AI coding agent that live…",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "kilocode",
+    "name": "kilocode",
+    "url": "https://github.com/Kilo-Org/kilocode",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Kilo is the all-in-one agentic engineeri…",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "9router",
+    "name": "9router",
+    "url": "https://github.com/decolua/9router",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "JavaScript"
+    ],
+    "summary": "Unlimited FREE AI coding. Connect Claude…",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "awesome-ai-agents",
+    "name": "awesome-ai-agents",
+    "url": "https://github.com/e2b-dev/awesome-ai-agents",
+    "category": "编程与开发",
+    "tags": [
+      "开源"
+    ],
+    "summary": "A list of AI autonomous agents",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "context-mode",
+    "name": "context-mode",
+    "url": "https://github.com/mksglu/context-mode",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Context window optimization for AI codin…",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "agentmemory",
+    "name": "agentmemory",
+    "url": "https://github.com/rohitg00/agentmemory",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "#1 Persistent memory for AI coding agent…",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "void",
+    "name": "void",
+    "url": "https://github.com/voideditor/void",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "void",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "librepods",
+    "name": "librepods",
+    "url": "https://github.com/librepods-org/librepods",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Kotlin"
+    ],
+    "summary": "AirPods liberated from Apple's ecosystem…",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "rag-techniques",
+    "name": "RAG_Techniques",
+    "url": "https://github.com/NirDiamant/RAG_Techniques",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Jupyter Notebook"
+    ],
+    "summary": "This repository showcases various advanc…",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "tencentdb-agent-memory",
+    "name": "TencentDB-Agent-Memory",
+    "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "TencentDB Agent Memory is a team-level m…",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "resume-matcher",
+    "name": "Resume-Matcher",
+    "url": "https://github.com/srbhr/Resume-Matcher",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "The #1 AI Harness for Building Resumes, …",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "cli",
+    "name": "cli",
+    "url": "https://github.com/googleworkspace/cli",
+    "category": "效率与办公",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "Google Workspace CLI — one command-line …",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "gpt-researcher",
+    "name": "gpt-researcher",
+    "url": "https://github.com/assafelovic/gpt-researcher",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "An autonomous agent that conducts deep r…",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "kestra",
+    "name": "kestra",
+    "url": "https://github.com/kestra-io/kestra",
+    "category": "效率与办公",
+    "tags": [
+      "开源",
+      "Java"
+    ],
+    "summary": "Event Driven Orchestration & Scheduling …",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "xstate",
+    "name": "xstate",
+    "url": "https://github.com/statelyai/xstate",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "State machines, statecharts, and actors …",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "fastgpt",
+    "name": "FastGPT",
+    "url": "https://github.com/labring/FastGPT",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "FastGPT is a knowledge-based platform bu…",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "label-studio",
+    "name": "label-studio",
+    "url": "https://github.com/HumanSignal/label-studio",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Label Studio is a multi-type data labeli…",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "mlflow",
+    "name": "mlflow",
+    "url": "https://github.com/mlflow/mlflow",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "The open source AI engineering platform …",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "mindustry",
+    "name": "Mindustry",
+    "url": "https://github.com/Anuken/Mindustry",
+    "category": "开发者作品",
+    "tags": [
+      "开源",
+      "Java"
+    ],
+    "summary": "The automation tower defense RTS",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "graphite",
+    "name": "Graphite",
+    "url": "https://github.com/GraphiteEditor/Graphite",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "Community-built comprehensive 2D content…",
+    "source": "github",
+    "score": 76,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "a-retro-video-game-console-i-ve-been-working-on-in-my-free-time",
+    "name": "A retro video game console I've been working on in my free time",
+    "url": "https://internalregister.github.io/2019/03/14/Homebrew-Console.html",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "A retro video game console I've been wor…",
+    "source": "hackernews",
+    "score": 75,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "kotaemon",
+    "name": "kotaemon",
+    "url": "https://github.com/Cinnamon/kotaemon",
+    "category": "对话与助手",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "An open-source RAG-based tool for chatti…",
+    "source": "github",
+    "score": 75,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "index-tts",
+    "name": "index-tts",
+    "url": "https://github.com/index-tts/index-tts",
+    "category": "视频与音频",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "An Industrial-Level Controllable and Eff…",
+    "source": "github",
+    "score": 75,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "faster-whisper",
+    "name": "faster-whisper",
+    "url": "https://github.com/SYSTRAN/faster-whisper",
+    "category": "视频与音频",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Faster Whisper transcription with CTrans…",
+    "source": "github",
+    "score": 75,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "whisperx",
+    "name": "whisperX",
+    "url": "https://github.com/m-bain/whisperX",
+    "category": "视频与音频",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "WhisperX: Automatic Speech Recognition w…",
+    "source": "github",
+    "score": 75,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "apktool",
+    "name": "Apktool",
+    "url": "https://github.com/iBotPeaches/Apktool",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Java"
+    ],
+    "summary": "A tool for reverse engineering Android a…",
+    "source": "github",
+    "score": 75,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "radare2",
+    "name": "radare2",
+    "url": "https://github.com/radareorg/radare2",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "C"
+    ],
+    "summary": "UNIX-like reverse engineering framework …",
+    "source": "github",
+    "score": 75,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "nextai-translator",
+    "name": "nextai-translator",
+    "url": "https://github.com/nextai-translator/nextai-translator",
+    "category": "uncategorized",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "基于 ChatGPT API 的划词翻译浏览器插件和跨平台桌面端应用 - Bro…",
+    "source": "github",
+    "score": 75,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "haystack",
+    "name": "haystack",
+    "url": "https://github.com/deepset-ai/haystack",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Open-source AI orchestration framework f…",
+    "source": "github",
+    "score": 75,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "typesense",
+    "name": "typesense",
+    "url": "https://github.com/typesense/typesense",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "C++"
+    ],
+    "summary": "Open Source alternative to Algolia + Pin…",
+    "source": "github",
+    "score": 75,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "wox",
+    "name": "Wox",
+    "url": "https://github.com/Wox-launcher/Wox",
+    "category": "效率与办公",
+    "tags": [
+      "开源",
+      "Go"
+    ],
+    "summary": "A cross-platform launcher that simply wo…",
+    "source": "github",
+    "score": 75,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "p5-js",
+    "name": "p5.js",
+    "url": "https://github.com/processing/p5.js",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "JavaScript"
+    ],
+    "summary": "p5.js is a client-side JS platform that …",
+    "source": "github",
+    "score": 75,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "an-e-ink-frame-that-hears-birds-and-draws-them-as-1800s-illustrations",
+    "name": "An e-ink frame that hears birds and draws them as 1800s illustrations",
+    "url": "https://github.com/arnegiacomo/fugleramme",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "An e-ink frame that hears birds and draw…",
+    "source": "hackernews",
+    "score": 74,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "cosyvoice",
+    "name": "CosyVoice",
+    "url": "https://github.com/QwenAudio/CosyVoice",
+    "category": "视频与音频",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Multi-lingual large voice generation mod…",
+    "source": "github",
+    "score": 74,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "awesome-ai-engineering",
+    "name": "awesome-ai-engineering",
+    "url": "https://github.com/dipakkr/awesome-ai-engineering",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源"
+    ],
+    "summary": "🚀 A curated collection of AI engineering…",
+    "source": "github",
+    "score": 74,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "peft",
+    "name": "peft",
+    "url": "https://github.com/huggingface/peft",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "🤗 PEFT: State-of-the-art Parameter-Effic…",
+    "source": "github",
+    "score": 74,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "redbean-single-file-distributable-web-server",
+    "name": "Redbean – Single-file distributable web server",
+    "url": "https://justine.lol/redbean/index.html",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Redbean – Single-file distributable web …",
+    "source": "hackernews",
+    "score": 73,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "non-io-a-reddit-like-platform-ive-been-working-on-for-the-last-4-years",
+    "name": "Non.io, a Reddit-like platform Ive been working on for the last 4 years",
+    "url": "https://non.io",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Non.io, a Reddit-like platform Ive been …",
+    "source": "hackernews",
+    "score": 72,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "i-may-have-created-a-new-type-of-puzzle",
+    "name": "I may have created a new type of puzzle",
+    "url": "http://www.dogbunnypuzzle.com/",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "I may have created a new type of puzzle",
+    "source": "hackernews",
+    "score": 72,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "weaviate",
+    "name": "weaviate",
+    "url": "https://github.com/weaviate/weaviate",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Go"
+    ],
+    "summary": "Weaviate is an open-source vector databa…",
+    "source": "github",
+    "score": 72,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "memvid",
+    "name": "memvid",
+    "url": "https://github.com/memvid/memvid",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "Memory layer for AI Agents. Replace comp…",
+    "source": "github",
+    "score": 72,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "zvec",
+    "name": "zvec",
+    "url": "https://github.com/alibaba/zvec",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "C++"
+    ],
+    "summary": "A lightweight, lightning-fast, in-proces…",
+    "source": "github",
+    "score": 72,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "i-3d-scanned-the-interior-of-the-great-pyramid-at-giza",
+    "name": "I 3D scanned the interior of the Great Pyramid at Giza",
+    "url": "https://giza.mused.org/en/guided/266/inside-the-great-pyramid",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "I 3D scanned the interior of the Great P…",
+    "source": "hackernews",
+    "score": 71,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "elevators",
+    "name": "Elevators",
+    "url": "https://john.fun/elevators",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Elevators",
+    "source": "hackernews",
+    "score": 71,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "web-design-in-4-minutes",
+    "name": "Web Design in 4 minutes",
+    "url": "http://jgthms.com/web-design-in-4-minutes/",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Web Design in 4 minutes",
+    "source": "hackernews",
+    "score": 71,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "easy-dataset",
+    "name": "easy-dataset",
+    "url": "https://github.com/ConardLi/easy-dataset",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "JavaScript"
+    ],
+    "summary": "A powerful tool for creating datasets fo…",
+    "source": "github",
+    "score": 71,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "awesome-creative-coding",
+    "name": "awesome-creative-coding",
+    "url": "https://github.com/terkelg/awesome-creative-coding",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "HTML"
+    ],
+    "summary": "Creative Coding: Generative Art, Data vi…",
+    "source": "github",
+    "score": 71,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "i-made-a-site-where-you-practice-typing-by-retyping-entire-novels",
+    "name": "I made a site where you practice typing by retyping entire novels",
+    "url": "http://typelit.io",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "I made a site where you practice typing …",
+    "source": "hackernews",
+    "score": 70,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "i-got-laid-off-from-meta-and-created-a-minor-hit-on-steam",
+    "name": "I got laid off from Meta and created a minor hit on Steam",
+    "url": "https://news.ycombinator.com/item?id=43186406",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "I got laid off from Meta and created a m…",
+    "source": "hackernews",
+    "score": 70,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "jmail-google-suite-for-epstein-files",
+    "name": "Jmail – Google Suite for Epstein files",
+    "url": "https://www.jmail.world",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Jmail – Google Suite for Epstein files",
+    "source": "hackernews",
+    "score": 70,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "i-m-an-airline-pilot-i-built-interactive-graphs-globes-of-my-flights",
+    "name": "I'm an airline pilot – I built interactive graphs/globes of my flights",
+    "url": "https://jameshard.ing/pilot",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "I'm an airline pilot – I built interacti…",
+    "source": "hackernews",
+    "score": 70,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "airmash-multiplayer-missile-warfare-html5-game",
+    "name": "Airmash – Multiplayer Missile Warfare HTML5 Game",
+    "url": "https://airma.sh/",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Airmash – Multiplayer Missile Warfare HT…",
+    "source": "hackernews",
+    "score": 70,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "beeper-mini-imessage-client-for-android",
+    "name": "Beeper Mini – iMessage client for Android",
+    "url": "https://www.beeper.com/",
+    "category": "编程与开发",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Beeper Mini – iMessage client for Androi…",
+    "source": "hackernews",
+    "score": 70,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "homebrew-6-0-0",
+    "name": "Homebrew 6.0.0",
+    "url": "https://brew.sh/2026/06/11/homebrew-6.0.0/",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Homebrew 6.0.0",
+    "source": "hackernews",
+    "score": 70,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "moss",
+    "name": "MOSS",
+    "url": "https://github.com/OpenMOSS/MOSS",
+    "category": "对话与助手",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "An open-source, tool-augmented conversat…",
+    "source": "github",
+    "score": 70,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "axolotl",
+    "name": "axolotl",
+    "url": "https://github.com/axolotl-ai-cloud/axolotl",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Go ahead and axolotl questions",
+    "source": "github",
+    "score": 70,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "openllm",
+    "name": "OpenLLM",
+    "url": "https://github.com/bentoml/OpenLLM",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Run any open-source LLMs, such as DeepSe…",
+    "source": "github",
+    "score": 70,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "langchain4j",
+    "name": "langchain4j",
+    "url": "https://github.com/langchain4j/langchain4j",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Java"
+    ],
+    "summary": "LangChain4j is an idiomatic, open-source…",
+    "source": "github",
+    "score": 70,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "leann",
+    "name": "LEANN",
+    "url": "https://github.com/StarTrail-org/LEANN",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "[MLsys2026 Best Paper]: https://arxiv.or…",
+    "source": "github",
+    "score": 70,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "txtai",
+    "name": "txtai",
+    "url": "https://github.com/neuml/txtai",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "💡 All-in-one AI framework for semantic s…",
+    "source": "github",
+    "score": 70,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "claude-context",
+    "name": "claude-context",
+    "url": "https://github.com/zilliztech/claude-context",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Code search MCP for Claude Code. Make en…",
+    "source": "github",
+    "score": 70,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "can-t-afford-bloomberg-terminal-no-prob-i-built-the-next-best-thing",
+    "name": "Can’t afford Bloomberg Terminal? No prob, I built the next best thing",
+    "url": "https://github.com/DidierRLopes/GamestonkTerminal",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Can’t afford Bloomberg Terminal? No prob…",
+    "source": "hackernews",
+    "score": 69,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "gpt-4-powered-web-searches-for-developers",
+    "name": "GPT-4-powered web searches for developers",
+    "url": "https://www.phind.com",
+    "category": "编程与开发",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "GPT-4-powered web searches for developer…",
+    "source": "hackernews",
+    "score": 69,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "i-built-a-rotten-tomatoes-style-platform-for-durable-products",
+    "name": "I built a Rotten Tomatoes-style platform for durable products",
+    "url": "https://www.buyforlifeproducts.com/",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "I built a Rotten Tomatoes-style platform…",
+    "source": "hackernews",
+    "score": 69,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "meteor-a-realtime-javascript-framework",
+    "name": "Meteor, a realtime JavaScript framework",
+    "url": "http://www.meteor.com",
+    "category": "模型与基础设施",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Meteor, a realtime JavaScript framework",
+    "source": "hackernews",
+    "score": 69,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "obsidian-canvas-an-infinite-space-for-your-ideas",
+    "name": "Obsidian Canvas – An infinite space for your ideas",
+    "url": "https://obsidian.md/canvas",
+    "category": "编程与开发",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Obsidian Canvas – An infinite space for …",
+    "source": "hackernews",
+    "score": 69,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "40k-hn-comments-mentioning-books-extracted-using-deep-learning",
+    "name": "40k HN comments mentioning books, extracted using deep learning",
+    "url": "https://hacker-recommended-books.vercel.app/category/0/all-time/page/0/0",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "40k HN comments mentioning books, extrac…",
+    "source": "hackernews",
+    "score": 69,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "i-m-building-an-open-source-amazon",
+    "name": "I'm building an open-source Amazon",
+    "url": "https://openship.org/",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "I'm building an open-source Amazon",
+    "source": "hackernews",
+    "score": 69,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "isometric-nyc-giant-isometric-pixel-art-map-of-nyc",
+    "name": "isometric.nyc – giant isometric pixel art map of NYC",
+    "url": "https://cannoneyed.com/isometric-nyc/",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "isometric.nyc – giant isometric pixel ar…",
+    "source": "hackernews",
+    "score": 69,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "show-hn",
+    "name": "Show HN",
+    "url": "https://news.ycombinator.com/show",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Show HN",
+    "source": "hackernews",
+    "score": 69,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "portable-secret-how-i-store-my-secrets-and-communicate-privately",
+    "name": "Portable Secret – How I store my secrets and communicate privately",
+    "url": "https://mprimi.github.io/portable-secret/",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Portable Secret – How I store my secrets…",
+    "source": "hackernews",
+    "score": 69,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "ludwig",
+    "name": "ludwig",
+    "url": "https://github.com/ludwig-ai/ludwig",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Low-code framework for building custom L…",
+    "source": "github",
+    "score": 69,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "lancedb",
+    "name": "lancedb",
+    "url": "https://github.com/lancedb/lancedb",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "Developer-friendly OSS embedded retrieva…",
+    "source": "github",
+    "score": 69,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "tetris-in-a-pdf",
+    "name": "Tetris in a PDF",
+    "url": "https://th0mas.nl/downloads/pdftris.pdf",
+    "category": "写作与文本处理",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Tetris in a PDF",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "bel",
+    "name": "Bel",
+    "url": "http://paulgraham.com/bel.html",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Bel",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "i-built-a-synth-for-my-daughter",
+    "name": "I built a synth for my daughter",
+    "url": "https://bitsnpieces.dev/posts/a-synth-for-my-daughter/",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "I built a synth for my daughter",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "3-years-and-1m-users-later-i-just-open-sourced-my-internet-os",
+    "name": "3 years and 1M users later, I just open-sourced my \"Internet OS\"",
+    "url": "https://github.com/HeyPuter/puter",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "3 years and 1M users later, I just open-…",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "sorting-two-metric-tons-of-lego",
+    "name": "Sorting Two Metric Tons of Lego",
+    "url": "https://jacquesmattheij.com/sorting-two-metric-tons-of-lego",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Sorting Two Metric Tons of Lego",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "looptap-a-minimal-game-to-waste-your-time",
+    "name": "Looptap – A minimal game to waste your time",
+    "url": "https://looptap.vasanthv.com/",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Looptap – A minimal game to waste your t…",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "sha-256-explained-step-by-step-visually",
+    "name": "SHA-256 explained step-by-step visually",
+    "url": "https://sha256algorithm.com/",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "SHA-256 explained step-by-step visually",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "wave-function-collapse-algorithm",
+    "name": "Wave function collapse algorithm",
+    "url": "https://github.com/mxgmn/WaveFunctionCollapse",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Wave function collapse algorithm",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "imba-i-have-spent-7-years-creating-a-programming-language-for-the-web",
+    "name": "Imba – I have spent 7 years creating a programming language for the web",
+    "url": "https://news.ycombinator.com/item?id=28207662",
+    "category": "编程与开发",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Imba – I have spent 7 years creating a p…",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "spot-the-drowning-child",
+    "name": "Spot the Drowning Child",
+    "url": "http://spotthedrowningchild.com",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Spot the Drowning Child",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "make-your-site-s-pages-instant-in-one-minute",
+    "name": "Make your site’s pages instant in one minute",
+    "url": "https://instant.page/",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Make your site’s pages instant in one mi…",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "i-built-an-app-to-stop-me-doomscrolling-by-touching-grass",
+    "name": "I built an app to stop me doomscrolling by touching grass",
+    "url": "https://touchgrass.now/",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "I built an app to stop me doomscrolling …",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "lofi-cafe",
+    "name": "Lofi.cafe",
+    "url": "https://lofi.cafe",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Lofi.cafe",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "a-store-that-generates-products-from-anything-you-type-in-search",
+    "name": "A store that generates products from anything you type in search",
+    "url": "https://anycrap.shop/",
+    "category": "搜索与研究",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "A store that generates products from any…",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "privacy-focused-ad-free-non-tracking-torrent-search-engine",
+    "name": "Privacy-focused, ad-free, non-tracking torrent search engine",
+    "url": "https://www.skytorrents.in",
+    "category": "模型与基础设施",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Privacy-focused, ad-free, non-tracking t…",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "performative-ui-a-react-component-library-of-design-tropes",
+    "name": "Performative-UI – A react component library of design tropes",
+    "url": "https://vorpus.github.io/performativeUI/",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Performative-UI – A react component libr…",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "we-built-an-end-to-end-encrypted-alternative-to-google-photos",
+    "name": "We built an end-to-end encrypted alternative to Google Photos",
+    "url": "https://news.ycombinator.com/item?id=28347439",
+    "category": "图像生成与处理",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "We built an end-to-end encrypted alterna…",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "six-degrees-of-wikipedia",
+    "name": "Six Degrees of Wikipedia",
+    "url": "https://www.sixdegreesofwikipedia.com",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Six Degrees of Wikipedia",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "make-a-programmable-mirror",
+    "name": "Make a programmable mirror",
+    "url": "https://github.com/HannahMitt/HomeMirror",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Make a programmable mirror",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "alacritty-a-gpu-accelerated-terminal-emulator-written-in-rust",
+    "name": "Alacritty, a GPU-accelerated terminal emulator written in Rust",
+    "url": "http://blog.jwilm.io/announcing-alacritty/",
+    "category": "开发者作品",
+    "tags": [
+      "网站",
+      "作品集",
+      "实验"
+    ],
+    "summary": "Alacritty, a GPU-accelerated terminal em…",
+    "source": "hackernews",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "oumi",
+    "name": "oumi",
+    "url": "https://github.com/oumi-ai/oumi",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Easily fine-tune (SFT/RL), evaluate, and…",
+    "source": "github",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "orama",
+    "name": "orama",
+    "url": "https://github.com/oramasearch/orama",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "🌌 A complete search engine and RAG pipel…",
+    "source": "github",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "oceanbase",
+    "name": "oceanbase",
+    "url": "https://github.com/oceanbase/oceanbase",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "C++"
+    ],
+    "summary": "OceanBase is the unified distributed dat…",
+    "source": "github",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "databend",
+    "name": "databend",
+    "url": "https://github.com/databendlabs/databend",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "Data Agent Ready Warehouse : One for Ana…",
+    "source": "github",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "paradedb",
+    "name": "paradedb",
+    "url": "https://github.com/paradedb/paradedb",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "One Postgres for your application data, …",
+    "source": "github",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "openframeworks",
+    "name": "openFrameworks",
+    "url": "https://github.com/openframeworks/openFrameworks",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "C++"
+    ],
+    "summary": "openFrameworks is a community-developed …",
+    "source": "github",
+    "score": 68,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "soup",
+    "name": "Soup",
+    "url": "https://github.com/MakazhanAlpamys/Soup",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Fine-tune LLMs from one YAML. Layer stre…",
+    "source": "github",
+    "score": 67,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "deeplake",
+    "name": "deeplake",
+    "url": "https://github.com/activeloopai/deeplake",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "C++"
+    ],
+    "summary": "Deeplake is AI Data Runtime for Agents. …",
+    "source": "github",
+    "score": 67,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "server",
+    "name": "server",
+    "url": "https://github.com/MariaDB/server",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "C++"
+    ],
+    "summary": "MariaDB server is a community developed …",
+    "source": "github",
+    "score": 67,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "deep-searcher",
+    "name": "deep-searcher",
+    "url": "https://github.com/zilliztech/deep-searcher",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Open Source Deep Research Alternative to…",
+    "source": "github",
+    "score": 67,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "vespa",
+    "name": "vespa",
+    "url": "https://github.com/vespa-engine/vespa",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Java"
+    ],
+    "summary": "The AI search platform",
+    "source": "github",
+    "score": 66,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "genkit",
+    "name": "genkit",
+    "url": "https://github.com/genkit-ai/genkit",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Open-source framework for building agent…",
+    "source": "github",
+    "score": 65,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "xerj",
+    "name": "xerj",
+    "url": "https://github.com/xerj-org/xerj",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "XERJ is the new way for AI to search dat…",
+    "source": "github",
+    "score": 65,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "redisearch",
+    "name": "RediSearch",
+    "url": "https://github.com/RediSearch/RediSearch",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "A query and indexing engine for Redis, p…",
+    "source": "github",
+    "score": 65,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "nannou",
+    "name": "nannou",
+    "url": "https://github.com/nannou-org/nannou",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "A Creative Coding Framework for Rust.",
+    "source": "github",
+    "score": 65,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "helix-db",
+    "name": "helix-db",
+    "url": "https://github.com/HelixDB/helix-db",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "HelixDB is an OLTP graph database with n…",
+    "source": "github",
+    "score": 64,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "css-doodle",
+    "name": "css-doodle",
+    "url": "https://github.com/css-doodle/css-doodle",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "JavaScript"
+    ],
+    "summary": "A web component for visual art and creat…",
+    "source": "github",
+    "score": 64,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "lollms-webui",
+    "name": "lollms-webui",
+    "url": "https://github.com/ParisNeo/lollms-webui",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Lord of Large Language and Multi modal S…",
+    "source": "github",
+    "score": 63,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "kiln",
+    "name": "Kiln",
+    "url": "https://github.com/Kiln-AI/Kiln",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Build, Evaluate, and Optimize AI Systems…",
+    "source": "github",
+    "score": 63,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "h2o-llmstudio",
+    "name": "h2o-llmstudio",
+    "url": "https://github.com/h2oai/h2o-llmstudio",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "H2O LLM Studio - a framework and no-code…",
+    "source": "github",
+    "score": 63,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "awesome-opus5-5-videos",
+    "name": "awesome-opus5-5-videos",
+    "url": "https://github.com/yihui-dev/awesome-opus5-5-videos",
+    "category": "编程与开发",
+    "tags": [
+      "开源"
+    ],
+    "summary": "A growing collection of viral videos mad…",
+    "source": "github",
+    "score": 63,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "pts",
+    "name": "pts",
+    "url": "https://github.com/williamngan/pts",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "A library for visualization and creative…",
+    "source": "github",
+    "score": 63,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "canvas-ui",
+    "name": "canvas-ui",
+    "url": "https://github.com/DavidHDev/canvas-ui",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "A library of creative canvas components.…",
+    "source": "github",
+    "score": 63,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "cognita",
+    "name": "cognita",
+    "url": "https://github.com/truefoundry/cognita",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "RAG (Retrieval Augmented Generation) Fra…",
+    "source": "github",
+    "score": 62,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "tweakpane",
+    "name": "tweakpane",
+    "url": "https://github.com/cocopon/tweakpane",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": ":control_knobs: Compact GUI for fine-tun…",
+    "source": "github",
+    "score": 62,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "lorax",
+    "name": "lorax",
+    "url": "https://github.com/predibase/lorax",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Multi-LoRA inference server that scales …",
+    "source": "github",
+    "score": 61,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "opendeepwiki",
+    "name": "OpenDeepWiki",
+    "url": "https://github.com/AIDotNet/OpenDeepWiki",
+    "category": "对话与助手",
+    "tags": [
+      "开源",
+      "C#"
+    ],
+    "summary": "OpenDeepWiki is the open-source version …",
+    "source": "github",
+    "score": 61,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "refact",
+    "name": "refact",
+    "url": "https://github.com/smallcloudai/refact",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "AI Agent that handles engineering tasks …",
+    "source": "github",
+    "score": 60,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "metaclaw",
+    "name": "MetaClaw",
+    "url": "https://github.com/aiming-lab/MetaClaw",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "🦞 Just talk to your agent — it learns an…",
+    "source": "github",
+    "score": 60,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "ai-engineering-interview-questions",
+    "name": "ai-engineering-interview-questions",
+    "url": "https://github.com/amitshekhariitbhu/ai-engineering-interview-questions",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Markdown"
+    ],
+    "summary": "Your Cheat Sheet for AI Engineering Inte…",
+    "source": "github",
+    "score": 60,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "onetrainer",
+    "name": "OneTrainer",
+    "url": "https://github.com/Nerogar/OneTrainer",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "OneTrainer is a one-stop solution for al…",
+    "source": "github",
+    "score": 60,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "scroll-craft",
+    "name": "scroll-craft",
+    "url": "https://github.com/nateherkai/scroll-craft",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "JavaScript"
+    ],
+    "summary": "An agent skill for building premium, imm…",
+    "source": "github",
+    "score": 60,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "second-brain-ai-assistant-course",
+    "name": "second-brain-ai-assistant-course",
+    "url": "https://github.com/decodingai-magazine/second-brain-ai-assistant-course",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Jupyter Notebook"
+    ],
+    "summary": "Learn to build your Second Brain AI assi…",
+    "source": "github",
+    "score": 59,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "simpletuner",
+    "name": "SimpleTuner",
+    "url": "https://github.com/bghira/SimpleTuner",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "A general fine-tuning kit geared toward …",
+    "source": "github",
+    "score": 59,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "maestro",
+    "name": "maestro",
+    "url": "https://github.com/roboflow/maestro",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "streamline the fine-tuning process for m…",
+    "source": "github",
+    "score": 58,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "xturing",
+    "name": "xTuring",
+    "url": "https://github.com/stochasticai/xTuring",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Build, personalize and control your own …",
+    "source": "github",
+    "score": 58,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "ort",
+    "name": "ort",
+    "url": "https://github.com/pykeio/ort",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Rust"
+    ],
+    "summary": "Fast ML inference & training for ONNX mo…",
+    "source": "github",
+    "score": 58,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "maxtext",
+    "name": "maxtext",
+    "url": "https://github.com/AI-Hypercomputer/maxtext",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "A simple, performant, and scalable Jax L…",
+    "source": "github",
+    "score": 58,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "lemo-opuscar",
+    "name": "lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "JavaScript"
+    ],
+    "summary": "Claude Code skill for short films with n…",
+    "source": "github",
+    "score": 58,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "pixel2motion",
+    "name": "pixel2motion",
+    "url": "https://github.com/nolangz/pixel2motion",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "AI logo animation skill: turn raster log…",
+    "source": "github",
+    "score": 58,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "texar",
+    "name": "texar",
+    "url": "https://github.com/asyml/texar",
+    "category": "写作与文本处理",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Toolkit for Machine Learning, Natural La…",
+    "source": "github",
+    "score": 57,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "ai-engineering-academy",
+    "name": "AI-Engineering.academy",
+    "url": "https://github.com/adithya-s-k/AI-Engineering.academy",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Jupyter Notebook"
+    ],
+    "summary": "Mastering Applied AI, One Concept at a T…",
+    "source": "github",
+    "score": 57,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "dstack",
+    "name": "dstack",
+    "url": "https://github.com/dstackai/dstack",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "A unified orchestration layer for hetero…",
+    "source": "github",
+    "score": 57,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "trainer",
+    "name": "trainer",
+    "url": "https://github.com/kubeflow/trainer",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Go"
+    ],
+    "summary": "Distributed AI Model Training and LLM Fi…",
+    "source": "github",
+    "score": 57,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "latentbox",
+    "name": "latentbox",
+    "url": "https://github.com/latentcat/latentbox",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "A collection of awesome-lists for AI, cr…",
+    "source": "github",
+    "score": 57,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "score",
+    "name": "score",
+    "url": "https://github.com/ossia/score",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "C++"
+    ],
+    "summary": "ossia score, an interactive sequencer fo…",
+    "source": "github",
+    "score": 56,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "noc-book-2",
+    "name": "noc-book-2",
+    "url": "https://github.com/nature-of-code/noc-book-2",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "HTML"
+    ],
+    "summary": "The 2024 edition of The Nature of Code w…",
+    "source": "github",
+    "score": 56,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "kage",
+    "name": "kage",
+    "url": "https://github.com/MengTo/kage",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "HTML"
+    ],
+    "summary": "An interactive five-chapter night walk t…",
+    "source": "github",
+    "score": 55,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "portable-local-studio",
+    "name": "Portable-Local-Studio",
+    "url": "https://github.com/techjarves/Portable-Local-Studio",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "JavaScript"
+    ],
+    "summary": "Portable local AI studio for Windows, Li…",
+    "source": "github",
+    "score": 54,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "webai2api",
+    "name": "WebAI2API",
+    "url": "https://github.com/foxhui/WebAI2API",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "JavaScript"
+    ],
+    "summary": "WebAI2API: 基于 Camoufox 的网页 AI 转 API 工具，支…",
+    "source": "github",
+    "score": 53,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "imgui-bundle",
+    "name": "imgui_bundle",
+    "url": "https://github.com/pthom/imgui_bundle",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Interactive Python & C++ apps for deskto…",
+    "source": "github",
+    "score": 53,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "glisp",
+    "name": "glisp",
+    "url": "https://github.com/baku89/glisp",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Glisp is a Lisp-based design tool that c…",
+    "source": "github",
+    "score": 52,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "vfx-js",
+    "name": "vfx-js",
+    "url": "https://github.com/fand/vfx-js",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "WebGL effects made easy.",
+    "source": "github",
+    "score": 52,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "auteur",
+    "name": "auteur",
+    "url": "https://github.com/agiwhitelist/auteur",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "JavaScript"
+    ],
+    "summary": "The Claude Code skill that directs a web…",
+    "source": "github",
+    "score": 51,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "awesome-threejs",
+    "name": "awesome-threejs",
+    "url": "https://github.com/AxiomeCG/awesome-threejs",
+    "category": "编程与开发",
+    "tags": [
+      "开源"
+    ],
+    "summary": "3️⃣ A curated list of awesome ThreeJS re…",
+    "source": "github",
+    "score": 51,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "openrndr",
+    "name": "openrndr",
+    "url": "https://github.com/openrndr/openrndr",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "Kotlin"
+    ],
+    "summary": "OPENRNDR. A Kotlin/JVM library for creat…",
+    "source": "github",
+    "score": 51,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "anidoodle",
+    "name": "anidoodle",
+    "url": "https://github.com/alexgreensh/anidoodle",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Art and animation, written as code. Illu…",
+    "source": "github",
+    "score": 51,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "glas",
+    "name": "glas",
+    "url": "https://github.com/lume/glas",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "WebGL in WebAssembly with AssemblyScript",
+    "source": "github",
+    "score": 51,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "fragment",
+    "name": "fragment",
+    "url": "https://github.com/raphaelameaume/fragment",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "JavaScript"
+    ],
+    "summary": "[alpha] A modern toolkit for creative co…",
+    "source": "github",
+    "score": 51,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "hello-imgui",
+    "name": "hello_imgui",
+    "url": "https://github.com/pthom/hello_imgui",
+    "category": "搜索与研究",
+    "tags": [
+      "开源",
+      "C++"
+    ],
+    "summary": "Dear ImGui apps made simple: desktop, mo…",
+    "source": "github",
+    "score": 50,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "shader-park-core",
+    "name": "shader-park-core",
+    "url": "https://github.com/shader-park/shader-park-core",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "JavaScript"
+    ],
+    "summary": "A JavaScript library for creating real-t…",
+    "source": "github",
+    "score": 50,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "polygonjs",
+    "name": "polygonjs",
+    "url": "https://github.com/polygonjs/polygonjs",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "node-based WebGL design tool",
+    "source": "github",
+    "score": 50,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "shader-lab",
+    "name": "shader-lab",
+    "url": "https://github.com/basementstudio/shader-lab",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "A powerful toolkit to create, stack, and…",
+    "source": "github",
+    "score": 49,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "payload-ai",
+    "name": "payload-ai",
+    "url": "https://github.com/ashbuilds/payload-ai",
+    "category": "写作与文本处理",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "AI Plugin is a powerful extension for th…",
+    "source": "github",
+    "score": 47,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "deepseek-php-client",
+    "name": "deepseek-php-client",
+    "url": "https://github.com/deepseek-php/deepseek-php-client",
+    "category": "编程与开发",
+    "tags": [
+      "开源",
+      "PHP"
+    ],
+    "summary": "⚡️ A community driven PHP client for Dee…",
+    "source": "github",
+    "score": 46,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "haystack-tutorials",
+    "name": "haystack-tutorials",
+    "url": "https://github.com/deepset-ai/haystack-tutorials",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Jupyter Notebook"
+    ],
+    "summary": "Here you can find all the Tutorials for …",
+    "source": "github",
+    "score": 44,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "llm4free",
+    "name": "llm4free",
+    "url": "https://github.com/OEvortex/llm4free",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "LLM4Free — All-in-one Python toolkit for…",
+    "source": "github",
+    "score": 44,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "react-native-apple-llm",
+    "name": "react-native-apple-llm",
+    "url": "https://github.com/deveix/react-native-apple-llm",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Swift"
+    ],
+    "summary": "React Native Apple LLM plugin using Foun…",
+    "source": "github",
+    "score": 43,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "diffusion-nlp-paper-arxiv",
+    "name": "diffusion-nlp-paper-arxiv",
+    "url": "https://github.com/bansky-cl/diffusion-nlp-paper-arxiv",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Auto get diffusion nlp papers in Axriv. …",
+    "source": "github",
+    "score": 43,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "amrlib",
+    "name": "amrlib",
+    "url": "https://github.com/bjascob/amrlib",
+    "category": "写作与文本处理",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "A python library that makes AMR parsing,…",
+    "source": "github",
+    "score": 42,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "rantjs",
+    "name": "Rantjs",
+    "url": "https://github.com/robbestad/Rantjs",
+    "category": "写作与文本处理",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Write a pattern, get a sentence. Seeded …",
+    "source": "github",
+    "score": 40,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "agentor",
+    "name": "agentor",
+    "url": "https://github.com/CelestoAI/agentor",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Open source version of Claude Managed Ag…",
+    "source": "github",
+    "score": 40,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "writingbench",
+    "name": "WritingBench",
+    "url": "https://github.com/X-PLUG/WritingBench",
+    "category": "写作与文本处理",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "WritingBench: A Comprehensive Benchmark …",
+    "source": "github",
+    "score": 40,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "qxotic",
+    "name": "qxotic",
+    "url": "https://github.com/qxoticai/qxotic",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Java"
+    ],
+    "summary": "AI sovereignty for the world's most trus…",
+    "source": "github",
+    "score": 39,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "transformers-in-action",
+    "name": "Transformers-in-Action",
+    "url": "https://github.com/Nicolepcx/Transformers-in-Action",
+    "category": "写作与文本处理",
+    "tags": [
+      "开源",
+      "Jupyter Notebook"
+    ],
+    "summary": "This is the corresponding code for the b…",
+    "source": "github",
+    "score": 38,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "novelgenerator",
+    "name": "NovelGenerator",
+    "url": "https://github.com/KazKozDev/NovelGenerator",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "TypeScript"
+    ],
+    "summary": "Local AI novel generator for Gemini and …",
+    "source": "github",
+    "score": 38,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "g4f-working",
+    "name": "g4f-working",
+    "url": "https://github.com/Free-AI-Things/g4f-working",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "g4f-working is a daily-updated list of w…",
+    "source": "github",
+    "score": 37,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "auto-improve",
+    "name": "auto-improve",
+    "url": "https://github.com/crimeacs/auto-improve",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "GAN-style self-improvement loop for any …",
+    "source": "github",
+    "score": 37,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "rgxgen",
+    "name": "RgxGen",
+    "url": "https://github.com/curious-odd-man/RgxGen",
+    "category": "写作与文本处理",
+    "tags": [
+      "开源",
+      "Java"
+    ],
+    "summary": "Regex: generate matching and non matchin…",
+    "source": "github",
+    "score": 35,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "easy-llama",
+    "name": "easy-llama",
+    "url": "https://github.com/ddh0/easy-llama",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Python package wrapping llama.cpp for on…",
+    "source": "github",
+    "score": 35,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "personalforge",
+    "name": "personalforge",
+    "url": "https://github.com/yagyeshVyas/personalforge",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Build your own offline AI from any docum…",
+    "source": "github",
+    "score": 34,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "hands-on-python-natural-language-processing",
+    "name": "Hands-On-Python-Natural-Language-Processing",
+    "url": "https://github.com/PacktPublishing/Hands-On-Python-Natural-Language-Processing",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Jupyter Notebook"
+    ],
+    "summary": "Hands-On-Python-Natural-Language-Process…",
+    "source": "github",
+    "score": 34,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "ai-watermark-remover-gui",
+    "name": "AI-watermark-remover-GUI",
+    "url": "https://github.com/yasir-mo/AI-watermark-remover-GUI",
+    "category": "写作与文本处理",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Open-source research tool for inspecting…",
+    "source": "github",
+    "score": 34,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "tsetlin-jl",
+    "name": "Tsetlin.jl",
+    "url": "https://github.com/BooBSD/Tsetlin.jl",
+    "category": "模型与基础设施",
+    "tags": [
+      "开源",
+      "Julia"
+    ],
+    "summary": "The Fuzzy-Pattern Tsetlin Machine librar…",
+    "source": "github",
+    "score": 34,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "front-porch-ai",
+    "name": "front-porch-AI",
+    "url": "https://github.com/linux4life1/front-porch-AI",
+    "category": "对话与助手",
+    "tags": [
+      "开源",
+      "Dart"
+    ],
+    "summary": "Local-first AI character chat & roleplay…",
+    "source": "github",
+    "score": 33,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "proseflow",
+    "name": "ProseFlow",
+    "url": "https://github.com/LSXPrime/ProseFlow",
+    "category": "写作与文本处理",
+    "tags": [
+      "开源",
+      "C#"
+    ],
+    "summary": "Your universal AI text processor, powere…",
+    "source": "github",
+    "score": 33,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "perchance",
+    "name": "perchance",
+    "url": "https://github.com/eeemoon/perchance",
+    "category": "图像生成与处理",
+    "tags": [
+      "开源",
+      "Python"
+    ],
+    "summary": "Unofficial Python API for Perchance.",
+    "source": "github",
+    "score": 33,
+    "date_added": "2026-10-16"
+  }
+]
