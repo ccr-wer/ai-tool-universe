@@ -11,7 +11,7 @@
     "summary": "Reverse engineer anything with agents, f…",
     "source": "github",
     "score": 95,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "ecc",
@@ -25,7 +25,7 @@
     "summary": "The agent harness performance optimizati…",
     "source": "github",
     "score": 93,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "hermes-agent",
@@ -39,7 +39,7 @@
     "summary": "The agent that grows with you",
     "source": "github",
     "score": 92,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "deepseek-harness",
@@ -67,7 +67,7 @@
     "summary": "Supercharge your AI agents with data fro…",
     "source": "github",
     "score": 90,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "autogpt",
@@ -81,7 +81,7 @@
     "summary": "AutoGPT is the vision of accessible AI f…",
     "source": "github",
     "score": 90,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "ohmyzsh",
@@ -95,7 +95,7 @@
     "summary": "🙃 A delightful community-driven (with 2,…",
     "source": "github",
     "score": 90,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "n8n",
@@ -109,7 +109,7 @@
     "summary": "Fair-code workflow automation platform w…",
     "source": "github",
     "score": 90,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "ollama",
@@ -123,7 +123,7 @@
     "summary": "Get up and running with Kimi, GLM, MiniM…",
     "source": "github",
     "score": 90,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "prompts-chat",
@@ -137,7 +137,7 @@
     "summary": "f.k.a. Awesome ChatGPT Prompts. Share, d…",
     "source": "github",
     "score": 89,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "transformers",
@@ -151,7 +151,7 @@
     "summary": "🤗 Transformers: the model-definition fra…",
     "source": "github",
     "score": 89,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "ponytail",
@@ -165,7 +165,7 @@
     "summary": "Makes your AI agent think like the lazie…",
     "source": "github",
     "score": 89,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "stable-diffusion-webui",
@@ -179,7 +179,7 @@
     "summary": "Stable Diffusion web UI",
     "source": "github",
     "score": 89,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "langchain",
@@ -193,7 +193,7 @@
     "summary": "The agent engineering platform.",
     "source": "github",
     "score": 88,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "dify",
@@ -207,7 +207,7 @@
     "summary": "Build Agentic workflows, RAG pipelines, …",
     "source": "github",
     "score": 88,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "open-webui",
@@ -221,7 +221,7 @@
     "summary": "User-friendly AI Interface (Supports Oll…",
     "source": "github",
     "score": 88,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "langflow",
@@ -248,7 +248,7 @@
     "summary": "FULL Augment Code, Claude Code, Cluely, …",
     "source": "github",
     "score": 88,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "spec-kit",
@@ -262,7 +262,7 @@
     "summary": "💫 Toolkit to help you get started with S…",
     "source": "github",
     "score": 88,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "awesome-llm-apps",
@@ -276,7 +276,7 @@
     "summary": "100+ AI Agents, Agent Skills and RAG App…",
     "source": "github",
     "score": 88,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "comfyui",
@@ -290,7 +290,7 @@
     "summary": "The most powerful and modular diffusion …",
     "source": "github",
     "score": 88,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "moneyprinterturbo",
@@ -304,7 +304,7 @@
     "summary": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Gener…",
     "source": "github",
     "score": 87,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "graphify",
@@ -318,7 +318,7 @@
     "summary": "Turn any codebase, with its docs, SQL sc…",
     "source": "github",
     "score": 87,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "ui-ux-pro-max-skill",
@@ -332,7 +332,7 @@
     "summary": "An AI skill that provides design intelli…",
     "source": "github",
     "score": 87,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "ui",
@@ -359,7 +359,7 @@
     "summary": "A collection of various awesome lists fo…",
     "source": "github",
     "score": 87,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "excalidraw",
@@ -373,7 +373,7 @@
     "summary": "Virtual whiteboard for sketching hand-dr…",
     "source": "github",
     "score": 87,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "browser-use",
@@ -443,7 +443,7 @@
     "summary": "21 Lessons, Get Started Building with Ge…",
     "source": "github",
     "score": 86,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "puppeteer",
@@ -1616,7 +1616,7 @@
     "summary": "This up votes itself",
     "source": "hackernews",
     "score": 78,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "gemini-pro-3-imagines-the-hn-front-page-10-years-from-now",
@@ -1631,7 +1631,7 @@
     "summary": "Gemini Pro 3 imagines the HN front page …",
     "source": "hackernews",
     "score": 78,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "quivr",
@@ -2108,7 +2108,7 @@
     "summary": "I made an open-source laptop from scratc…",
     "source": "hackernews",
     "score": 77,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "qwenpaw",
@@ -2375,7 +2375,7 @@
     "summary": "I replaced a $120k bowling center system…",
     "source": "hackernews",
     "score": 76,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "if-youtube-had-actual-channels",
@@ -2390,7 +2390,7 @@
     "summary": "If YouTube had actual channels",
     "source": "hackernews",
     "score": 76,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "xiaozhi-esp32",
@@ -2824,7 +2824,7 @@
     "summary": "A retro video game console I've been wor…",
     "source": "hackernews",
     "score": 75,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "kotaemon",
@@ -2993,7 +2993,7 @@
     "summary": "An e-ink frame that hears birds and draw…",
     "source": "hackernews",
     "score": 74,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "cosyvoice",
@@ -3049,7 +3049,7 @@
     "summary": "Redbean – Single-file distributable web …",
     "source": "hackernews",
     "score": 73,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "non-io-a-reddit-like-platform-ive-been-working-on-for-the-last-4-years",
@@ -3064,7 +3064,7 @@
     "summary": "Non.io, a Reddit-like platform Ive been …",
     "source": "hackernews",
     "score": 72,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "i-may-have-created-a-new-type-of-puzzle",
@@ -3079,7 +3079,7 @@
     "summary": "I may have created a new type of puzzle",
     "source": "hackernews",
     "score": 72,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "weaviate",
@@ -3136,7 +3136,7 @@
     "summary": "I 3D scanned the interior of the Great P…",
     "source": "hackernews",
     "score": 71,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "elevators",
@@ -3151,7 +3151,7 @@
     "summary": "Elevators",
     "source": "hackernews",
     "score": 71,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "web-design-in-4-minutes",
@@ -3166,7 +3166,7 @@
     "summary": "Web Design in 4 minutes",
     "source": "hackernews",
     "score": 71,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "easy-dataset",
@@ -3209,7 +3209,7 @@
     "summary": "I made a site where you practice typing …",
     "source": "hackernews",
     "score": 70,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "i-got-laid-off-from-meta-and-created-a-minor-hit-on-steam",
@@ -3224,7 +3224,7 @@
     "summary": "I got laid off from Meta and created a m…",
     "source": "hackernews",
     "score": 70,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "jmail-google-suite-for-epstein-files",
@@ -3239,7 +3239,7 @@
     "summary": "Jmail – Google Suite for Epstein files",
     "source": "hackernews",
     "score": 70,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "i-m-an-airline-pilot-i-built-interactive-graphs-globes-of-my-flights",
@@ -3254,7 +3254,7 @@
     "summary": "I'm an airline pilot – I built interacti…",
     "source": "hackernews",
     "score": 70,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "airmash-multiplayer-missile-warfare-html5-game",
@@ -3269,7 +3269,7 @@
     "summary": "Airmash – Multiplayer Missile Warfare HT…",
     "source": "hackernews",
     "score": 70,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "beeper-mini-imessage-client-for-android",
@@ -3284,7 +3284,7 @@
     "summary": "Beeper Mini – iMessage client for Androi…",
     "source": "hackernews",
     "score": 70,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "homebrew-6-0-0",
@@ -3299,7 +3299,7 @@
     "summary": "Homebrew 6.0.0",
     "source": "hackernews",
     "score": 70,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "moss",
@@ -3412,7 +3412,7 @@
     "summary": "Can’t afford Bloomberg Terminal? No prob…",
     "source": "hackernews",
     "score": 69,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "gpt-4-powered-web-searches-for-developers",
@@ -3427,7 +3427,7 @@
     "summary": "GPT-4-powered web searches for developer…",
     "source": "hackernews",
     "score": 69,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "i-built-a-rotten-tomatoes-style-platform-for-durable-products",
@@ -3442,7 +3442,7 @@
     "summary": "I built a Rotten Tomatoes-style platform…",
     "source": "hackernews",
     "score": 69,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "meteor-a-realtime-javascript-framework",
@@ -3457,7 +3457,7 @@
     "summary": "Meteor, a realtime JavaScript framework",
     "source": "hackernews",
     "score": 69,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "obsidian-canvas-an-infinite-space-for-your-ideas",
@@ -3472,7 +3472,7 @@
     "summary": "Obsidian Canvas – An infinite space for …",
     "source": "hackernews",
     "score": 69,
-    "date_added": "2026-10-24"
+    "date_added": "2026-10-25"
   },
   {
     "id": "40k-hn-comments-mentioning-books-extracted-using-deep-learning",
